@@ -9,4 +9,7 @@
     <string name="press_here_to_call">Press the red button below to call</string>
     <string name="need_help">Need help?</string>
     <string name="click_here_for_guidance">Click here for guidance</string>
+    <string name="ambulance">Ambulance</string>
+    <string name="police">Police</string>
+    <string name="firefighter">Firefighter</string>
 </resources>
