@@ -4,4 +4,9 @@
     <string name="help">Help</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home">Home</string>
+    <string name="sos_service_title">SOS Service</string>
+    <string name="press_here_to_call">Press the red button below to call</string>
+    <string name="need_help">Need help?</string>
+    <string name="click_here_for_guidance">Click here for guidance</string>
 </resources>
