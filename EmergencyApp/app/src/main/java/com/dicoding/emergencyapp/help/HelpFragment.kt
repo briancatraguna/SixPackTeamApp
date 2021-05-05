@@ -1,11 +1,15 @@
 package com.dicoding.emergencyapp.help
 
+import android.app.Activity
+import android.content.pm.PackageManager
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.app.ActivityCompat
 import com.dicoding.emergencyapp.R
+import java.util.jar.Manifest
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -27,6 +31,10 @@ class HelpFragment : Fragment() {
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
+        }
+
+        if(context?.let { ActivityCompat.checkSelfPermission(it, android.Manifest.permission.RECORD_AUDIO) } != PackageManager.PERMISSION_GRANTED) {
+            activity?.let { ActivityCompat.requestPermissions(it, arrayOf(android.Manifest.permission.RECORD_AUDIO, android.Manifest.permission.WRITE_EXTERNAL_STORAGE), 111) }
         }
     }
 
