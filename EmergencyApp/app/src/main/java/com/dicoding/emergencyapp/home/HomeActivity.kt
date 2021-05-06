@@ -1,10 +1,12 @@
 package com.dicoding.emergencyapp.home
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.dicoding.emergencyapp.R
 import com.dicoding.emergencyapp.databinding.ActivityHomeBinding
+import com.dicoding.emergencyapp.googlemapsactivity.MapsActivity
 import com.dicoding.emergencyapp.help.HelpFragment
 import com.dicoding.emergencyapp.sos.SosFragment
 
@@ -31,7 +33,8 @@ class HomeActivity : AppCompatActivity() {
         }
 
         binding.toolbarHome.seeLocationBtn.setOnClickListener {
-
+            val locationIntent = Intent(this@HomeActivity, MapsActivity::class.java)
+            startActivity(locationIntent)
         }
 
     }

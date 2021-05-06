@@ -17,4 +17,5 @@
     <string name="dummy_location">Kecamatan Pancoran</string>
     <string name="transcription">Transcription</string>
     <string name="no_transcription">Currently you have no audio to transcribe. Press the record button below.</string>
+    <string name="title_activity_maps">Map</string>
 </resources>
