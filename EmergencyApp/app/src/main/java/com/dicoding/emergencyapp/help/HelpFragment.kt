@@ -1,9 +1,12 @@
 package com.dicoding.emergencyapp.help
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.media.MediaRecorder
+import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.os.Environment
 import android.speech.RecognizerIntent
@@ -21,6 +24,7 @@ import com.dicoding.emergencyapp.R
 import com.dicoding.emergencyapp.databinding.FragmentHelpBinding
 import com.dicoding.emergencyapp.home.HomeActivity
 import java.io.File
+import java.io.*
 import java.util.*
 import java.util.jar.Manifest
 
@@ -28,10 +32,10 @@ class HelpFragment : Fragment() {
 
     private lateinit var binding: FragmentHelpBinding
     private val RQ_SPEECH_REC = 102
+    private var textFile: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(
@@ -46,8 +50,13 @@ class HelpFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val recordBtn = binding.recordButton
+        val saveBtn = binding.btnSave
         recordBtn.setOnClickListener {
             askSpeechInput()
+        }
+
+        saveBtn.setOnClickListener {
+            saveFile()
         }
     }
 
@@ -68,6 +77,24 @@ class HelpFragment : Fragment() {
             i.putExtra(RecognizerIntent.EXTRA_LANGUAGE,Locale.getDefault())
             i.putExtra(RecognizerIntent.EXTRA_PROMPT,"Explain your emergency situation!")
             startActivityForResult(i,RQ_SPEECH_REC)
+        }
+    }
+
+    private fun saveFile() {
+        textFile = binding.tvResult.text.toString().trim()
+        val fileOutputStream: FileOutputStream
+        try {
+            context?.openFileOutput("TTS.txt", Context.MODE_PRIVATE).use { fileOutputStream ->
+                if (fileOutputStream != null) {
+                    fileOutputStream.write(textFile.toByteArray())
+                    var path = context?.filesDir
+                    Toast.makeText(context,"File has been saved in " + path, Toast.LENGTH_LONG).show()
+
+                }
+            }
+        }
+        catch (e: Exception) {
+            e.printStackTrace()
         }
     }
 }
