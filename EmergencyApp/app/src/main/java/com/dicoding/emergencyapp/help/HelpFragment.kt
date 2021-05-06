@@ -1,14 +1,24 @@
 package com.dicoding.emergencyapp.help
 
 import android.app.Activity
+import android.content.Intent
 import android.content.pm.PackageManager
+import android.media.MediaRecorder
 import android.os.Bundle
+import android.os.Environment
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.Toast
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.app.ActivityCompat
 import com.dicoding.emergencyapp.R
+import com.dicoding.emergencyapp.databinding.FragmentHelpBinding
+import com.dicoding.emergencyapp.home.HomeActivity
+import java.io.File
 import java.util.jar.Manifest
 
 // TODO: Rename parameter arguments, choose names that match
@@ -22,9 +32,15 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class HelpFragment : Fragment() {
-    // TODO: Rename and change types of parameters
+
     private var param1: String? = null
     private var param2: String? = null
+
+    private lateinit var binding: FragmentHelpBinding
+    private var state: Boolean = true
+    private lateinit var btnRecord: ImageView
+    private var path = Environment.getExternalStorageDirectory().toString()+"/record_data.3gp"
+    private lateinit var mediaRecorder : MediaRecorder
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,9 +48,12 @@ class HelpFragment : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+    }
 
-        if(context?.let { ActivityCompat.checkSelfPermission(it, android.Manifest.permission.RECORD_AUDIO) } != PackageManager.PERMISSION_GRANTED) {
-            activity?.let { ActivityCompat.requestPermissions(it, arrayOf(android.Manifest.permission.RECORD_AUDIO, android.Manifest.permission.WRITE_EXTERNAL_STORAGE), 111) }
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == 111 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            btnRecord.isEnabled = true
         }
     }
 
@@ -42,8 +61,36 @@ class HelpFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_help, container, false)
+        binding = FragmentHelpBinding.inflate(inflater, container, false)
+        btnRecord = binding.imageView
+        return binding.root
+
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        mediaRecorder = MediaRecorder()
+        if (ActivityCompat.checkSelfPermission(context as Activity, android.Manifest.permission.RECORD_AUDIO)  != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(context as Activity, arrayOf(android.Manifest.permission.RECORD_AUDIO, android.Manifest.permission.WRITE_EXTERNAL_STORAGE), 111)
+            btnRecord.setOnClickListener {
+                if(state == false) {
+                    mediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC)
+                    mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP)
+                    mediaRecorder.setAudioEncoder(MediaRecorder.OutputFormat.AMR_NB)
+                    mediaRecorder.setOutputFile(path)
+                    mediaRecorder.prepare()
+                    mediaRecorder.start()
+                    state = true
+                    Toast.makeText(context, "Recording started!", Toast.LENGTH_LONG).show()
+                    Log.d("info", "$")
+                }
+                else if (state == true) {
+                    mediaRecorder.stop()
+                    state = false
+                    Toast.makeText(context, "Recording has stopped!", Toast.LENGTH_LONG).show()
+                }
+            }
+        }
     }
 
     companion object {
@@ -66,3 +113,4 @@ class HelpFragment : Fragment() {
             }
     }
 }
+

@@ -19,10 +19,10 @@
         app:layout_constraintVertical_bias="0.217" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/sos_button_container"
-        android:layout_width="275dp"
-        android:layout_height="275dp"
-        android:layout_marginBottom="156dp"
+        android:id="@+id/help_button_container"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="32dp"
         android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,8 +31,8 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="275dp"
-            android:layout_height="275dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:src="@drawable/ic_sos_red_button"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -40,8 +40,8 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:src="@drawable/ic_mic"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
