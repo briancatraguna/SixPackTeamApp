@@ -13,8 +13,7 @@ class GuidelineActivity : AppCompatActivity() {
         setContentView(R.layout.activity_guideline)
         val backBtn = findViewById<ImageView>(R.id.back_btn)
         backBtn.setOnClickListener {
-            val intent = Intent(this, HomeActivity::class.java)
-            startActivity(intent)
+            finish()
         }
     }
 }

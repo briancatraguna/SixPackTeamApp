@@ -30,6 +30,10 @@ class HomeActivity : AppCompatActivity() {
             true
         }
 
+        binding.toolbarHome.seeLocationBtn.setOnClickListener {
+
+        }
+
     }
 
     private fun replaceFragment(fragment: Fragment){

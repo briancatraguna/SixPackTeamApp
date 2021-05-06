@@ -5,12 +5,16 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="home">Home</string>
-    <string name="sos_service_title">SOS Service</string>
-    <string name="press_here_to_call">Press the red button below to call</string>
+    <string name="sos_service_title">SOS help needed?</string>
+    <string name="press_here_to_call">Press the red button below to request for help</string>
     <string name="need_help">Need help?</string>
     <string name="click_here_for_guidance">Click here for guidance</string>
     <string name="ambulance">Ambulance</string>
     <string name="police">Police</string>
     <string name="firefighter">Firefighter</string>
     <string name="guideline">Guideline</string>
+    <string name="see_your_location">See your location</string>
+    <string name="dummy_location">Kecamatan Pancoran</string>
+    <string name="transcription">Transcription</string>
+    <string name="no_transcription">Currently you have no audio to transcribe. Press the record button below.</string>
 </resources>

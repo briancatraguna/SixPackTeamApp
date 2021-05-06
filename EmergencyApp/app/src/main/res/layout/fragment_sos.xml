@@ -2,22 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/main_bg_color"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".sos.SosFragment">
-
-    <ImageView
-        android:id="@+id/guideline"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:foregroundGravity="center"
-        android:src="@drawable/ic_baseline_help"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.955"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
 
     <TextView
         android:id="@+id/textView"
@@ -39,7 +27,7 @@
         android:layout_marginTop="30dp"
         android:fontFamily="@font/roboto_regular"
         android:text="@string/press_here_to_call"
-        android:textColor="@color/black"
+        android:textColor="@color/subtext"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,6 +44,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2">
 
         <ImageView
+            android:elevation="20dp"
             android:id="@+id/imageView"
             android:layout_width="275dp"
             android:layout_height="275dp"
@@ -66,9 +55,10 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
+            android:elevation="30dp"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:src="@drawable/ic_notification"
+            android:src="@drawable/ic_emergency_button"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -91,6 +81,8 @@
         app:layout_constraintTop_toBottomOf="@+id/radio_group" />
 
     <TextView
+        android:id="@+id/guideline"
+        android:clickable="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"

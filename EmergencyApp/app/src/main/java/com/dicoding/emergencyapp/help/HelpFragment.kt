@@ -50,19 +50,14 @@ class HelpFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val recordBtn = binding.recordButton
+        val recordBtn = binding.btnRecord
         val saveBtn = binding.btnSave
-        val guidelineBtn = binding.guideline
         recordBtn.setOnClickListener {
             askSpeechInput()
         }
 
         saveBtn.setOnClickListener {
             saveFile()
-        }
-        guidelineBtn.setOnClickListener{
-            val intent = Intent(context, GuidelineActivity::class.java)
-            startActivity(intent)
         }
     }
 
