@@ -22,6 +22,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.app.ActivityCompat
 import com.dicoding.emergencyapp.R
 import com.dicoding.emergencyapp.databinding.FragmentHelpBinding
+import com.dicoding.emergencyapp.guideline.GuidelineActivity
 import com.dicoding.emergencyapp.home.HomeActivity
 import java.io.File
 import java.io.*
@@ -51,12 +52,17 @@ class HelpFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val recordBtn = binding.recordButton
         val saveBtn = binding.btnSave
+        val guidelineBtn = binding.guideline
         recordBtn.setOnClickListener {
             askSpeechInput()
         }
 
         saveBtn.setOnClickListener {
             saveFile()
+        }
+        guidelineBtn.setOnClickListener{
+            val intent = Intent(context, GuidelineActivity::class.java)
+            startActivity(intent)
         }
     }
 

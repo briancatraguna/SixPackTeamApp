@@ -1,5 +1,6 @@
 package com.dicoding.emergencyapp.sos
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,6 +11,7 @@ import android.widget.RadioGroup
 import android.widget.Toast
 import com.dicoding.emergencyapp.R
 import com.dicoding.emergencyapp.databinding.FragmentSosBinding
+import com.dicoding.emergencyapp.guideline.GuidelineActivity
 
 class SosFragment : Fragment() {
 
@@ -48,6 +50,11 @@ class SosFragment : Fragment() {
                     Toast.makeText(context,"Firefighter Mode",Toast.LENGTH_SHORT).show()
                 }
             }
+        }
+        val guidelineBtn = binding.guideline
+        guidelineBtn.setOnClickListener {
+            val intent = Intent(context, GuidelineActivity::class.java)
+            startActivity(intent)
         }
     }
 }

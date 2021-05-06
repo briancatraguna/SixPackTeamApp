@@ -12,4 +12,5 @@
     <string name="ambulance">Ambulance</string>
     <string name="police">Police</string>
     <string name="firefighter">Firefighter</string>
+    <string name="guideline">Guideline</string>
 </resources>
