@@ -1,6 +1,7 @@
 package com.dicoding.emergencyapp.home
 
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Geocoder
 import android.location.Location
@@ -14,6 +15,7 @@ import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import com.dicoding.emergencyapp.R
 import com.dicoding.emergencyapp.databinding.ActivityHomeBinding
+import com.dicoding.emergencyapp.googlemapsactivity.MapsActivity
 import com.dicoding.emergencyapp.help.HelpFragment
 import com.dicoding.emergencyapp.settings.SettingsFragment
 import com.dicoding.emergencyapp.sos.SosFragment
@@ -31,9 +33,15 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var fusedLocationProviderClient: FusedLocationProviderClient
     private lateinit var locationRequest: LocationRequest
 
+    private var cityName: String? = null
+    private var longitude: Double? = null
+    private var latitude: Double? = null
+
     companion object{
         //Unique int for permission ID
         private const val PERMISSION_ID = 1000
+        const val LONGITUDE_KEY = "longitude"
+        const val LATITUDE_KEY = "latitude"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,8 +61,16 @@ class HomeActivity : AppCompatActivity() {
         }
 
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
+        getLastLocation()
         binding.toolbarHome.seeLocationBtn.setOnClickListener {
-            getLastLocation()
+            if (cityName!= null){
+                val locationIntent = Intent(this@HomeActivity,MapsActivity::class.java)
+                locationIntent.putExtra(LONGITUDE_KEY,longitude)
+                locationIntent.putExtra(LATITUDE_KEY,latitude)
+                startActivity(locationIntent)
+            } else {
+                Toast.makeText(this,"Please allow app to access location service",Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
@@ -71,7 +87,10 @@ class HomeActivity : AppCompatActivity() {
                         //So we need to create a new function
                         getNewLocation()
                     } else {
-                        binding.toolbarHome.tvLocation.text = getCityName(location.latitude,location.longitude)
+                        latitude = location.latitude
+                        longitude = location.longitude
+                        cityName = getCityName(location.latitude,location.longitude)
+                        binding.toolbarHome.tvLocation.text = cityName
                     }
                 }
             } else {
@@ -98,7 +117,10 @@ class HomeActivity : AppCompatActivity() {
         override fun onLocationResult(p0: LocationResult) {
             var lastLocation = p0.lastLocation
             //Now we will set the new location
-            binding.toolbarHome.tvLocation.text = getCityName(lastLocation.latitude,lastLocation.longitude)
+            latitude = lastLocation.latitude
+            longitude = lastLocation.longitude
+            cityName = getCityName(lastLocation.latitude,lastLocation.longitude)
+            binding.toolbarHome.tvLocation.text = cityName
         }
     }
 
