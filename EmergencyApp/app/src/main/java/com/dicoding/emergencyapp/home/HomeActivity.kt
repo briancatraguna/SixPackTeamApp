@@ -42,6 +42,7 @@ class HomeActivity : AppCompatActivity() {
         private const val PERMISSION_ID = 1000
         const val LONGITUDE_KEY = "longitude"
         const val LATITUDE_KEY = "latitude"
+        const val CITY_KEY = "city"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -67,6 +68,7 @@ class HomeActivity : AppCompatActivity() {
                 val locationIntent = Intent(this@HomeActivity,MapsActivity::class.java)
                 locationIntent.putExtra(LONGITUDE_KEY,longitude)
                 locationIntent.putExtra(LATITUDE_KEY,latitude)
+                locationIntent.putExtra(CITY_KEY,cityName)
                 startActivity(locationIntent)
             } else {
                 Toast.makeText(this,"Please allow app to access location service",Toast.LENGTH_SHORT).show()

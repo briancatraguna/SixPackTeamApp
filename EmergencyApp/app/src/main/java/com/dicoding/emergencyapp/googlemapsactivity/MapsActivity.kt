@@ -3,6 +3,7 @@ package com.dicoding.emergencyapp.googlemapsactivity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.dicoding.emergencyapp.R
+import com.dicoding.emergencyapp.home.HomeActivity
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -14,10 +15,17 @@ import com.google.android.gms.maps.model.MarkerOptions
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
+    private var latitude: Double = 0.0
+    private var longitude: Double = 0.0
+    private var cityName: String = ""
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps)
+        latitude = intent.getDoubleExtra(HomeActivity.LATITUDE_KEY,0.0)
+        longitude = intent.getDoubleExtra(HomeActivity.LONGITUDE_KEY,0.0)
+        cityName = intent.getStringExtra(HomeActivity.CITY_KEY).toString()
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
@@ -37,8 +45,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap = googleMap
 
         // Add a marker in Sydney and move the camera
-        val sydney = LatLng(-34.0, 151.0)
-        mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+        val yourLocation = LatLng(latitude, longitude)
+        mMap.addMarker(MarkerOptions().position(yourLocation).title(cityName))
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(yourLocation))
     }
 }
