@@ -14,7 +14,7 @@
     <string name="firefighter">Pemadam Kebakaran</string>
     <string name="guideline">Pedoman</string>
     <string name="see_your_location">Lihat lokasimu</string>
-    <string name="dummy_location">Kecamatan Pancoran</string>
+    <string name="dummy_location">-</string>
     <string name="transcription">Transkripsi</string>
     <string name="no_transcription">Saat ini kau tidak punya audio untuk di transkripsi. Tekan tombol record untuk mulai</string>
     <string name="title_activity_maps">Peta</string>

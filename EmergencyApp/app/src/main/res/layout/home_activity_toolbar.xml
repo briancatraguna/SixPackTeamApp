@@ -21,8 +21,8 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView6"
-        android:layout_width="100dp"
+        android:id="@+id/tv_location"
+        android:layout_width="wrap_content"
         android:layout_height="20dp"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/roboto_regular"
@@ -41,7 +41,7 @@
         android:textColor="@color/emergency_red"
         android:textSize="13sp"
         app:layout_constraintEnd_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_location" />
 
     <ImageView
         android:id="@+id/imageView2"
