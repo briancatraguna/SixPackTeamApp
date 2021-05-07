@@ -1,9 +1,8 @@
 <resources>
-    <string name="app_name">EmergencyApp</string>
+    <string name="app_name">Emergency App</string>
     <string name="sos_menu">SOS</string>
     <string name="help">Help</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="home">Home</string>
     <string name="sos_service_title">SOS help needed?</string>
     <string name="press_here_to_call">Press the red button below to request for help</string>
@@ -18,4 +17,5 @@
     <string name="transcription">Transcription</string>
     <string name="no_transcription">Currently you have no audio to transcribe. Press the record button below.</string>
     <string name="title_activity_maps">Map</string>
+    <string name="language">Change language</string>
 </resources>

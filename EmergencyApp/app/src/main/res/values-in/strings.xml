@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Emergency App</string>
+    <string name="sos_menu">SOS</string>
+    <string name="help">Pertolongan</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="home">Halaman Utama</string>
+    <string name="sos_service_title">Butuh bantuan SOS?</string>
+    <string name="press_here_to_call">Tekan tombol merah untuk meminta bantuan</string>
+    <string name="need_help">Butuh bantuan?</string>
+    <string name="click_here_for_guidance">Tekan disini untuk pedoman</string>
+    <string name="ambulance">Ambulans</string>
+    <string name="police">Polisi</string>
+    <string name="firefighter">Pemadam Kebakaran</string>
+    <string name="guideline">Pedoman</string>
+    <string name="see_your_location">Lihat lokasimu</string>
+    <string name="dummy_location">Kecamatan Pancoran</string>
+    <string name="transcription">Transkripsi</string>
+    <string name="no_transcription">Saat ini kau tidak punya audio untuk di transkripsi. Tekan tombol record untuk mulai</string>
+    <string name="title_activity_maps">Peta</string>
+    <string name="language">Ganti bahasa</string>
+</resources>

@@ -9,5 +9,9 @@
         android:id="@+id/ic_help"
         android:icon="@drawable/ic_help"
         android:title="@string/help"/>
+    <item
+        android:id="@+id/ic_settings"
+        android:icon="@drawable/ic_settings"
+        android:title="Settings"/>
 
 </menu>

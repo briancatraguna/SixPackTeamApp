@@ -8,6 +8,7 @@ import com.dicoding.emergencyapp.R
 import com.dicoding.emergencyapp.databinding.ActivityHomeBinding
 import com.dicoding.emergencyapp.googlemapsactivity.MapsActivity
 import com.dicoding.emergencyapp.help.HelpFragment
+import com.dicoding.emergencyapp.settings.SettingsFragment
 import com.dicoding.emergencyapp.sos.SosFragment
 
 class HomeActivity : AppCompatActivity() {
@@ -16,6 +17,7 @@ class HomeActivity : AppCompatActivity() {
 
     private val sosFragment = SosFragment()
     private val helpFragment = HelpFragment()
+    private val settingsFragment = SettingsFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +30,7 @@ class HomeActivity : AppCompatActivity() {
             when(it.itemId){
                 R.id.ic_sos -> replaceFragment(sosFragment)
                 R.id.ic_help -> replaceFragment(helpFragment)
+                R.id.ic_settings -> replaceFragment(settingsFragment)
             }
             true
         }
