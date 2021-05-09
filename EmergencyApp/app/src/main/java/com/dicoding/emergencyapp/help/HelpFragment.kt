@@ -24,6 +24,7 @@ import com.dicoding.emergencyapp.R
 import com.dicoding.emergencyapp.databinding.FragmentHelpBinding
 import com.dicoding.emergencyapp.guideline.GuidelineActivity
 import com.dicoding.emergencyapp.home.HomeActivity
+import com.dicoding.emergencyapp.typing.TypingActivity
 import java.io.File
 import java.io.*
 import java.util.*
@@ -52,12 +53,16 @@ class HelpFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val recordBtn = binding.btnRecord
         val saveBtn = binding.btnSave
+        val typingText = binding.typingText
         recordBtn.setOnClickListener {
             askSpeechInput()
         }
 
         saveBtn.setOnClickListener {
             saveFile()
+        }
+        typingText.setOnClickListener {
+            moveToTyping()
         }
     }
 
@@ -97,6 +102,10 @@ class HelpFragment : Fragment() {
         catch (e: Exception) {
             e.printStackTrace()
         }
+    }
+    private fun moveToTyping() {
+        val intent = Intent(context, TypingActivity::class.java)
+        context?.startActivity(intent)
     }
 }
 

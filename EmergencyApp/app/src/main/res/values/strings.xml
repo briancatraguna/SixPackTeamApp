@@ -18,4 +18,11 @@
     <string name="no_transcription">Currently you have no audio to transcribe. Press the record button below.</string>
     <string name="title_activity_maps">Map</string>
     <string name="language">Change language</string>
+    <string name="cant_talk">Can\'t talk? Click here</string>
+    <string name="name_type">Name</string>
+    <string name="location">Location</string>
+    <string name="write_your_name">Write your name</string>
+    <string name="write_your_location">Write your location</string>
+    <string name="situation">Situation</string>
+    <string name="write_down_your_current_situation">Write down your current situation</string>
 </resources>
