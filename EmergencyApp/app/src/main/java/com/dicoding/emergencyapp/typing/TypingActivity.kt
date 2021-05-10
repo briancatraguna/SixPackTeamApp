@@ -1,15 +1,22 @@
 package com.dicoding.emergencyapp.typing
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.dicoding.emergencyapp.R
 import com.google.android.material.textfield.TextInputLayout
-import com.jakewharton.rxbinding.widget.RxTextView
+import com.jakewharton.rxbinding2.widget.RxTextView
+import com.jakewharton.rxbinding2.widget.TextViewAfterTextChangeEvent
 import java.util.*
 import io.reactivex.Observable
+import io.reactivex.ObservableTransformer
+import io.reactivex.Observer
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.Disposable
+import java.util.concurrent.TimeUnit
 
 class TypingActivity : AppCompatActivity() {
     private lateinit var nameEdit: EditText
@@ -31,19 +38,70 @@ class TypingActivity : AppCompatActivity() {
         situationInput = findViewById(R.id.situation_edit)
         sendButton = findViewById(R.id.send_btn)
 
-        nameInput.error = "Require name"
-        sendButtonObservable()
+        sendButton.setOnClickListener {
+            clickSendButton()
+        }
+
     }
 
-    private fun sendButtonObservable() : Observable<String> {
-        return Observable.create { emmiter ->
-            sendButton.setOnClickListener {
-                emmiter.onNext(nameEdit.text.toString())
-                Toast.makeText(applicationContext, "Report has been send", Toast.LENGTH_LONG)
-            }
-            emmiter.setCancellable {
-                sendButton.setOnClickListener(null)
-            }
+    private fun clickSendButton() {
+        if(nameEdit != null) {
+            RxTextView.afterTextChangeEvents(nameEdit)
+                    .skipInitialValue()
+                    .debounce(400, TimeUnit.MILLISECONDS)
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe()
         }
+        else {
+            nameInput.error = "Require name"
+        }
+
+        if(locationEdit != null) {
+            RxTextView.afterTextChangeEvents(locationEdit)
+                    .skipInitialValue()
+                    .debounce(400, TimeUnit.MILLISECONDS)
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe()
+        }
+        else {
+            nameInput.error = "Require location"
+        }
+
+        if(situationEdit != null) {
+            RxTextView.afterTextChangeEvents(locationEdit)
+                    .skipInitialValue()
+                    .debounce(400, TimeUnit.MILLISECONDS)
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe()
+        }
+        else {
+            situationInput.error = "Require situation"
+        }
+
+    }
+
+    private fun getObserver() : Observer<String> {
+        return object: Observer<String> {
+            override fun onSubscribe(d: Disposable) {
+                Log.d("TAG", "On Subscribe")
+            }
+
+            override fun onNext(t: String) {
+                Log.d("TAG", "On Next $t")
+            }
+
+            override fun onError(e: Throwable) {
+                Log.d("TAG", "On Error" + e.message)
+            }
+
+            override fun onComplete() {
+                Log.d("TAG", "On Complete")
+            }
+
+        }
+    }
+
+    private fun getObservable() : Observable<EditText> {
+        return Observable.just(nameEdit, locationEdit, situationEdit)
     }
 }
