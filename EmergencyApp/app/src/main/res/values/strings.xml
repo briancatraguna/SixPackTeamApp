@@ -7,7 +7,7 @@
     <string name="sos_service_title">SOS help needed?</string>
     <string name="press_here_to_call">Press the red button below to request for help</string>
     <string name="need_help">Need help?</string>
-    <string name="click_here_for_guidance">Click here for guidance</string>
+    <string name="click_here_for_guidance">Click here for typing mode</string>
     <string name="ambulance">Ambulance</string>
     <string name="police">Police</string>
     <string name="firefighter">Firefighter</string>
@@ -18,7 +18,7 @@
     <string name="no_transcription">Currently you have no audio to transcribe. Press the record button below.</string>
     <string name="title_activity_maps">Map</string>
     <string name="language">Change language</string>
-    <string name="cant_talk">Can\'t talk? Click here</string>
+    <string name="cant_talk">Can\'t talk?</string>
     <string name="name_type">Name</string>
     <string name="location">Location</string>
     <string name="write_your_name">Write your name</string>

@@ -72,7 +72,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:fontFamily="@font/roboto_bold"
-        android:text="@string/need_help"
+        android:text="@string/cant_talk"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"

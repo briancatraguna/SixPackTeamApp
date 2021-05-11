@@ -33,7 +33,6 @@ import java.util.jar.Manifest
 class HelpFragment : Fragment() {
 
     private lateinit var binding: FragmentHelpBinding
-    private val RQ_SPEECH_REC = 102
     private var textFile: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,38 +50,14 @@ class HelpFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val recordBtn = binding.btnRecord
         val saveBtn = binding.btnSave
         val typingText = binding.typingText
-        recordBtn.setOnClickListener {
-            askSpeechInput()
-        }
 
         saveBtn.setOnClickListener {
             saveFile()
         }
         typingText.setOnClickListener {
             moveToTyping()
-        }
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == RQ_SPEECH_REC && resultCode == Activity.RESULT_OK){
-            val result = data?.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS)
-            binding.tvResult.text = result?.get(0).toString()
-        }
-    }
-
-    private fun askSpeechInput() {
-        if (!SpeechRecognizer.isRecognitionAvailable(context)){
-            Toast.makeText(context,"Speech recognition is not available",Toast.LENGTH_SHORT).show()
-        } else {
-            val i = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH)
-            i.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,RecognizerIntent.LANGUAGE_MODEL_FREE_FORM)
-            i.putExtra(RecognizerIntent.EXTRA_LANGUAGE,Locale.getDefault())
-            i.putExtra(RecognizerIntent.EXTRA_PROMPT,"Explain your emergency situation!")
-            startActivityForResult(i,RQ_SPEECH_REC)
         }
     }
 
