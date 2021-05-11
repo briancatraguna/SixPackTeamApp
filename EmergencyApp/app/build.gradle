@@ -59,4 +59,5 @@ dependencies {
 
     //RxBinding
     implementation 'com.jakewharton.rxbinding2:rxbinding:2.1.1'
+
 }

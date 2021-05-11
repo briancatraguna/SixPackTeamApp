@@ -20,6 +20,8 @@ import com.dicoding.emergencyapp.help.HelpFragment
 import com.dicoding.emergencyapp.settings.SettingsFragment
 import com.dicoding.emergencyapp.sos.SosFragment
 import com.google.android.gms.location.*
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import kotlinx.android.synthetic.main.activity_home.*
 import java.util.*
 
 class HomeActivity : AppCompatActivity() {
