@@ -1,4 +1,4 @@
-package com.dicoding.emergencyapp.settings
+package com.dicoding.emergencyapp.ui.settings
 
 import android.app.Activity
 import android.app.AlertDialog
@@ -11,7 +11,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.app.ActivityCompat.recreate
-import com.dicoding.emergencyapp.R
 import com.dicoding.emergencyapp.databinding.FragmentSettingsBinding
 import java.util.*
 

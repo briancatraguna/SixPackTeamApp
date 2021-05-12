@@ -1,11 +1,11 @@
-package com.dicoding.emergencyapp.splashscreen
+package com.dicoding.emergencyapp.ui.splashscreen
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import com.dicoding.emergencyapp.databinding.ActivitySplashScreenBinding
-import com.dicoding.emergencyapp.home.HomeActivity
+import com.dicoding.emergencyapp.ui.home.HomeActivity
 
 class SplashScreenActivity : AppCompatActivity() {
 

@@ -1,19 +1,18 @@
-package com.dicoding.emergencyapp.typing
+package com.dicoding.emergencyapp.ui.typing
 
 import android.os.Bundle
 import android.util.Log
 import android.widget.EditText
 import android.widget.LinearLayout
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.dicoding.emergencyapp.R
 import com.google.android.material.textfield.TextInputLayout
 import com.jakewharton.rxbinding2.widget.RxTextView
-import com.jakewharton.rxbinding2.widget.TextViewAfterTextChangeEvent
-import java.util.*
-import io.reactivex.Observable
-import io.reactivex.ObservableTransformer
+import io.reactivex.Flowable.just
+import io.reactivex.Maybe.just
+import io.reactivex.Observable.just
 import io.reactivex.Observer
+import java.util.*
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import java.util.concurrent.TimeUnit
@@ -80,7 +79,7 @@ class TypingActivity : AppCompatActivity() {
 
     }
 
-    private fun getObserver() : Observer<String> {
+    private fun getObserver() : io.reactivex.Observer<String> {
         return object: Observer<String> {
             override fun onSubscribe(d: Disposable) {
                 Log.d("TAG", "On Subscribe")
@@ -101,7 +100,7 @@ class TypingActivity : AppCompatActivity() {
         }
     }
 
-    private fun getObservable() : Observable<EditText> {
-        return Observable.just(nameEdit, locationEdit, situationEdit)
-    }
+//    private fun getObservable() : io.reactivex.Observable<EditText> {
+//        return Observable.just(nameEdit, locationEdit, situationEdit)
+//    }
 }

@@ -1,4 +1,4 @@
-package com.dicoding.emergencyapp.home
+package com.dicoding.emergencyapp.ui.home
 
 import android.content.Context
 import android.content.Intent
@@ -15,12 +15,11 @@ import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import com.dicoding.emergencyapp.R
 import com.dicoding.emergencyapp.databinding.ActivityHomeBinding
-import com.dicoding.emergencyapp.googlemapsactivity.MapsActivity
-import com.dicoding.emergencyapp.help.HelpFragment
-import com.dicoding.emergencyapp.settings.SettingsFragment
-import com.dicoding.emergencyapp.sos.SosFragment
+import com.dicoding.emergencyapp.ui.googlemapsactivity.MapsActivity
+import com.dicoding.emergencyapp.ui.help.HelpFragment
+import com.dicoding.emergencyapp.ui.settings.SettingsFragment
+import com.dicoding.emergencyapp.ui.sos.SosFragment
 import com.google.android.gms.location.*
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_home.*
 import java.util.*
 
@@ -38,6 +37,7 @@ class HomeActivity : AppCompatActivity() {
     private var cityName: String? = null
     private var longitude: Double? = null
     private var latitude: Double? = null
+    private val bundle = Bundle()
 
     companion object{
         //Unique int for permission ID
@@ -52,7 +52,7 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //Set sos as the starting fragment
+        sosFragment.arguments = bundle
         replaceFragment(sosFragment)
         binding.bottomNavigation.setOnNavigationItemSelectedListener {
             when(it.itemId){
@@ -73,17 +73,14 @@ class HomeActivity : AppCompatActivity() {
                 locationIntent.putExtra(CITY_KEY,cityName)
                 startActivity(locationIntent)
             } else {
-                Toast.makeText(this,"Please allow app to access location service",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,"Please allow app to access location service.",Toast.LENGTH_SHORT).show()
             }
         }
     }
 
     private fun getLastLocation(){
-        //First we check the permission
         if(checkPermission()){
-            //Now we check the location service is enabled
             if (isLocationEnabled()){
-                //Now let's get the location
                 fusedLocationProviderClient.lastLocation.addOnCompleteListener { task->
                     var location: Location? = task.result
                     if (location == null){
@@ -93,6 +90,8 @@ class HomeActivity : AppCompatActivity() {
                     } else {
                         latitude = location.latitude
                         longitude = location.longitude
+                        bundle.putDouble("long",location.longitude)
+                        bundle.putDouble("lat",location.latitude)
                         cityName = getCityName(location.latitude,location.longitude)
                         binding.toolbarHome.tvLocation.text = cityName
                     }
@@ -120,9 +119,10 @@ class HomeActivity : AppCompatActivity() {
     private val locationCallback = object: LocationCallback(){
         override fun onLocationResult(p0: LocationResult) {
             var lastLocation = p0.lastLocation
-            //Now we will set the new location
             latitude = lastLocation.latitude
             longitude = lastLocation.longitude
+            bundle.putDouble("long",lastLocation.longitude)
+            bundle.putDouble("lat",lastLocation.latitude)
             cityName = getCityName(lastLocation.latitude,lastLocation.longitude)
             binding.toolbarHome.tvLocation.text = cityName
         }
@@ -164,8 +164,6 @@ class HomeActivity : AppCompatActivity() {
             permissions: Array<out String>,
             grantResults: IntArray
     ) {
-        //this is a built in function that check the permission result
-        //We will use it just for debugging our code
         if (requestCode == PERMISSION_ID){
             if(grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED){
                 Log.d("Debug: ","You Have the Permission")

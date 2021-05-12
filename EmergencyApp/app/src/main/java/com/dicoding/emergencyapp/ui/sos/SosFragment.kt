@@ -1,4 +1,4 @@
-package com.dicoding.emergencyapp.sos
+package com.dicoding.emergencyapp.ui.sos
 
 import android.app.Activity
 import android.content.Intent
@@ -9,13 +9,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Toast
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import com.dicoding.emergencyapp.R
 import com.dicoding.emergencyapp.databinding.FragmentSosBinding
-import com.dicoding.emergencyapp.guideline.GuidelineActivity
-import com.dicoding.emergencyapp.typing.TypingActivity
+import com.dicoding.emergencyapp.ui.home.HomeActivity
+import com.dicoding.emergencyapp.ui.typing.TypingActivity
 import java.util.*
 
 class SosFragment : Fragment() {
@@ -23,10 +24,15 @@ class SosFragment : Fragment() {
     private lateinit var binding: FragmentSosBinding
     private lateinit var radioGroup: RadioGroup
     private lateinit var transcription: String
+    private lateinit var type: String
+    private lateinit var viewModel: SosViewModel
 
     companion object {
         private var TAG = SosFragment::class.java.simpleName
         private const val RQ_SPEECH_REC = 102
+        private const val AMBULANCE = "ambulance"
+        private const val POLICE = "police"
+        private const val FIREFIGHTER = "firefighter"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,17 +51,17 @@ class SosFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        
+
         radioGroup.setOnCheckedChangeListener { group, checkedId ->
             when (checkedId){
                 R.id.ambulance ->{
-
+                    type = AMBULANCE
                 }
                 R.id.police -> {
-
+                    type = POLICE
                 }
                 R.id.firefighter -> {
-
+                    type = FIREFIGHTER
                 }
             }
         }
@@ -79,9 +85,15 @@ class SosFragment : Fragment() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
+        viewModel = ViewModelProvider(requireActivity(),ViewModelProvider.NewInstanceFactory())[SosViewModel::class.java]
+        val latitude = arguments?.getDouble("lat")
+        val longitude = arguments?.getDouble("long")
+        println(latitude)
+        println(longitude)
         if (requestCode == RQ_SPEECH_REC && resultCode == Activity.RESULT_OK){
             val result = data?.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS)
             transcription = result?.get(0).toString()
+            viewModel.postData(type,latitude,longitude,transcription)
         }
     }
 

@@ -1,34 +1,17 @@
-package com.dicoding.emergencyapp.help
+package com.dicoding.emergencyapp.ui.help
 
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import android.content.pm.PackageManager
-import android.media.MediaRecorder
-import android.net.Uri
-import android.os.Build
 import android.os.Bundle
-import android.os.Environment
-import android.speech.RecognizerIntent
-import android.speech.SpeechRecognizer
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.Toast
-import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.core.app.ActivityCompat
-import com.dicoding.emergencyapp.R
 import com.dicoding.emergencyapp.databinding.FragmentHelpBinding
-import com.dicoding.emergencyapp.guideline.GuidelineActivity
-import com.dicoding.emergencyapp.home.HomeActivity
-import com.dicoding.emergencyapp.typing.TypingActivity
-import java.io.File
+import com.dicoding.emergencyapp.ui.typing.TypingActivity
 import java.io.*
 import java.util.*
-import java.util.jar.Manifest
 
 class HelpFragment : Fragment() {
 
@@ -62,7 +45,7 @@ class HelpFragment : Fragment() {
     }
 
     private fun saveFile() {
-        textFile = binding.tvResult.text.toString().trim()
+        textFile = "Dummy Text"
         val fileOutputStream: FileOutputStream
         try {
             context?.openFileOutput("TTS.txt", Context.MODE_PRIVATE).use { fileOutputStream ->

@@ -1,9 +1,9 @@
-package com.dicoding.emergencyapp.googlemapsactivity
+package com.dicoding.emergencyapp.ui.googlemapsactivity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.dicoding.emergencyapp.R
-import com.dicoding.emergencyapp.home.HomeActivity
+import com.dicoding.emergencyapp.ui.home.HomeActivity
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
