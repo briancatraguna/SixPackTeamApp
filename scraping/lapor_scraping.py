@@ -1,0 +1,80 @@
+import requests
+import pandas as pd
+from bs4 import BeautifulSoup
+
+def get_url(query, page):
+    """
+    Generate URL from query and page number.
+    """
+    url = 'https://www.lapor.go.id/search?q={}&page={}'.format(query, page)
+    return url
+  
+def get_html_source(url):
+    """
+    Send request and log in to the website and return the HTML code.
+    Replace value of the code below with yours.
+    See README for more information.
+    """
+    cookies = {
+        'lapor': 'eyJpdiI6Ing0MVlmM0RoU1lwSG9ldnA5S2VKS3c9PSIsInZhbHVlIjoiYVlEYUZJMHQyKzV3UnRUSHdiRjVOcGpjZ0YyeWk0WjJzazBmRlo1T1BSSjlGaXRnOFwveEdYRFRRMDREN3dqYUltMUw4cU9FSWRPc0E0MlFFa01SSEJ3PT0iLCJtYWMiOiJiNGJjODhhMzU1OGI0MmQ1NjA2ZGFlYjE3Njc0ZTVhZDEwMmFiYWY2NzJjNmIyZTZiMjkxYzRlNDI3NTNmOWNmIn0%3D',
+    }
+
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:88.0) Gecko/20100101 Firefox/88.0',
+        'Accept': '*/*',
+        'Accept-Language': 'en-US,en;q=0.5',
+        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+        'X-OCTOBER-REQUEST-HANDLER': 'laporAuth::onSignin',
+        'X-OCTOBER-REQUEST-PARTIALS': 'captcha-login',
+        'X-OCTOBER-REQUEST-FLASH': '1',
+        'X-Requested-With': 'XMLHttpRequest',
+        'Origin': 'https://www.lapor.go.id',
+        'Connection': 'keep-alive',
+        'Referer': 'https://www.lapor.go.id/',
+        'Sec-GPC': '1',
+    }
+
+    data = {
+      '_session_key': 'YOUR_SESSION_KEY',
+      '_token': 'YOUR_TOKEN',
+      'login': 'YOUR_EMAIL',
+      'password': 'YOUR_PASSWORD'
+    }
+
+    response = requests.get(url, headers=headers, cookies=cookies)
+    html_code = BeautifulSoup(response.text, 'html.parser')
+    response = requests.post(url, headers=headers, cookies=cookies, data=data)
+    return html_code
+  
+  def get_report(query, page_len):
+    """
+    Extract user's reports from the website based on query and page number.
+    """
+    urls = [get_url(query, page) for page in range(1, page_len+1)]
+    
+    all_reports = []
+    for url in urls:
+        html = get_html_source(url)
+
+        # check if there's <p class='readmore'> </p> in the HTML code. 
+        pageExist = html.find('p', {'class':'readmore'})
+        if pageExist:
+            reports = [_.text for _ in html.find_all('p', {'class':'readmore'})]
+        else:
+            print('No result.')
+
+        all_reports.extend(reports)
+    return all_reports
+  
+def generate_dataframe(reports):
+    """
+    Generate a DataFrame from list.
+    """
+    return pd.DataFrame(reports, columns=['reports'])
+  
+def main():
+    reports = get_report('kebakaran', 3)
+    df = generate_dataframe(reports)
+    print(df)
+    
+main()
