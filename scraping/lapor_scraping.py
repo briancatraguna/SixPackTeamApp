@@ -42,31 +42,34 @@ def get_html_source(url):
       'password': 'YOUR_PASSWORD'
     }
 
-    response = requests.get(url, headers=headers, cookies=cookies)
-    html_code = BeautifulSoup(response.text, 'html.parser')
-    response = requests.post(url, headers=headers, cookies=cookies, data=data)
-    return html_code
+    try:
+        response = requests.get(url, headers=headers, cookies=cookies, timeout=10)
+        html_code = BeautifulSoup(response.text, 'html.parser')
+        response = requests.post(url, headers=headers, cookies=cookies, data=data)
+        return html_code
+    except Exception as e:
+        return 'ERROR'
   
 def get_report(query, page_len):
     """
     Extract user's reports from the website based on query and page number.
     """
-    urls = tqdm([get_url(query, page) for page in range(1, int(page_len)+1)],ncols=100)
+    urls = tqdm([get_url(query, page) for page in range(1, int(page_len)+1)], ncols=100)
 
-    all_reports = []
     for url in urls:
-        urls.set_description('Scraping page {}'.format(url[-1]))
+        urls.set_description('Scraping...')
         html = get_html_source(url)
-
-        # check if there's <p class='readmore'> </p> in the HTML code. 
-        pageExist = html.find('p', {'class':'readmore'})
         
-        if pageExist:
-            reports = [(report.text, unit.text) for report, unit in zip(html.find_all('p', {'class':'readmore'}), html.find_all('b'))]
-            all_reports.extend(reports)
+        if not 'ERROR':
+            # check if there's <p class='readmore'> </p> in the HTML code. 
+            pageExist = html.find('p', {'class':'readmore'})
+            
+            if pageExist:
+                reports = [(report.text, unit.text) for report, unit in zip(html.find_all('p', {'class':'readmore'}), html.find_all('b'))]
+                all_reports.extend(reports)
 
-        elif pageExist==False:
-            break
+            elif pageExist==False:
+                break
 
     return all_reports
   
