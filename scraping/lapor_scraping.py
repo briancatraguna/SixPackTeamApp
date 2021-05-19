@@ -50,7 +50,7 @@ def get_html_source(url):
     """
     Extract user's reports from the website based on query and page number.
     """
-    urls = [get_url(query, page) for page in range(1, page_len+1)]
+    urls = [get_url(query, page) for page in range(1, int(page_len)+1)]
     
     all_reports = []
     for url in urls:
@@ -75,7 +75,9 @@ def generate_dataframe(reports):
     return pd.DataFrame(reports, columns=columns)
   
 def main():
-    reports = get_report('kebakaran', 3)
+    query = input()
+    page_len = str(input())
+    reports = get_report(query, page_len)
     df = generate_dataframe(reports)
     print(df)
     
