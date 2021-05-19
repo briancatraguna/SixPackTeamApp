@@ -1,7 +1,10 @@
 # SixPackTeamApp
 Emergency App By Six Pack Team
 
-# Team Members
+## LAPOR! Website Scraping
+Tutorial coming soon! See `scraping > README.md` for details.
+
+### Team Members
 1. Annisa Nuri Nabila
 2. Brian Mohammed Catraguna
 3. Fadia Hanifa Suwandoko
