@@ -6,6 +6,11 @@
         android:title="@string/sos_menu"/>
 
     <item
+        android:id="@+id/ic_news"
+        android:icon="@drawable/news"
+        android:title="@string/news"/>
+
+    <item
         android:id="@+id/ic_help"
         android:icon="@drawable/ic_help"
         android:title="@string/help"/>

@@ -88,8 +88,6 @@ class SosFragment : Fragment() {
         viewModel = ViewModelProvider(requireActivity(),ViewModelProvider.NewInstanceFactory())[SosViewModel::class.java]
         val latitude = arguments?.getDouble("lat")
         val longitude = arguments?.getDouble("long")
-        println(latitude)
-        println(longitude)
         if (requestCode == RQ_SPEECH_REC && resultCode == Activity.RESULT_OK){
             val result = data?.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS)
             transcription = result?.get(0).toString()
