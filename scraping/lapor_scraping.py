@@ -79,6 +79,6 @@ def main():
     page_len = str(input())
     reports = get_report(query, page_len)
     df = generate_dataframe(reports)
-    print(df)
+    df.to_csv('{}.csv'.format(query), index=True)
     
 main()
