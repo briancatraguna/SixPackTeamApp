@@ -16,4 +16,4 @@ This code is to scrape user's reports through LAPOR! website (https://lapor.go.i
 
 NOTE:
 - If it doesn't work: copy the cURL of the POST request and convert it through https://curl.trillworks.com/, then replace the code.
-- You must redoing it again if you turn off your laptop, or closing the tab (maybe).
+- You must update the value if you turn off your laptop, closing the tab, or get disconnected.
