@@ -1,5 +1,6 @@
 import requests
 import pandas as pd
+from tqdm import tqdm
 from bs4 import BeautifulSoup
 
 def get_url(query, page):
@@ -46,14 +47,15 @@ def get_html_source(url):
     response = requests.post(url, headers=headers, cookies=cookies, data=data)
     return html_code
   
-  def get_report(query, page_len):
+def get_report(query, page_len):
     """
     Extract user's reports from the website based on query and page number.
     """
-    urls = [get_url(query, page) for page in range(1, int(page_len)+1)]
-    
+    urls = tqdm([get_url(query, page) for page in range(1, int(page_len)+1)],ncols=100)
+
     all_reports = []
     for url in urls:
+        urls.set_description('Scraping page {}'.format(url[-1]))
         html = get_html_source(url)
 
         # check if there's <p class='readmore'> </p> in the HTML code. 
@@ -62,6 +64,7 @@ def get_html_source(url):
         if pageExist:
             reports = [(report.text, unit.text) for report, unit in zip(html.find_all('p', {'class':'readmore'}), html.find_all('b'))]
             all_reports.extend(reports)
+
         elif pageExist==False:
             break
 
