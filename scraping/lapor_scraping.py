@@ -58,10 +58,11 @@ def get_html_source(url):
 
         # check if there's <p class='readmore'> </p> in the HTML code. 
         pageExist = html.find('p', {'class':'readmore'})
+        
         if pageExist:
             reports = [_.text for _ in html.find_all('p', {'class':'readmore'})]
-        else:
-            print('No result.')
+        elif pageExist==False:
+            break
 
         all_reports.extend(reports)
     return all_reports
