@@ -61,10 +61,10 @@ def get_html_source(url):
         
         if pageExist:
             reports = [_.text for _ in html.find_all('p', {'class':'readmore'})]
+            all_reports.extend(reports)
         elif pageExist==False:
             break
 
-        all_reports.extend(reports)
     return all_reports
   
 def generate_dataframe(reports):
