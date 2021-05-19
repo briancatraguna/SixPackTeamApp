@@ -60,7 +60,7 @@ def get_html_source(url):
         pageExist = html.find('p', {'class':'readmore'})
         
         if pageExist:
-            reports = [_.text for _ in html.find_all('p', {'class':'readmore'})]
+            reports = [(report.text, unit.text) for report, unit in zip(html.find_all('p', {'class':'readmore'}), html.find_all('b'))]
             all_reports.extend(reports)
         elif pageExist==False:
             break
@@ -71,7 +71,8 @@ def generate_dataframe(reports):
     """
     Generate a DataFrame from list.
     """
-    return pd.DataFrame(reports, columns=['reports'])
+    columns = ['report', 'unit']
+    return pd.DataFrame(reports, columns=columns)
   
 def main():
     reports = get_report('kebakaran', 3)
