@@ -88,9 +88,21 @@ def writeFile(dataframe):
     """
     Save the DataFrame into a csv file.
     """
-    print('   + Writing file . .')
-    with open('{}.csv'.format(query), 'a+') as file:
-        dataframe.to_csv(file, header=True)
+    DATA_PATH = 'data/'
+    QUERY_PATH = DATA_PATH + '{}.csv'.format(QUERY)
+
+    # if csv file of query is exist
+    if os.path.exists(QUERY_PATH):
+        # open the file and will append the new data to the file
+        with open(QUERY_PATH, 'a+') as file:
+            dataframe.to_csv(file, header=False)
+    # if csv file of query doesn't exist
+    else:
+        # create folder for data
+        os.mkdir(DATA_PATH)
+        # write a new file inside the data folder
+        with open(QUERY_PATH, 'w') as file:
+            dataframe.to_csv(file, header=True)
   
 def main():   
     global QUERY, PAGE_LEN
