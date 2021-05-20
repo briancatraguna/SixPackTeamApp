@@ -100,10 +100,15 @@ def main():
     PAGE_START, PAGE_LEN = str(input()), str(input())
     
     print('Begin scraping {} page with keyword \'{}\'\n'.format(PAGE_LEN-PAGE_START, QUERY))
-    for i in range(PAGE_START, PAGE_LEN+1):
-        print('Scraping page {}...'.format(i))
-        report = get_report(query, page_len)
-        df = generate_dataframe(report)
-        writeFile(df)
+    for _num in range(PAGE_START, PAGE_LEN+1):
+        print('\noooooooooo PAGE {} oooooooooo'.format(_num))
+        try:
+            report = get_report(QUERY, _num)
+            df = generate_dataframe(report)
+        except Exception:
+            continue
+            raise Exception('  ERROR: Unable to generate DataFrame.')
+        else:
+            writeFile(df)
     
 main()
