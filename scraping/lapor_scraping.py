@@ -56,6 +56,8 @@ def get_report(query, page_len):
     Extract user's reports from the website based on query and page number.
     """
     url = get_url(query, page_len)
+
+    print('   + Getting HTML source . .')
     html = get_html_source(url)
 
     pageExist = html.find('p', {'class':'readmore'})
@@ -64,7 +66,8 @@ def get_report(query, page_len):
         return reports
     # for non existing page i.e no reports.
     elif pageExist==False:
-        raise Exception('Page doesn\'t exist! Going to the next page..')
+        raise Exception('  ERROR: Page is not exist! Going to the next page ..')
+        pass
   
 def generate_dataframe(reports):
     """
