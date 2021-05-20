@@ -79,12 +79,22 @@ def generate_dataframe(reports):
     """
     columns = ['report', 'unit']
     return pd.DataFrame(reports, columns=columns)
+
+def writeFile(dataframe):
+    with open('{}.csv'.format(query), 'a+') as file:
+        writer = csv.writer(file, dialect='excel')
+        writer.writerow(dataframe)
   
-def main():
-    query = input()
-    page_len = str(input())
-    reports = get_report(query, page_len)
-    df = generate_dataframe(reports)
-    df.to_csv('{}.csv'.format(query), index=True)
+def main():   
+    global query, page_len
+    global df
+    
+    query, page_len = input(), str(input())
+
+    for i in range(1, page_len+1):
+        print('Scraping page {}...'.format(i))
+        report = get_report(query, page_len)
+        df = generate_dataframe(report)
+        writeFile(df)
     
 main()
