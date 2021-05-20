@@ -96,10 +96,14 @@ def writeFile(dataframe):
         # open the file and will append the new data to the file
         with open(QUERY_PATH, 'a+') as file:
             dataframe.to_csv(file, header=False)
-    # if csv file of query doesn't exist
-    else:
+    
+    # if data folder doesn't exist
+    elif os.path.exists(DATA_PATH) == False:
         # create folder for data
         os.mkdir(DATA_PATH)
+
+    # if csv file of query doesn't exist
+    else:
         # write a new file inside the data folder
         with open(QUERY_PATH, 'w') as file:
             dataframe.to_csv(file, header=True)
