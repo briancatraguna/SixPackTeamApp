@@ -1,5 +1,6 @@
 import requests
 import pandas as pd
+from tqdm import tqdm
 from bs4 import BeautifulSoup
 
 def get_url(query, page):
@@ -41,44 +42,73 @@ def get_html_source(url):
       'password': 'YOUR_PASSWORD'
     }
 
-    response = requests.get(url, headers=headers, cookies=cookies)
-    html_code = BeautifulSoup(response.text, 'html.parser')
-    response = requests.post(url, headers=headers, cookies=cookies, data=data)
-    return html_code
+    try:
+        response = requests.get(url, headers=headers, cookies=cookies, timeout=60)
+        html_code = BeautifulSoup(response.text, 'html.parser')
+        response = requests.post(url, headers=headers, cookies=cookies, data=data)
+        return html_code
+    
+    except Exception:
+        print('  ERROR: Timeout')
   
-  def get_report(query, page_len):
+def get_report(query, page_len):
     """
     Extract user's reports from the website based on query and page number.
     """
-    urls = [get_url(query, page) for page in range(1, int(page_len)+1)]
-    
-    all_reports = []
-    for url in urls:
-        html = get_html_source(url)
+    url = get_url(query, page_len)
 
-        # check if there's <p class='readmore'> </p> in the HTML code. 
-        pageExist = html.find('p', {'class':'readmore'})
-        
-        if pageExist:
-            reports = [(report.text, unit.text) for report, unit in zip(html.find_all('p', {'class':'readmore'}), html.find_all('b'))]
-            all_reports.extend(reports)
-        elif pageExist==False:
-            break
+    print('   + Getting HTML source . .')
+    html = get_html_source(url)
 
-    return all_reports
+    pageExist = html.find('p', {'class':'readmore'})
+    if pageExist:
+        reports = [(report.text, unit.text) for report, unit in zip(html.find_all('p', {'class':'readmore'}), html.find_all('b'))]
+        return reports
+    # for non existing page i.e no reports.
+    elif pageExist==False:
+        raise Exception('  ERROR: Page is not exist! Going to the next page ..')
+        pass
   
 def generate_dataframe(reports):
     """
-    Generate a DataFrame from list.
+    Generate a DataFrame from list of tuples.
+    The reports output is [(report1, unit1), (report2, unit2), (report3, unit3), ...].
+    In that case, for each report1, report2, report3 will be added to dictionary, as well as unit1, unit2, unit3.
+    Then, DataFrame will be created from the dictionary.
     """
-    columns = ['report', 'unit']
-    return pd.DataFrame(reports, columns=columns)
+    print('   + Generate DataFrame . .')
+    reportDict = {'report': [],
+                  'unit': []}
+
+    for report, unit in reports:
+        reportDict['report'].append(report)
+        reportDict['unit'].append(unit)
+    return pd.DataFrame.from_dict(reportDict)
+
+def writeFile(dataframe):
+    """
+    Save the DataFrame into a csv file.
+    """
+    print('   + Writing file . .')
+    with open('{}.csv'.format(query), 'a+') as file:
+        dataframe.to_csv(file, header=True)
   
-def main():
-    query = input()
-    page_len = str(input())
-    reports = get_report(query, page_len)
-    df = generate_dataframe(reports)
-    df.to_csv('{}.csv'.format(query), index=True)
+def main():   
+    global query, page_len
+    
+    QUERY, = input()
+    PAGE_START, PAGE_LEN = str(input()), str(input())
+    
+    print('Begin scraping {} page with keyword \'{}\'\n'.format(PAGE_LEN-PAGE_START, QUERY))
+    for _num in range(PAGE_START, PAGE_LEN+1):
+        print('\noooooooooo PAGE {} oooooooooo'.format(_num))
+        try:
+            report = get_report(QUERY, _num)
+            df = generate_dataframe(report)
+        except Exception:
+            continue
+            raise Exception('  ERROR: Unable to generate DataFrame.')
+        else:
+            writeFile(df)
     
 main()
