@@ -76,6 +76,7 @@ def generate_dataframe(reports):
     In that case, for each report1, report2, report3 will be added to dictionary, as well as unit1, unit2, unit3.
     Then, DataFrame will be created from the dictionary.
     """
+    print('   + Generate DataFrame . .')
     reportDict = {'report': [],
                   'unit': []}
 
@@ -88,16 +89,18 @@ def writeFile(dataframe):
     """
     Save the DataFrame into a csv file.
     """
+    print('   + Writing file . .')
     with open('{}.csv'.format(query), 'a+') as file:
         dataframe.to_csv(file, header=True)
   
 def main():   
     global query, page_len
-    global df
     
-    query, page_len = input(), str(input())
-
-    for i in range(1, page_len+1):
+    QUERY, = input()
+    PAGE_START, PAGE_LEN = str(input()), str(input())
+    
+    print('Begin scraping {} page with keyword \'{}\'\n'.format(PAGE_LEN-PAGE_START, QUERY))
+    for i in range(PAGE_START, PAGE_LEN+1):
         print('Scraping page {}...'.format(i))
         report = get_report(query, page_len)
         df = generate_dataframe(report)
