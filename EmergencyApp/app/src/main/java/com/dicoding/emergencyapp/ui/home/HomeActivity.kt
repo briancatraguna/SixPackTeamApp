@@ -44,6 +44,7 @@ class HomeActivity : AppCompatActivity() {
     companion object{
         //Unique int for permission ID
         private const val PERMISSION_ID = 1000
+        private var TAG = HomeActivity::class.java.simpleName
         const val LONGITUDE_KEY = "longitude"
         const val LATITUDE_KEY = "latitude"
         const val CITY_KEY = "city"
@@ -51,7 +52,13 @@ class HomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityHomeBinding.inflate(layoutInflater)
+        try {
+            binding = ActivityHomeBinding.inflate(layoutInflater)
+        } catch (e: Exception){
+            Log.e(TAG,"onCreateView",e)
+            throw(e)
+        }
+
         setContentView(binding.root)
 
         sosFragment.arguments = bundle
