@@ -16,7 +16,6 @@ import java.util.*
 class HelpFragment : Fragment() {
 
     private lateinit var binding: FragmentHelpBinding
-    private var textFile: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,37 +32,7 @@ class HelpFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val saveBtn = binding.btnSave
-        val typingText = binding.typingText
 
-        saveBtn.setOnClickListener {
-            saveFile()
-        }
-        typingText.setOnClickListener {
-            moveToTyping()
-        }
-    }
-
-    private fun saveFile() {
-        textFile = "Dummy Text"
-        val fileOutputStream: FileOutputStream
-        try {
-            context?.openFileOutput("TTS.txt", Context.MODE_PRIVATE).use { fileOutputStream ->
-                if (fileOutputStream != null) {
-                    fileOutputStream.write(textFile.toByteArray())
-                    var path = context?.filesDir
-                    Toast.makeText(context,"File has been saved in " + path, Toast.LENGTH_LONG).show()
-
-                }
-            }
-        }
-        catch (e: Exception) {
-            e.printStackTrace()
-        }
-    }
-    private fun moveToTyping() {
-        val intent = Intent(context, TypingActivity::class.java)
-        context?.startActivity(intent)
     }
 }
 

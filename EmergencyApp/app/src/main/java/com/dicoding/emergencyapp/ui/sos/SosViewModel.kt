@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.dicoding.emergencyapp.data.entity.PostResponse
-import com.dicoding.emergencyapp.data.retrofit.RetrofitClient
+import com.dicoding.emergencyapp.data.retrofit.SheetRetrofitClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -14,7 +14,7 @@ class SosViewModel: ViewModel() {
     fun getStatus(): LiveData<String> = _status
 
     fun postData(type: String,latitude: Double?,longitude: Double?,situation: String){
-        RetrofitClient.instance
+        SheetRetrofitClient.instance
             .postData(type,latitude,longitude,situation)
             .enqueue(object : Callback<PostResponse>{
                 override fun onResponse(
