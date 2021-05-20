@@ -82,9 +82,11 @@ def generate_dataframe(reports):
     return pd.DataFrame.from_dict(reportDict)
 
 def writeFile(dataframe):
+    """
+    Save the DataFrame into a csv file.
+    """
     with open('{}.csv'.format(query), 'a+') as file:
-        writer = csv.writer(file, dialect='excel')
-        writer.writerow(dataframe)
+        dataframe.to_csv(file, header=True)
   
 def main():   
     global query, page_len
