@@ -43,12 +43,12 @@ def get_html_source(url):
     }
 
     try:
-        response = requests.get(url, headers=headers, cookies=cookies, timeout=10)
+        response = requests.get(url, headers=headers, cookies=cookies, timeout=60)
         html_code = BeautifulSoup(response.text, 'html.parser')
         response = requests.post(url, headers=headers, cookies=cookies, data=data)
         return html_code
     except Exception as e:
-        return 'ERROR'
+        print(e)
   
 def get_report(query, page_len):
     """
