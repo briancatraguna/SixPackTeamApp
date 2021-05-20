@@ -106,8 +106,8 @@ def main():
             report = get_report(QUERY, _num)
             df = generate_dataframe(report)
         except Exception:
-            continue
-            raise Exception('  ERROR: Unable to generate DataFrame.')
+            print('  ERROR: No result.')
+            break
         else:
             writeFile(df)
     
