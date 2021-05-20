@@ -7,7 +7,13 @@ def get_url(query, page):
     """
     Generate URL from query and page number.
     """
-    url = 'https://www.lapor.go.id/search?q={}&page={}'.format(query, page)
+    queryLength = len(query.split())
+    if queryLength == 1:
+        url = 'https://www.lapor.go.id/search?q={}&page={}'.format(query, page)
+    else:
+        query = query.split()
+        param = '+'.join(query)
+        url = 'https://www.lapor.go.id/search?q={}&page={}'.format(param, page)
     return url
   
 def get_html_source(url):
