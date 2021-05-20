@@ -47,5 +47,5 @@ data class ArticlesItem(
 	val url: String? = null,
 
 	@field:SerializedName("content")
-	val content: Any? = null
+	val content: String? = null
 )

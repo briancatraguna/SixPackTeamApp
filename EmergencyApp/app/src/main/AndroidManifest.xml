@@ -12,6 +12,12 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <queries>
+        <intent>
+            <action android:name="android.speech.RecognitionService" />
+        </intent>
+    </queries>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -19,7 +25,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EmergencyApp">
-        <activity android:name="com.dicoding.emergencyapp.ui.typing.TypingActivity"></activity>
+        <activity android:name=".ui.news.detail.DetailNewsActivity"></activity>
+        <activity android:name=".ui.typing.TypingActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -29,26 +36,21 @@
              You can define the keys for the debug and release targets in src/debug/ and src/release/.
         -->
         <activity
-            android:name="com.dicoding.emergencyapp.ui.googlemapsactivity.MapsActivity"
+            android:name=".ui.googlemapsactivity.MapsActivity"
             android:label="@string/title_activity_maps" />
-
-        <activity android:name="com.dicoding.emergencyapp.ui.guideline.GuidelineActivity" />
-        <activity android:name="com.dicoding.emergencyapp.ui.home.HomeActivity" />
-        <activity android:name="com.dicoding.emergencyapp.ui.splashscreen.SplashScreenActivity">
+        <activity android:name=".ui.guideline.GuidelineActivity" />
+        <activity android:name=".ui.home.HomeActivity" />
+        <activity android:name=".ui.splashscreen.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
     </application>
-    <queries>
-        <intent>
-            <action android:name="android.speech.RecognitionService" />
-        </intent>
-    </queries>
 
 </manifest>

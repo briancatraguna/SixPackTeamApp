@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.dicoding.emergencyapp.R
 import com.dicoding.emergencyapp.data.remote.NewsDataSource
 import com.dicoding.emergencyapp.data.repository.NewsRepository
 import com.dicoding.emergencyapp.databinding.FragmentNewsListBinding
@@ -20,7 +19,6 @@ class HealthFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         binding = FragmentNewsListBinding.inflate(inflater,container,false)
         return binding.root
     }
@@ -28,13 +26,17 @@ class HealthFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val rvNews = binding.rvHealthNews
+        val rvNews = binding.rvNews
         rvNews.layoutManager = LinearLayoutManager(context)
         val listNewsAdapter = ListNewsAdapter()
 
         val viewModel = HealthNewsViewModel(NewsRepository.getInstance(NewsDataSource()))
-        val healthNews = viewModel.getHealthNews()
         val status = viewModel.getStatus()
+        if (!status){
+            binding.tvFail.visibility = View.VISIBLE
+        } else {
+            binding.tvFail.visibility = View.GONE
+        }
         viewModel.getHealthNews().observe(requireActivity(),{articles->
             listNewsAdapter.setData(articles)
             rvNews.adapter = listNewsAdapter

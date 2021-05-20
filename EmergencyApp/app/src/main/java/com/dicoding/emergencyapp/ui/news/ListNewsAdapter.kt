@@ -1,5 +1,6 @@
 package com.dicoding.emergencyapp.ui.news
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -7,6 +8,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.dicoding.emergencyapp.data.entity.ArticlesItem
 import com.dicoding.emergencyapp.databinding.ItemNewsBinding
+import com.dicoding.emergencyapp.ui.news.detail.DetailNewsActivity
 
 class ListNewsAdapter: RecyclerView.Adapter<ListNewsAdapter.ListViewHolder>() {
 
@@ -29,6 +31,16 @@ class ListNewsAdapter: RecyclerView.Adapter<ListNewsAdapter.ListViewHolder>() {
                     .load(article?.urlToImage)
                     .apply(RequestOptions().override(500,500))
                     .into(imgNews)
+            }
+            itemView.setOnClickListener{
+                val intent = Intent(itemView.context, DetailNewsActivity::class.java)
+                intent.putExtra(DetailNewsActivity.EXTRA_AUTHOR,article?.author)
+                intent.putExtra(DetailNewsActivity.EXTRA_DESCRIPTION,article?.description)
+                intent.putExtra(DetailNewsActivity.EXTRA_PUBLISHED,article?.publishedAt)
+                intent.putExtra(DetailNewsActivity.EXTRA_SOURCE,article?.source?.name)
+                intent.putExtra(DetailNewsActivity.EXTRA_CONTENT,article?.content)
+                intent.putExtra(DetailNewsActivity.EXTRA_TITLE,article?.title)
+                itemView.context.startActivity(intent)
             }
         }
 
