@@ -76,7 +76,7 @@ def generate_dataframe(reports):
     In that case, for each report1, report2, report3 will be added to dictionary, as well as unit1, unit2, unit3.
     Then, DataFrame will be created from the dictionary.
     """
-    print('   + Generate DataFrame . .')
+    print('   + Generate reports . .')
     reportDict = {'report': [],
                   'unit': []}
 
