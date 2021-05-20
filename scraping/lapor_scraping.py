@@ -96,11 +96,14 @@ def writeFile(dataframe):
 def main():   
     global query, page_len
     
-    QUERY, = input()
+    print('Please insert 1) query, 2) starting page, and 3) max page.')
+    QUERY = input()
     PAGE_START, PAGE_LEN = str(input()), str(input())
-    
-    print('Begin scraping {} page with keyword \'{}\'\n'.format(PAGE_LEN-PAGE_START, QUERY))
-    for _num in range(PAGE_START, PAGE_LEN+1):
+
+    # urls = tqdm([get_url(query, page) for page in range(1, int(page_len)+1)], ncols=100)
+    print('\nBegin scraping {} page with keyword \'{}\'\n'.format(int(PAGE_LEN)-int(PAGE_START), QUERY))
+
+    for _num in range(int(PAGE_START), int(PAGE_LEN)+1):
         print('\noooooooooo PAGE {} oooooooooo'.format(_num))
         try:
             report = get_report(QUERY, _num)
