@@ -67,7 +67,6 @@ def get_report(query, page_len):
     # for non existing page i.e no reports.
     elif pageExist==False:
         raise Exception('  ERROR: Page is not exist! Going to the next page ..')
-        pass
   
 def generate_dataframe(reports):
     """
@@ -94,23 +93,23 @@ def writeFile(dataframe):
         dataframe.to_csv(file, header=True)
   
 def main():   
-    global query, page_len
-    
+    global QUERY, PAGE_LEN
+
     print('Please insert 1) query, 2) starting page, and 3) max page.')
     QUERY = input()
-    PAGE_START, PAGE_LEN = str(input()), str(input())
+    PAGE_START, PAGE_END = str(input()), str(input())
 
     # urls = tqdm([get_url(query, page) for page in range(1, int(page_len)+1)], ncols=100)
-    print('\nBegin scraping {} page with keyword \'{}\'\n'.format(int(PAGE_LEN)-int(PAGE_START), QUERY))
+    print('\nBegin scraping {} page with keyword \'{}\'\n'.format(int(PAGE_END)-int(PAGE_START), QUERY))
 
-    for _num in range(int(PAGE_START), int(PAGE_LEN)+1):
+    for _num in range(int(PAGE_START), int(PAGE_END)+1):
         print('\noooooooooo PAGE {} oooooooooo'.format(_num))
         try:
             report = get_report(QUERY, _num)
             df = generate_dataframe(report)
         except Exception:
             print('  ERROR: No result.')
-            break
+            continue # gimana caranya break kalo no result tapi continue kalo timeout??
         else:
             writeFile(df)
     
