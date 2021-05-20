@@ -47,6 +47,7 @@ def get_html_source(url):
         html_code = BeautifulSoup(response.text, 'html.parser')
         response = requests.post(url, headers=headers, cookies=cookies, data=data)
         return html_code
+    
     except Exception as e:
         print(e)
   
@@ -67,10 +68,18 @@ def get_report(query, page_len):
   
 def generate_dataframe(reports):
     """
-    Generate a DataFrame from list.
+    Generate a DataFrame from list of tuples.
+    The reports output is [(report1, unit1), (report2, unit2), (report3, unit3), ...].
+    In that case, for each report1, report2, report3 will be added to dictionary, as well as unit1, unit2, unit3.
+    Then, DataFrame will be created from the dictionary.
     """
-    columns = ['report', 'unit']
-    return pd.DataFrame(reports, columns=columns)
+    reportDict = {'report': [],
+                  'unit': []}
+
+    for report, unit in reports:
+        reportDict['report'].append(report)
+        reportDict['unit'].append(unit)
+    return pd.DataFrame.from_dict(reportDict)
 
 def writeFile(dataframe):
     with open('{}.csv'.format(query), 'a+') as file:
