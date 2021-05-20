@@ -14,7 +14,7 @@ class NewsApiConfig {
                     .addInterceptor(loggingInterceptor)
                     .build()
             val retrofit = Retrofit.Builder()
-                    .baseUrl("https://newsapi.org/v2/top-headlines?country=id&")
+                    .baseUrl("https://newsapi.org/v2/")
                     .addConverterFactory(GsonConverterFactory.create())
                     .client(client)
                     .build()

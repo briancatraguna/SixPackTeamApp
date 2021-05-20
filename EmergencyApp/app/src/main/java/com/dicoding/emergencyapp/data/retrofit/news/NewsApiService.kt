@@ -6,15 +6,15 @@ import retrofit2.Call
 import retrofit2.http.GET
 
 interface NewsApiService {
-    @GET("category=health&apiKey=${BuildConfig.NEWS_TOKEN}")
+    @GET("top-headlines?country=id&category=health&apiKey=${BuildConfig.NEWS_TOKEN}")
     fun getHealthNews(
     ): Call<NewsResponse>
 
-    @GET("category=science&apiKey=${BuildConfig.NEWS_TOKEN}")
+    @GET("top-headlines?country=id&category=science&apiKey=${BuildConfig.NEWS_TOKEN}")
     fun getScienceNews(
     ): Call<NewsResponse>
 
-    @GET("category=entertainment&apiKey=${BuildConfig.NEWS_TOKEN}")
+    @GET("top-headlines?country=id&category=entertainment&apiKey=${BuildConfig.NEWS_TOKEN}")
     fun getEntertainmentNews(
     ): Call<NewsResponse>
 
