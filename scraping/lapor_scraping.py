@@ -48,8 +48,8 @@ def get_html_source(url):
         response = requests.post(url, headers=headers, cookies=cookies, data=data)
         return html_code
     
-    except Exception as e:
-        print(e)
+    except Exception:
+        print('  ERROR: Timeout')
   
 def get_report(query, page_len):
     """
