@@ -14,8 +14,8 @@ reports from user/reporter | destination, to whom the user would like to filed t
 
 
 ## Input data for `get_html source`
-1. If you haven't, create an account.
-2. Open developer tools on your browser, or press F12.
+1. If you haven't, create an account at https://lapor.go.id
+2. Open developer tools on your browser, or press `F12`.
 3. Go to the Network tab.
 4. Log in to your account.
 5. Select the latest POST request.
