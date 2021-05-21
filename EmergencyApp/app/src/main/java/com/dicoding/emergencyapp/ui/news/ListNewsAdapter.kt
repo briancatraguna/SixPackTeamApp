@@ -8,6 +8,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.dicoding.emergencyapp.data.entity.ArticlesItem
 import com.dicoding.emergencyapp.databinding.ItemNewsBinding
+import com.dicoding.emergencyapp.helpers.DateHelper
 import com.dicoding.emergencyapp.ui.news.detail.DetailNewsActivity
 
 class ListNewsAdapter: RecyclerView.Adapter<ListNewsAdapter.ListViewHolder>() {
@@ -25,7 +26,7 @@ class ListNewsAdapter: RecyclerView.Adapter<ListNewsAdapter.ListViewHolder>() {
                 val title = titleAndSource?.get(0)
                 val source = titleAndSource?.get(1)
                 tvNewsTitle.text = title
-                tvHoursAgo.text = article?.publishedAt
+                tvHoursAgo.text = DateHelper.getHoursAgo(article?.publishedAt)
                 tvSource.text = source
                 Glide.with(itemView.context)
                     .load(article?.urlToImage)

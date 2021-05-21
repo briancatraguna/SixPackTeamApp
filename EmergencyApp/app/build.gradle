@@ -11,7 +11,7 @@ android {
     defaultConfig {
         buildConfigField('String','NEWS_TOKEN','"886f025122c74ff785da25ef964f7ebe"')
         applicationId "com.dicoding.emergencyapp"
-        minSdkVersion 21
+        minSdkVersion 26
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
