@@ -16,6 +16,10 @@ class ScienceFragment : Fragment() {
 
     private lateinit var binding: FragmentNewsListBinding
 
+    companion object{
+        private const val CATEGORY = "science"
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -40,6 +44,7 @@ class ScienceFragment : Fragment() {
         }
         viewModel.getScienceNews().observe(requireActivity(),{articles ->
             listNewsAdapter.setData(articles)
+            listNewsAdapter.setCategory(CATEGORY)
             rvNews.adapter = listNewsAdapter
         })
     }

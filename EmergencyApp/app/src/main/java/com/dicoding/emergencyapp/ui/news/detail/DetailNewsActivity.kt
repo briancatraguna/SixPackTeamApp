@@ -15,6 +15,7 @@ class DetailNewsActivity : AppCompatActivity() {
         const val EXTRA_CONTENT = "extra_content"
         const val EXTRA_SOURCE = "extra_source"
         const val EXTRA_PUBLISHED = "extra_published"
+        const val EXTRA_CATEGORY = "extra_category"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -6,4 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.news.detail.DetailNewsActivity">
 
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

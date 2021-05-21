@@ -19,6 +19,11 @@ class ListNewsAdapter: RecyclerView.Adapter<ListNewsAdapter.ListViewHolder>() {
         notifyDataSetChanged()
     }
 
+    private var category: String? = null
+    fun setCategory(category: String){
+        this.category = category
+    }
+
     inner class ListViewHolder(private val binding: ItemNewsBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(article: ArticlesItem?){
             with(binding){
@@ -41,6 +46,7 @@ class ListNewsAdapter: RecyclerView.Adapter<ListNewsAdapter.ListViewHolder>() {
                 intent.putExtra(DetailNewsActivity.EXTRA_SOURCE,article?.source?.name)
                 intent.putExtra(DetailNewsActivity.EXTRA_CONTENT,article?.content)
                 intent.putExtra(DetailNewsActivity.EXTRA_TITLE,article?.title)
+                intent.putExtra(DetailNewsActivity.EXTRA_CATEGORY,category)
                 itemView.context.startActivity(intent)
             }
         }
