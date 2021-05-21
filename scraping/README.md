@@ -21,8 +21,8 @@ reports from user/reporter | destination, to whom the user would like to filed t
 5. Select the latest POST request.
 6. See the `Form data` on the Request tab.
 7. Replace the `_session_key`, `token`, `login`, and `password` with yours.
-   <br> a. If it doesn't work:
-   <br>    copy the cURL of the POST request and convert it through https://curl.trillworks.com/, then replace the code.
+   <br> If it doesn't work:
+   <br> copy the cURL of the POST request and convert it through https://curl.trillworks.com/, then replace the code.
 8. All set!
 
 ##### NOTE:
