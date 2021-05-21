@@ -35,11 +35,6 @@ class SosFragment : Fragment() {
         private const val FIREFIGHTER = "firefighter"
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -68,7 +63,7 @@ class SosFragment : Fragment() {
 
         val emergencyButton = binding.sosButtonContainer
         emergencyButton.setOnClickListener {
-            if (radioGroup.getCheckedRadioButtonId() == -1) {
+            if (radioGroup.checkedRadioButtonId == -1) {
                 Toast.makeText(context,"Choose one of the emergency services!",Toast.LENGTH_SHORT).show()
             }
             else {

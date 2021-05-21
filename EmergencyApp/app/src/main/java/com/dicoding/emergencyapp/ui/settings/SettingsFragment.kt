@@ -21,10 +21,6 @@ class SettingsFragment : Fragment() {
     lateinit var languageBtn: ConstraintLayout
     lateinit var guidelineBtn: ConstraintLayout
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
@@ -46,9 +42,7 @@ class SettingsFragment : Fragment() {
         }
     }
 
-    companion object {
-
-    }
+    companion object;
 
     private fun changeLanguage() {
         val listItems = arrayOf("English", "Indonesia")

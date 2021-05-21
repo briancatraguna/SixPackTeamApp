@@ -121,7 +121,7 @@ class HomeActivity : AppCompatActivity() {
         locationRequest.interval = 0
         locationRequest.fastestInterval = 0
         locationRequest.numUpdates = 1
-        fusedLocationProviderClient!!.requestLocationUpdates(
+        fusedLocationProviderClient.requestLocationUpdates(
                 locationRequest,locationCallback, Looper.myLooper()
         )
     }
