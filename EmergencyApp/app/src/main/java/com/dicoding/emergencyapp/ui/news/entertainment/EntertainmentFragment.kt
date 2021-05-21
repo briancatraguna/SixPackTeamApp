@@ -15,6 +15,10 @@ class EntertainmentFragment : Fragment() {
 
     private lateinit var binding: FragmentNewsListBinding
 
+    companion object{
+        private const val CATEGORY = "entertainment"
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -39,6 +43,7 @@ class EntertainmentFragment : Fragment() {
         }
         viewModel.getEntertainmentNews().observe(requireActivity(),{articles ->
             listNewsAdapter.setData(articles)
+            listNewsAdapter.setCategory(CATEGORY)
             rvNews.adapter = listNewsAdapter
         })
     }

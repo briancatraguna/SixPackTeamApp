@@ -45,6 +45,7 @@ class NewsDataSource {
                 if (response.isSuccessful){
                     val articles = response.body()?.articles
                     _healthNews.value = articles
+                    loadHealthSuccess = true
                 } else {
                     Log.e(TAG,"onFailure: ${response.message()}")
                     loadHealthSuccess = false
@@ -65,6 +66,7 @@ class NewsDataSource {
                 if (response.isSuccessful){
                     val articles = response.body()?.articles
                     _scienceNews.value = articles
+                    loadScienceSuccess = true
                 } else {
                     Log.e(TAG,"onFailure: ${response.message()}")
                     loadScienceSuccess = false
@@ -85,6 +87,7 @@ class NewsDataSource {
                 if (response.isSuccessful){
                     val articles = response.body()?.articles
                     _entertainmentNews.value = articles
+                    loadEntertainmentSuccess = true
                 } else {
                     Log.e(TAG,"onFailure: ${response.message()}")
                 }
