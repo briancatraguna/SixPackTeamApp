@@ -6,8 +6,8 @@ This code is to scrape user's reports through LAPOR! website (https://lapor.go.i
 <br> `PAGE_START` -> starting page
 <br> `PAGE_END` -> ending page
 <br> e.g `PAGE_START == 1` and `PAGE_END == 100`, you will scrape from page 1-100.
-
 #### Output:
+The output of this program will be a csv file, see example below.
 report | institute | category
 ---|---|---
 reports from user/reporter | destination, to whom the user would like to filed the report | category of the report (the user decide)
@@ -22,7 +22,8 @@ reports from user/reporter | destination, to whom the user would like to filed t
 5. Select the latest POST request.
 6. See the `Form data` on the Request tab.
 7. Replace the `_session_key`, `token`, `login`, and `password` with yours.
-   <br> a. If it doesn't work: copy the cURL of the POST request and convert it through https://curl.trillworks.com/, then replace the code.
+   <br> a. If it doesn't work:
+   <br>    copy the cURL of the POST request and convert it through https://curl.trillworks.com/, then replace the code.
 8. All set!
 
 ##### NOTE:
