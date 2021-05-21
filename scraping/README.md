@@ -2,10 +2,10 @@ This code is to scrape user's reports through LAPOR! website (https://lapor.go.i
 
 ##  WORKFLOW
 Input:
-`QUERY` -> the keyword you want to search, e.g 'kebakaran', 'kdrt'
-`PAGE_START` -> starting page
-`PAGE_END` -> ending page
-e.g `PAGE_START == 1` and `PAGE_END == 100`, you will scrape from page 1-100.
+<br> `QUERY` -> the keyword you want to search, e.g 'kebakaran', 'kdrt'
+<br> `PAGE_START` -> starting page
+<br> `PAGE_END` -> ending page
+<br> e.g `PAGE_START == 1` and `PAGE_END == 100`, you will scrape from page 1-100.
 <br>
 Output:
 report | institute | category
