@@ -83,6 +83,7 @@ cd SixPackTeamApp/scraping
       <br> *If it doesn't work:*
       <br> copy the cURL of the POST request and convert it through https://curl.trillworks.com/, then replace the code.
     8. All set!
+
 **NOTE**
 *You must update the value if you turn off your laptop, closing the tab, or get disconnected.*
 
