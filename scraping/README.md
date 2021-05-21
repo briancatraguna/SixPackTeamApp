@@ -7,7 +7,7 @@ This program is to scrape user's reports through LAPOR! website (https://lapor.g
 <br> `PAGE_END` -> ending page
 <br> e.g `PAGE_START == 1` and `PAGE_END == 100`, you will scrape from page 1-100.
 #### OUTPUT
-The output of this program will be a csv file, see example below.
+The output of this program will be a csv file inside `data` folder (`data/{QUERY}.csv`) see example below.
 report | institute | category
 ---|---|---
 reports from user/reporter | destination, to whom the user would like to filed the report | category of the report (the user decide)
