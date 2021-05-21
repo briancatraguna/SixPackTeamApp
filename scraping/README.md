@@ -1,20 +1,19 @@
-This code is to scrape user's reports through LAPOR! website (https://lapor.go.id)
+This program is to scrape user's reports through LAPOR! website (https://lapor.go.id)
 
-###  Input and Output
-#### Input:
+##  Input and output of this program
+#### INPUT
 `QUERY` -> the keyword you want to search, e.g 'kebakaran', 'kdrt'
 <br> `PAGE_START` -> starting page
 <br> `PAGE_END` -> ending page
 <br> e.g `PAGE_START == 1` and `PAGE_END == 100`, you will scrape from page 1-100.
-#### Output:
+#### OUTPUT
 The output of this program will be a csv file, see example below.
 report | institute | category
 ---|---|---
 reports from user/reporter | destination, to whom the user would like to filed the report | category of the report (the user decide)
-
-
-### Input data for `get_html source`
-
+<br>
+<br>
+## Input data for `get_html source`
 1. If you haven't, create an account.
 2. Open developer tools on your browser, or press F12.
 3. Go to the Network tab.
