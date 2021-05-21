@@ -49,7 +49,7 @@ def get_html_source(url):
     }
 
     try:
-        response = requests.get(url, headers=headers, cookies=cookies, timeout=60)
+        response = requests.get(url, headers=headers, cookies=cookies, timeout=60) # if page need more than 60 secs to load, then abort and go to the next page
         html_code = BeautifulSoup(response.text, 'html.parser')
         response = requests.post(url, headers=headers, cookies=cookies, data=data)
         return html_code
@@ -60,6 +60,9 @@ def get_html_source(url):
 def get_report(query, page_len):
     """
     Extract user's reports from the website based on query and page number.
+    Here, we want to extract reports from user, institute destination, and category of the reports.
+    In the HTML code, the reports element is in the <p> (paragraph) tag with class attribute `readmore`.
+    As well as the institute element in the <b> (bold) tag and so on.
     """
     url = get_url(query, page_len)
 
@@ -68,26 +71,34 @@ def get_report(query, page_len):
 
     pageExist = html.find('p', {'class':'readmore'})
     if pageExist:
-        reports = [(report.text, unit.text) for report, unit in zip(html.find_all('p', {'class':'readmore'}), html.find_all('b'))]
+        print('   + Page found! Begin scraping . .')
+        reports = [(report.text, institute.text, category.text) for report, institute, category in zip(html.find_all('p', {'class':'readmore'}), # report
+                                                                                                       html.find_all('b'), # institute
+                                                                                                       html.find_all('a', {'class':'text-muted'}) # category
+                                                                                                       )
+        ]
         return reports
     # for non existing page i.e no reports.
     elif pageExist==False:
-        raise Exception('  ERROR: Page is not exist! Going to the next page ..')
+        raise Exception('  ERROR: Page is not exist! Going to the next page ..') # (?)
   
 def generate_dataframe(reports):
     """
     Generate a DataFrame from list of tuples.
-    The reports output is [(report1, unit1), (report2, unit2), (report3, unit3), ...].
-    In that case, for each report1, report2, report3 will be added to dictionary, as well as unit1, unit2, unit3.
+    The reports output is [(report1, institute1, category1), (report2, institute2, category2), (report3, institute3, category3), ...].
+    In that case, for each report1, report2, report3 will be added to dictionary, as well as institute1, institute2, institute3.
     Then, DataFrame will be created from the dictionary.
     """
     print('   + Generate reports . .')
     reportDict = {'report': [],
-                  'unit': []}
+                  'institute': [],
+                  'category': []}
 
-    for report, unit in reports:
+    for report, institute, category in reports:
         reportDict['report'].append(report)
-        reportDict['unit'].append(unit)
+        reportDict['institute'].append(institute)
+        reportDict['category'].append(category)
+        
     return pd.DataFrame.from_dict(reportDict)
 
 def writeFile(dataframe):
@@ -121,7 +132,6 @@ def main():
     QUERY = input()
     PAGE_START, PAGE_END = str(input()), str(input())
 
-    # urls = tqdm([get_url(query, page) for page in range(1, int(page_len)+1)], ncols=100)
     print('\nBegin scraping {} page with keyword \'{}\'\n'.format(int(PAGE_END)-int(PAGE_START), QUERY))
 
     for _num in range(int(PAGE_START), int(PAGE_END)+1):
