@@ -26,7 +26,6 @@
 
   <p align="center">
     by Six Pack (B21-CAP0031)
-    `add slogan or something here`
     <br />
     <a href="https://github.com/briancatraguna/SixPackTeamApp/"><strong>Explore the docs »</strong></a>
     <br />
