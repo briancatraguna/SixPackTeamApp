@@ -87,6 +87,6 @@ Before running the program, do some steps below.
 *You must update the value if you turn off your laptop, closing the tab, or get disconnected.*
 
 Finally, run the code on terminal/command prompt. `Notebook file will be added.`
-```py
+```sh
 python lapor_scraping.py
 ```
