@@ -16,7 +16,7 @@ import androidx.fragment.app.Fragment
 import com.dicoding.emergencyapp.R
 import com.dicoding.emergencyapp.databinding.ActivityHomeBinding
 import com.dicoding.emergencyapp.ui.googlemapsactivity.MapsActivity
-import com.dicoding.emergencyapp.ui.help.HelpFragment
+import com.dicoding.emergencyapp.ui.help.TipsFragment
 import com.dicoding.emergencyapp.ui.news.NewsFragment
 import com.dicoding.emergencyapp.ui.settings.SettingsFragment
 import com.dicoding.emergencyapp.ui.sos.SosFragment
@@ -30,7 +30,7 @@ class HomeActivity : AppCompatActivity() {
 
     private val sosFragment = SosFragment()
     private val newsFragment = NewsFragment()
-    private val helpFragment = HelpFragment()
+    private val helpFragment = TipsFragment()
     private val settingsFragment = SettingsFragment()
 
     private lateinit var fusedLocationProviderClient: FusedLocationProviderClient
@@ -67,7 +67,7 @@ class HomeActivity : AppCompatActivity() {
             when(it.itemId){
                 R.id.ic_sos -> replaceFragment(sosFragment)
                 R.id.ic_news -> replaceFragment(newsFragment)
-                R.id.ic_help -> replaceFragment(helpFragment)
+                R.id.ic_tips -> replaceFragment(helpFragment)
                 R.id.ic_settings -> replaceFragment(settingsFragment)
             }
             true

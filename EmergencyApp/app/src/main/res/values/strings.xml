@@ -31,9 +31,12 @@
     <string name="science">Science</string>
     <string name="entertainment">Entertainment</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="dummy_news_title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="dummy_news_title" translatable="false">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</string>
     <string name="dummy_hours_ago">4 hours ago</string>
     <string name="dummy_source">Tempo.co</string>
     <string name="fail_connect">Check your internet connection and try again.</string>
+    <string name="hospital">Hospital</string>
+    <string name="tips">Tips</string>
+    <string name="lifestyle">Lifestyle</string>
 </resources>

@@ -13,7 +13,7 @@ import com.dicoding.emergencyapp.ui.typing.TypingActivity
 import java.io.*
 import java.util.*
 
-class HelpFragment : Fragment() {
+class TipsFragment : Fragment() {
 
     private lateinit var binding: FragmentHelpBinding
 

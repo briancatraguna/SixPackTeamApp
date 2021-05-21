@@ -21,6 +21,12 @@
     <string name="language">Ganti bahasa</string>
     <string name="cant_talk">Tidak bisa bicara?</string>
     <string name="settings">Setelan</string>
+    <string name="hospital">Rumah sakit</string>
+    <string name="tips">Tips</string>
+    <string name="news">Berita</string>
+    <string name="health">Kesehatan</string>
+    <string name="science">Ilmu pengetahuan</string>
+    <string name="entertainment">Hiburan</string>
 
     <!--typing activity-->
     <string name="name_type">Nama</string>
@@ -29,6 +35,7 @@
     <string name="write_your_name">Tuliskan nama-mu</string>
     <string name="write_your_location">Tuliskan lokasi-mu</string>
     <string name="write_down_your_current_situation">Tuliskan situasi-mu saat ini</string>
+    <string name="lifestyle">Lifestyle</string>
 
 
 </resources>

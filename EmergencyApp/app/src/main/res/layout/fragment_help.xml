@@ -5,7 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/main_bg_color"
-    tools:context=".ui.help.HelpFragment">
+    tools:context=".ui.help.TipsFragment">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Click the button to see tips!"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.148" />
 
     <GridLayout
         android:layout_width="match_parent"
@@ -20,7 +33,7 @@
         app:layout_constraintHorizontal_weight="2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.188">
+        app:layout_constraintVertical_bias="0.433">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cv_guideline"
@@ -37,7 +50,7 @@
             app:cardElevation="6dp">
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="16dp"
@@ -46,15 +59,16 @@
                 <ImageView
                     android:layout_width="63dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/ic_baseline_help" />
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_baseline_hospital" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/guideline"
+                    android:text="@string/hospital"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="15sp" />
+                    android:textSize="11sp" />
 
             </LinearLayout>
 
@@ -75,24 +89,25 @@
             app:cardElevation="6dp">
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_gravity="center"
                 android:layout_margin="16dp"
                 android:orientation="vertical">
 
                 <ImageView
                     android:layout_width="63dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/ic_settings" />
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_baseline_police" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/settings"
+                    android:text="@string/police"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="15sp" />
+                    android:textSize="11sp" />
 
             </LinearLayout>
 
@@ -113,24 +128,25 @@
             app:cardElevation="6dp">
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_gravity="center"
                 android:layout_margin="16dp"
                 android:orientation="vertical">
 
                 <ImageView
                     android:layout_width="63dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/ic_settings" />
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_baseline_fire" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Settings"
+                    android:text="@string/firefighter"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="15sp" />
+                    android:textSize="11sp" />
 
             </LinearLayout>
 
@@ -150,24 +166,25 @@
             app:cardElevation="6dp">
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_gravity="center"
                 android:layout_margin="16dp"
                 android:orientation="vertical">
 
                 <ImageView
                     android:layout_width="63dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/ic_settings" />
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_baseline_lifestyle" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Settings"
+                    android:text="@string/lifestyle"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="15sp" />
+                    android:textSize="11sp" />
 
             </LinearLayout>
 
