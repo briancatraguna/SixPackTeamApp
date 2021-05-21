@@ -1,8 +1,16 @@
 This code is to scrape user's reports through LAPOR! website (https://lapor.go.id)
 
-#  WORKFLOW
-1. Input the query (e.g 'kebakaran', 'copet') and set max page to scrape
-2. Create DataFrame of user's reports on the website.
+##  WORKFLOW
+Input:
+`QUERY` -> the keyword you want to search, e.g 'kebakaran', 'kdrt'
+`PAGE_START` -> starting page
+`PAGE_END` -> ending page
+e.g `PAGE_START == 1` and `PAGE_END == 100`, you will scrape from page 1-100.
+<br>
+Output:
+report | institute | category
+---|---|---
+reports from user/reporter | destination, to whom the user would like to filed the report | category of the report (the user decide)
 
 # GUIDE
 1. If you haven't, create an account.
