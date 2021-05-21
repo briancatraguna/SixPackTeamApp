@@ -83,8 +83,9 @@ Before running the program, do some steps below.
    <br> *If it doesn't work:*
    <br> copy the cURL of the POST request and convert it through https://curl.trillworks.com/, then replace the code.
 8. All set!
-**NOTE** *You must update the value if you turn off your laptop, closing the tab, or get disconnected.*
 <br>
+**NOTE** *You must update the value if you turn off your laptop, closing the tab, or get disconnected.*
+
 Run the code on terminal/command prompt. `Notebook file will be added.`
 ```py
 python lapor_scraping.py
