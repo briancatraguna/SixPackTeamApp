@@ -40,13 +40,13 @@ class ListNewsAdapter: RecyclerView.Adapter<ListNewsAdapter.ListViewHolder>() {
             }
             itemView.setOnClickListener{
                 val intent = Intent(itemView.context, DetailNewsActivity::class.java)
-                intent.putExtra(DetailNewsActivity.EXTRA_AUTHOR,article?.author)
-                intent.putExtra(DetailNewsActivity.EXTRA_DESCRIPTION,article?.description)
-                intent.putExtra(DetailNewsActivity.EXTRA_PUBLISHED,article?.publishedAt)
-                intent.putExtra(DetailNewsActivity.EXTRA_SOURCE,article?.source?.name)
+                intent.putExtra(DetailNewsActivity.EXTRA_AUTHOR,article?.author)//
+                intent.putExtra(DetailNewsActivity.EXTRA_DESCRIPTION,article?.description)//
+                intent.putExtra(DetailNewsActivity.EXTRA_PUBLISHED,article?.publishedAt)//
+                intent.putExtra(DetailNewsActivity.EXTRA_SOURCE,article?.source?.name)//
                 intent.putExtra(DetailNewsActivity.EXTRA_CONTENT,article?.content)
-                intent.putExtra(DetailNewsActivity.EXTRA_TITLE,article?.title)
-                intent.putExtra(DetailNewsActivity.EXTRA_CATEGORY,category)
+                intent.putExtra(DetailNewsActivity.EXTRA_TITLE,article?.title)//
+                intent.putExtra(DetailNewsActivity.EXTRA_CATEGORY,category)//
                 itemView.context.startActivity(intent)
             }
         }
