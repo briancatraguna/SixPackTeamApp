@@ -156,18 +156,36 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Team Members
 
-Annisa Nuri Nabila [Github](https://github.com/annisann) [LinkedIn](https://linkedin.com/annisann)
-Brian Mohammed Catraguna [Github](https://github.com/briancatraguna) [LinkedIn](https://linkedin.com/)
-Fadia Haniwa Suwandoko [Github](https://github.com/fadiahanifa) [LinkedIn](https://linkedin.com/)
-Michael Wijaya [Github](https://github.com/Michael-Wijayaa) [LinkedIn](https://linkedin.com/)
-Rahmat Syawaludin [Github](https://github.com/rahmatsywldn) [LinkedIn](https://linkedin.com/)
-Septin Lutfiyatul Munawaroh [Github](https://github.com/septinlutf) [LinkedIn](https://linkedin.com/)
+1. Annisa Nuri Nabila [Github](https://github.com/annisann) [LinkedIn](https://linkedin.com/annisann)
+2. Brian Mohammed Catraguna [Github](https://github.com/briancatraguna) [LinkedIn](https://linkedin.com/)
+3. Fadia Haniwa Suwandoko [Github](https://github.com/fadiahanifa) [LinkedIn](https://linkedin.com/)
+4. Michael Wijaya [Github](https://github.com/Michael-Wijayaa) [LinkedIn](https://linkedin.com/)
+5. Rahmat Syawaludin [Github](https://github.com/rahmatsywldn) [LinkedIn](https://linkedin.com/)
+6. Septin Lutfiyatul Munawaroh [Github](https://github.com/septinlutf) [LinkedIn](https://linkedin.com/)
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
-
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
-
-
+<!-- <p align="center">
+  <li> Annisa Nuri Nabila
+  </li>
+  <li> Brian Mohammed Catraguna
+  </li>
+  <li> Annisa Nuri Nabila
+  </li>
+  <li> Annisa Nuri Nabila
+  </li>
+  <li> Annisa Nuri Nabila
+  </li>
+  <li> Annisa Nuri Nabila
+  </li>
+    
+  <a href="https://github.com/briancatraguna/SixPackTeamApp/"><strong>Explore the docs »</strong></a>
+  <br />
+  <br />
+  <a href="https://github.com/briancatraguna/SixPackTeamApp/">View Demo</a>
+  ·
+  <a href="https://github.com/briancatraguna/SixPackTeamApp/">Video Presentation</a>
+  ·
+  <a href="https://github.com/briancatraguna/SixPackTeamApp/">Slide Deck</a> -->
+</p>
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
