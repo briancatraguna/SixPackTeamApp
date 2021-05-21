@@ -60,6 +60,9 @@ def get_html_source(url):
 def get_report(query, page_len):
     """
     Extract user's reports from the website based on query and page number.
+    Here, we want to extract reports from user, institute destination, and category of the reports.
+    In the HTML code, the reports element is in the <p> (paragraph) tag with class attribute `readmore`.
+    As well as the institute element in the <b> (bold) tag and so on.
     """
     url = get_url(query, page_len)
 
