@@ -11,8 +11,8 @@ The output of this program will be a csv file, see example below.
 report | institute | category
 ---|---|---
 reports from user/reporter | destination, to whom the user would like to filed the report | category of the report (the user decide)
-<br>
-<br>
+
+
 ## Input data for `get_html source`
 1. If you haven't, create an account.
 2. Open developer tools on your browser, or press F12.
