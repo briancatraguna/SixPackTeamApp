@@ -156,16 +156,17 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- OUR TEAM -->
 ## Our Team
 
-1. Annisa Nuri Nabila [Github](https://github.com/annisann)     [LinkedIn](https://linkedin.com/annisann)
-2. Brian Mohammed Catraguna [Github](https://github.com/briancatraguna)      [LinkedIn](https://linkedin.com/)
-3. Fadia Haniwa Suwandoko [Github](https://github.com/fadiahanifa)     [LinkedIn](https://linkedin.com/)
-4. Michael Wijaya [Github](https://github.com/Michael-Wijayaa)     [LinkedIn](https://linkedin.com/)
-5. Rahmat Syawaludin [Github](https://github.com/rahmatsywldn)     [LinkedIn](https://linkedin.com/)
-6. Septin Lutfiyatul Munawaroh [Github](https://github.com/septinlutf)     [LinkedIn](https://linkedin.com/)
+1. Annisa Nuri Nabila [Github](https://github.com/annisann) [LinkedIn](https://linkedin.com/annisann)
+2. Brian Mohammed Catraguna [Github](https://github.com/briancatraguna) [LinkedIn](https://linkedin.com/)
+3. Fadia Haniwa Suwandoko [Github](https://github.com/fadiahanifa) [LinkedIn](https://linkedin.com/)
+4. Michael Wijaya [Github](https://github.com/Michael-Wijayaa) [LinkedIn](https://linkedin.com/)
+5. Rahmat Syawaludin [Github](https://github.com/rahmatsywldn) [LinkedIn](https://linkedin.com/)
+6. Septin Lutfiyatul Munawaroh [Github](https://github.com/septinlutf) [LinkedIn](https://linkedin.com/)
 
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
+`insert references etc`
 * [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
 * [Img Shields](https://shields.io)
 * [Choose an Open Source License](https://choosealicense.com)
