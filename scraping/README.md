@@ -52,7 +52,7 @@ pip install -r requirements.txt
 2. Have an account on https://lapor.go.id and `POST` request data, see <a href="#usage">Usage</a> for details.
 
 ### Installation
-Setting up git credentials. Fill the inside brackets with yours.
+1. Setting up git credentials. Fill the inside brackets with yours.
 ```
 git config --global user.name "{name}"
 ```
@@ -62,31 +62,31 @@ git config --global user.username "{username}"
 ```
 git config --global user.email "{email}"
 ```
-Clone the repository
+2. Clone the repository
 ```
 git clone https://{username}:{password}@github.com/briancatraguna/SixPackTeamApp.git
 ```
 
 ## Usage
-Go to the directory
+1. Go to the directory
 ```
 cd SixPackTeamApp/scraping
 ```
-Before running the program, do some steps below.
-1. If you haven't, create an account at https://lapor.go.id
-2. Open developer tools on your browser, or press `F12`.
-3. Go to the Network tab.
-4. Log in to your account.
-5. Select the latest POST request.
-6. See the `Form data` on the Request tab.
-7. Replace the `_session_key`, `token`, `login`, and `password` on  `get_html_source` with yours.
-   <br> *If it doesn't work:*
-   <br> copy the cURL of the POST request and convert it through https://curl.trillworks.com/, then replace the code.
-8. All set!
+2. Before running the program, do some steps below.
+    1. If you haven't, create an account at https://lapor.go.id
+    2. Open developer tools on your browser, or press `F12`.
+    3. Go to the Network tab.
+    4. Log in to your account.
+    5. Select the latest POST request.
+    6. See the `Form data` on the Request tab.
+    7. Replace the `_session_key`, `token`, `login`, and `password` on  `get_html_source` with yours.
+      <br> *If it doesn't work:*
+      <br> copy the cURL of the POST request and convert it through https://curl.trillworks.com/, then replace the code.
+    8. All set!
 **NOTE**
 *You must update the value if you turn off your laptop, closing the tab, or get disconnected.*
 
-Finally, run the code on terminal/command prompt. `Notebook file will be added.`
+3. Finally, run the code on terminal/command prompt. `Notebook file will be added.`
 ```sh
 python lapor_scraping.py
 ```
