@@ -30,7 +30,7 @@
 
     <TextView
         android:id="@+id/tv_news_title"
-        android:layout_width="300dp"
+        android:layout_width="270dp"
         android:layout_height="45dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="17dp"

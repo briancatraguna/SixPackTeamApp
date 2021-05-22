@@ -22,7 +22,6 @@ import java.util.*
 class SosFragment : Fragment() {
 
     private lateinit var binding: FragmentSosBinding
-    private lateinit var radioGroup: RadioGroup
     private lateinit var transcription: String
     private lateinit var type: String
     private lateinit var viewModel: SosViewModel
@@ -30,14 +29,6 @@ class SosFragment : Fragment() {
     companion object {
         private var TAG = SosFragment::class.java.simpleName
         private const val RQ_SPEECH_REC = 102
-        private const val AMBULANCE = "ambulance"
-        private const val POLICE = "police"
-        private const val FIREFIGHTER = "firefighter"
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(
@@ -45,35 +36,16 @@ class SosFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentSosBinding.inflate(inflater,container,false)
-        radioGroup = binding.radioGroup
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        radioGroup.setOnCheckedChangeListener { group, checkedId ->
-            when (checkedId){
-                R.id.ambulance ->{
-                    type = AMBULANCE
-                }
-                R.id.police -> {
-                    type = POLICE
-                }
-                R.id.firefighter -> {
-                    type = FIREFIGHTER
-                }
-            }
-        }
 
         val emergencyButton = binding.sosButtonContainer
         emergencyButton.setOnClickListener {
-            if (radioGroup.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(context,"Choose one of the emergency services!",Toast.LENGTH_SHORT).show()
-            }
-            else {
-                askSpeechInput()
-            }
+            askSpeechInput()
         }
 
         val guidelineBtn = binding.guideline

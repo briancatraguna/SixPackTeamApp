@@ -11,9 +11,9 @@
         android:title="@string/news"/>
 
     <item
-        android:id="@+id/ic_help"
+        android:id="@+id/ic_tips"
         android:icon="@drawable/ic_help"
-        android:title="@string/help"/>
+        android:title="@string/tips"/>
     <item
         android:id="@+id/ic_settings"
         android:icon="@drawable/ic_settings"

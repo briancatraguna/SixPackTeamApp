@@ -31,9 +31,19 @@
     <string name="science">Science</string>
     <string name="entertainment">Entertainment</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="dummy_news_title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</string>
-    <string name="dummy_hours_ago">4 hours ago</string>
-    <string name="dummy_source">Tempo.co</string>
-    <string name="fail_connect">Check your internet connection and try again.</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="dummy_news_title" translatable="false">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</string>
+    <string name="dummy_hours_ago" translatable="false">4 hours ago</string>
+    <string name="dummy_source" translatable="false">Tempo.co</string>
+    <string name="dummy_content" translatable="false">
+        So how did the classical Latin become so incoherent? According to McClintock, a 15th century typesetter likely scrambled part of Cicero\'s De Finibus in order to provide placeholder text to mockup various fonts for a type specimen book.
+
+It\'s difficult to find examples of lorem ipsum in use before Letraset made it popular as a dummy text in the 1960s, although McClintock says he remembers coming across the lorem ipsum passage in a book of old metal type samples. So far he hasn\'t relocated where he once saw the passage, but the popularity of Cicero in the 15th century supports the theory that the filler text has been used for centuries.
+
+And anyways, as Cecil Adams reasoned, “[Do you really] think graphic arts supply houses were hiring classics scholars in the 1960s?” Perhaps. But it seems reasonable to imagine that there was a version in use far before the age of Letraset.
+    </string>
+    <string name="fail_connect" translatable="false">Check your internet connection and try again.</string>
+    <string name="hospital">Hospital</string>
+    <string name="tips">Tips</string>
+    <string name="lifestyle">Lifestyle</string>
 </resources>
