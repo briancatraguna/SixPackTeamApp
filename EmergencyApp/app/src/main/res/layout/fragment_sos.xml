@@ -2,7 +2,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/main_bg_color"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.sos.SosFragment">
@@ -70,15 +69,14 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/roboto_bold"
         android:text="@string/cant_talk"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radio_group" />
+        app:layout_constraintTop_toBottomOf="@+id/sos_button_container" />
 
     <TextView
         android:id="@+id/guideline"
@@ -93,55 +91,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-    <RadioGroup
-        android:id="@+id/radio_group"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sos_button_container">
-
-        <RadioButton
-            android:id="@+id/ambulance"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:padding="10dp"
-            android:text="@string/ambulance"
-            android:button="@android:color/transparent"
-            android:background="@drawable/radio_selector"
-            android:textColor="@drawable/text_color"
-            android:elevation="4dp"
-            android:textSize="15sp" />
-
-        <RadioButton
-            android:id="@+id/police"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:padding="10dp"
-            android:text="@string/police"
-            android:button="@android:color/transparent"
-            android:background="@drawable/radio_selector"
-            android:textColor="@drawable/text_color"
-            android:elevation="4dp"
-            android:textSize="15sp" />
-
-        <RadioButton
-            android:id="@+id/firefighter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:padding="10dp"
-            android:text="@string/firefighter"
-            android:button="@android:color/transparent"
-            android:background="@drawable/radio_selector"
-            android:textColor="@drawable/text_color"
-            android:elevation="4dp"
-            android:textSize="15sp" />
-
-    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
