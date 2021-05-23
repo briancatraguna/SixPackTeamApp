@@ -81,7 +81,7 @@ cd SixPackTeamApp/scraping
     6. See the `Form data` on the Request tab.
     7. Replace the `_session_key`, `token`, `login`, and `password` on  `get_html_source` with yours.
       <br> *If it doesn't work:*
-      <br> copy the cURL of the POST request and convert it through https://curl.trillworks.com/, then replace the code.
+      <br> copy the cURL of the POST request and convert it through https://curl.trillworks.com/, then replace the `cookies`, `headers`, `data` code.
     8. All set!
     
     **NOTE**

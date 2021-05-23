@@ -1,11 +1,14 @@
 import requests
 import pandas as pd
+import os
 from tqdm import tqdm
 from bs4 import BeautifulSoup
 
 def get_url(query, page):
     """
     Generate URL from query and page number.
+    The input query will be split into token or list of word, e.g 'luka parah' will be ['luka', 'parah'] and 'kdrt' will be ['kdrt']
+    For input query with more than 1 word, the url will be `..q={token1}+{token2}&..`, e.g `..q=luka+parah&..`
     """
     queryLength = len(query.split())
     if queryLength == 1:
@@ -79,18 +82,19 @@ def get_report(query, page_len):
         ]
         return reports
     # for non existing page i.e no reports.
-    elif pageExist==False:
-        raise Exception('  ERROR: Page is not exist! Going to the next page ..') # (?)
+    else:
+        print('  ERROR: Page not found!')
   
-def generate_dataframe(reports):
+def generate_dataframe(query, reports):
     """
-    Generate a DataFrame from list of tuples.
+    Generate a DataFrame from list of tuples and input query.
     The reports output is [(report1, institute1, category1), (report2, institute2, category2), (report3, institute3, category3), ...].
     In that case, for each report1, report2, report3 will be added to dictionary, as well as institute1, institute2, institute3.
     Then, DataFrame will be created from the dictionary.
     """
     print('   + Generate reports . .')
-    reportDict = {'report': [],
+    reportDict = {'query': query,
+                  'report': [],
                   'institute': [],
                   'category': []}
 
@@ -105,25 +109,27 @@ def writeFile(dataframe):
     """
     Save the DataFrame into a csv file.
     """
-    DATA_PATH = 'data/'
-    QUERY_PATH = DATA_PATH + '{}.csv'.format(QUERY)
+    print('   + Writing file . .')
 
-    # if csv file of query is exist
-    if os.path.exists(QUERY_PATH):
-        # open the file and will append the new data to the file
-        with open(QUERY_PATH, 'a+') as file:
-            dataframe.to_csv(file, header=False)
-    
-    # if data folder doesn't exist
-    elif os.path.exists(DATA_PATH) == False:
-        # create folder for data
-        os.mkdir(DATA_PATH)
+    DATA_DIR = 'data/'
+    RESULT_PATH = DATA_DIR + 'lapor_scraping_results.csv'
 
-    # if csv file of query doesn't exist
+    # if result file exist in data dir
+    if os.path.exists(RESULT_PATH):
+        # append new data to the file
+        with open(RESULT_PATH, 'a+') as file:
+            dataframe.to_csv(file, header=False, index=False)
+
+    # if dir doesn't exist
+    elif os.path.exists(DATA_DIR) == False:
+        # create dir
+        os.mkdir(DATA_DIR)
+
+    # if result file doesn't exist
     else:
-        # write a new file inside the data folder
-        with open(QUERY_PATH, 'w') as file:
-            dataframe.to_csv(file, header=True)
+        # write a new file
+        with open(RESULT_PATH, 'w') as file:
+            dataframe.to_csv(file, header=True, index=False)
   
 def main():   
     global QUERY, PAGE_LEN
@@ -138,7 +144,7 @@ def main():
         print('\noooooooooo PAGE {} oooooooooo'.format(_num))
         try:
             report = get_report(QUERY, _num)
-            df = generate_dataframe(report)
+            df = generate_dataframe(QUERY, report)
         except Exception:
             print('  ERROR: No result.')
             continue # gimana caranya break kalo no result tapi continue kalo timeout??
