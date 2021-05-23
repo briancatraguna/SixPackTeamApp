@@ -29,6 +29,7 @@
 
 ##  About
 This program is to scrape user's reports on LAPOR! website (https://lapor.go.id).
+Maximum reports per page on the website is 10.
 
 #### Input
 `QUERY` -> the keyword you want to search, e.g 'kebakaran', 'kdrt'
@@ -96,3 +97,4 @@ python lapor_scraping.py
 
 ## Limitations
 - If you have run the program and have the csv file output, and you wish to re-run it again, DELETE the csv file first. Otherwise it will have duplicate rows.
+- The program will keep running until `PAGE_START` even though the page is not found. Because of this, I find out the maximum page by myself.
