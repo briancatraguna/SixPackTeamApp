@@ -7,6 +7,8 @@ from bs4 import BeautifulSoup
 def get_url(query, page):
     """
     Generate URL from query and page number.
+    The input query will be split into token or list of word, e.g 'luka parah' will be ['luka', 'parah'] and 'kdrt' will be ['kdrt']
+    For input query with more than 1 word, the url will be `..q={token1}+{token2}&..`, e.g `..q=luka+parah&..`
     """
     queryLength = len(query.split())
     if queryLength == 1:
