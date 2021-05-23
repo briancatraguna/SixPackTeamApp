@@ -19,6 +19,7 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
+    <li><a hred="limitations">Limitations</a></li>
 <!--     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
