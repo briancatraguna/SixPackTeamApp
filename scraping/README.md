@@ -73,7 +73,7 @@ git clone https://{username}:{password}@github.com/briancatraguna/SixPackTeamApp
 cd SixPackTeamApp/scraping
 ```
 2. Before running the program, do some steps below.
-```
+    ```
     1. If you haven't, create an account at https://lapor.go.id
     2. Open developer tools on your browser, or press `F12`.
     3. Go to the Network tab.
@@ -85,9 +85,9 @@ cd SixPackTeamApp/scraping
       <br> copy the cURL of the POST request and convert it through https://curl.trillworks.com/, then replace the code.
     8. All set!
 
-**NOTE**
-*You must update the value if you turn off your laptop, closing the tab, or get disconnected.*
-```
+    **NOTE**
+    *You must update the value if you turn off your laptop, closing the tab, or get disconnected.*
+    ```
 
 3. Finally, run the code on terminal/command prompt.
 ```sh
