@@ -92,3 +92,6 @@ cd SixPackTeamApp/scraping
 python lapor_scraping.py
 ```
 **P.S**: there is also a notebook file for this! :)
+
+## Limitations
+- If you have run the program and have the csv file output, and you wish to re-run it again, DELETE the csv file first. Otherwise it will have duplicate rows.
