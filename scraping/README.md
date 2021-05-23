@@ -63,9 +63,9 @@ This program is to scrape user's reports on LAPOR! website (https://lapor.go.id)
 
 #### Output
 The output of this program will be a csv file inside `data` folder (`data/{QUERY}.csv`) see example and explanation below.
-report | institute | category
----|---|---
-reports from user/reporter | destination, to whom the user would like to filed the report | category of the report (the user decide)
+query | report | institute | category
+---|---|---|---
+input query | reports from user/reporter | destination, to whom the user would like to filed the report | category of the report (the user decide)
 
 ## Getting Started
 
