@@ -73,6 +73,7 @@ git clone https://{username}:{password}@github.com/briancatraguna/SixPackTeamApp
 cd SixPackTeamApp/scraping
 ```
 2. Before running the program, do some steps below.
+```
     1. If you haven't, create an account at https://lapor.go.id
     2. Open developer tools on your browser, or press `F12`.
     3. Go to the Network tab.
@@ -86,8 +87,11 @@ cd SixPackTeamApp/scraping
 
 **NOTE**
 *You must update the value if you turn off your laptop, closing the tab, or get disconnected.*
+```
 
-3. Finally, run the code on terminal/command prompt. `Notebook file will be added.`
+3. Finally, run the code on terminal/command prompt.
 ```sh
 python lapor_scraping.py
 ```
+
+**P.S**: there is also a notebook file! :)
