@@ -14,12 +14,11 @@
 [![LinkedIn][linkedin-shield]][linkedin-url] -->
 
 
-
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
   <a href="https://github.com/briancatraguna/SixPackTeamApp/">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="https://user-images.githubusercontent.com/32363208/119332765-40f68e00-bcb3-11eb-9517-ff4fa1104210.jpg" alt="Logo" width="187" height="244">
   </a>
 
   <h3 align="center">An Emergency Service App</h3>
