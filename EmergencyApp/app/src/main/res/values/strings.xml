@@ -57,4 +57,5 @@ And anyways, as Cecil Adams reasoned, “[Do you really] think graphic arts supp
     <string name="account">Account</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="sign_up">Sign up</string>
+    <string name="already_have_an_account">Already have an account?</string>
 </resources>
