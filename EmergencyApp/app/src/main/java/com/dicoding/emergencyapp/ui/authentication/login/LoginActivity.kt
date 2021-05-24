@@ -12,6 +12,7 @@ import com.dicoding.emergencyapp.ui.home.HomeActivity
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 
 class LoginActivity : AppCompatActivity(),View.OnClickListener {
 
@@ -51,7 +52,20 @@ class LoginActivity : AppCompatActivity(),View.OnClickListener {
             }
 
             R.id.tv_forgot_password -> {
-
+                val email = binding.edittextEmail.text.toString().trim()
+                if (email.equals("")){
+                    binding.edittextEmail.error = "Enter email"
+                } else {
+                    val mAuth: FirebaseAuth = FirebaseAuth.getInstance()
+                    mAuth.sendPasswordResetEmail(email)
+                        .addOnCompleteListener(OnCompleteListener<Void>(){
+                            if (it.isSuccessful){
+                                Toast.makeText(this,"Email sent to ${email}",Toast.LENGTH_SHORT).show()
+                            } else {
+                                Toast.makeText(this,"Failed to send email: ${it.exception}",Toast.LENGTH_SHORT).show()
+                            }
+                        })
+                }
             }
 
             R.id.tv_sign_up -> {
@@ -66,5 +80,15 @@ class LoginActivity : AppCompatActivity(),View.OnClickListener {
         val intent = Intent(this, HomeActivity::class.java)
         startActivity(intent)
         finish()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        val mAuth: FirebaseAuth = FirebaseAuth.getInstance()
+        val mUser: FirebaseUser? = mAuth.currentUser
+
+        if (mUser!=null){
+            redirect()
+        }
     }
 }
