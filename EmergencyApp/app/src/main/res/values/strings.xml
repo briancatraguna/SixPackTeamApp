@@ -46,4 +46,7 @@ And anyways, as Cecil Adams reasoned, “[Do you really] think graphic arts supp
     <string name="hospital">Hospital</string>
     <string name="tips">Tips</string>
     <string name="lifestyle">Lifestyle</string>
+    <string name="login">Log in</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
 </resources>
