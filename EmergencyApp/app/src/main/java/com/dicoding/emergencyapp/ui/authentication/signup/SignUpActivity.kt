@@ -16,12 +16,18 @@ class SignUpActivity : AppCompatActivity(),View.OnClickListener {
         setContentView(binding.root)
 
         binding.buttonBack.setOnClickListener(this)
+        binding.tvLogin.setOnClickListener(this)
 
     }
 
     override fun onClick(v: View?) {
         when (v?.id){
+
             R.id.button_back -> {
+                finish()
+            }
+
+            R.id.tv_login -> {
                 finish()
             }
         }
