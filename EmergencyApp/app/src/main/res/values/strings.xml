@@ -59,4 +59,6 @@ And anyways, as Cecil Adams reasoned, “[Do you really] think graphic arts supp
     <string name="already_have_an_account">Already have an account?</string>
     <string name="keep_your_safety">Keep your safety.</string>
     <string name="join_tolong_app">Join us</string>
+    <string name="edit_profile">Edit profile</string>
+    <string name="hello">Hello!</string>
 </resources>
