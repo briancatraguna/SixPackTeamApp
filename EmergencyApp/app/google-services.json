@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "50943649204",
+    "project_id": "emergencyapp-6fa8e",
+    "storage_bucket": "emergencyapp-6fa8e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:50943649204:android:2180c066d48de054947ee1",
+        "android_client_info": {
+          "package_name": "com.dicoding.emergencyapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "50943649204-3v925nnoega0emkn1af5etqmg9k4hbo3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcdN8nRDhjfJPHdrxSYLKrJSMZvL4xu70"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "50943649204-3v925nnoega0emkn1af5etqmg9k4hbo3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:50943649204:android:d60ab849a874b361947ee1",
+        "android_client_info": {
+          "package_name": "com.dicoding.myfirebasecloudmessaging"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "50943649204-3v925nnoega0emkn1af5etqmg9k4hbo3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcdN8nRDhjfJPHdrxSYLKrJSMZvL4xu70"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "50943649204-3v925nnoega0emkn1af5etqmg9k4hbo3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
