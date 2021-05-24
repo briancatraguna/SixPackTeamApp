@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import com.dicoding.emergencyapp.databinding.ActivitySplashScreenBinding
-import com.dicoding.emergencyapp.ui.home.HomeActivity
+import com.dicoding.emergencyapp.ui.login.LoginActivity
 
 class SplashScreenActivity : AppCompatActivity() {
 
@@ -17,7 +17,7 @@ class SplashScreenActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         Handler().postDelayed({
-            val intent = Intent(this@SplashScreenActivity, HomeActivity::class.java)
+            val intent = Intent(this@SplashScreenActivity, LoginActivity::class.java)
             startActivity(intent)
             finish()
         },2000)
