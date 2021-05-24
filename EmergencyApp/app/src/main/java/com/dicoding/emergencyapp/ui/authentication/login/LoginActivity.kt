@@ -1,4 +1,4 @@
-package com.dicoding.emergencyapp.ui.login
+package com.dicoding.emergencyapp.ui.authentication.login
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Toast
 import com.dicoding.emergencyapp.R
 import com.dicoding.emergencyapp.databinding.ActivityLoginBinding
+import com.dicoding.emergencyapp.ui.authentication.signup.SignUpActivity
 import com.dicoding.emergencyapp.ui.home.HomeActivity
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.AuthResult
@@ -54,7 +55,8 @@ class LoginActivity : AppCompatActivity(),View.OnClickListener {
             }
 
             R.id.tv_sign_up -> {
-
+                val intent = Intent(this, SignUpActivity::class.java)
+                startActivity(intent)
             }
 
         }

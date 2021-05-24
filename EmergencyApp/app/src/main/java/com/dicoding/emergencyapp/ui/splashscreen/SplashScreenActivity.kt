@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import com.dicoding.emergencyapp.databinding.ActivitySplashScreenBinding
-import com.dicoding.emergencyapp.ui.login.LoginActivity
+import com.dicoding.emergencyapp.ui.authentication.login.LoginActivity
 
 class SplashScreenActivity : AppCompatActivity() {
 

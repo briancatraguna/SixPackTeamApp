@@ -53,4 +53,8 @@ And anyways, as Cecil Adams reasoned, “[Do you really] think graphic arts supp
     <string name="forgot_password">Forgot password</string>
     <string name="don_t_have_an_account">Don\'t have an account?</string>
     <string name="sign_up">Sign up</string>
+    <string name="create">Create</string>
+    <string name="account">Account</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="already_have_an_account">Already have an account?</string>
 </resources>
