@@ -13,32 +13,41 @@ import android.view.ViewGroup
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.app.ActivityCompat.recreate
 import com.dicoding.emergencyapp.databinding.FragmentSettingsBinding
+import com.dicoding.emergencyapp.ui.authentication.login.LoginActivity
 import com.dicoding.emergencyapp.ui.guideline.GuidelineActivity
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import java.util.*
 
 class SettingsFragment : Fragment() {
+
     private lateinit var binding: FragmentSettingsBinding
-    lateinit var languageBtn: ConstraintLayout
-    lateinit var guidelineBtn: ConstraintLayout
+    private lateinit var mAuth: FirebaseAuth
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         binding = FragmentSettingsBinding.inflate(inflater, container, false)
-        languageBtn = binding.changeLanguage
-        guidelineBtn = binding.guideline
+        mAuth = FirebaseAuth.getInstance()
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         loadLanguage()
-        languageBtn.setOnClickListener {
+        binding.changeLanguage.setOnClickListener {
             changeLanguage()
         }
-        guidelineBtn.setOnClickListener {
+        binding.guideline.setOnClickListener {
             val intent = Intent(context, GuidelineActivity::class.java)
             startActivity(intent)
+        }
+
+        binding.signOut.setOnClickListener {
+            mAuth.signOut()
+            val intent = Intent(activity,LoginActivity::class.java)
+            startActivity(intent)
+            activity?.finish()
         }
     }
 

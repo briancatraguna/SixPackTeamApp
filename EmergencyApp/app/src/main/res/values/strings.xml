@@ -61,4 +61,5 @@ And anyways, as Cecil Adams reasoned, “[Do you really] think graphic arts supp
     <string name="join_tolong_app">Join us</string>
     <string name="edit_profile">Edit profile</string>
     <string name="hello">Hello!</string>
+    <string name="log_out">Log out</string>
 </resources>
