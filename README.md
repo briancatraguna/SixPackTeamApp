@@ -75,6 +75,16 @@
 `deskripsi, UI, fitur apa aja, kelebihan, etc. idk..
 COMING SOON!
 `
+### Machine Learning
+#### Dataset
+We do scraping from https://lapor.go.id
+
+#### Word Vectors
+We use pretrained from the corpus of of Indonesian Wikipedia article.
+
+#### Entity Tag
+
+#### Method Used
 
 ### Built With
 
@@ -177,6 +187,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 * [Sticky Kit](http://leafo.net/sticky-kit)
 * [JVectorMap](http://jvectormap.com)
 * [Font Awesome](https://fontawesome.com)
+* [README Template](https://github.com/othneildrew/Best-README-Template/)
 
 
 
