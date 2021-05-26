@@ -9,17 +9,18 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/change_language"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:background="@drawable/bottom_border"
         android:padding="4dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/img_language"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_marginStart="8dp"
             android:src="@drawable/ic_language"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -33,14 +34,14 @@
             android:fontFamily="@font/roboto_regular"
             android:text="@string/language"
             android:textColor="@color/subtext"
-            android:textSize="20sp"
+            android:textSize="17sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/img_language"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_marginEnd="8dp"
             android:src="@drawable/ic_arrow_settings"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -52,7 +53,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/guideline"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:background="@drawable/bottom_border"
         android:padding="4dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -61,8 +62,8 @@
 
         <ImageView
             android:id="@+id/img_guideline"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_marginStart="8dp"
             android:src="@drawable/ic_baseline_help"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -74,7 +75,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
             android:text="@string/guideline"
-            android:textSize="20sp"
+            android:textSize="17sp"
             android:fontFamily="@font/roboto_regular"
             android:textColor="@color/subtext"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -82,8 +83,8 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_marginEnd="8dp"
             android:src="@drawable/ic_arrow_settings"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -95,7 +96,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/sign_out"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:background="@drawable/bottom_border"
         android:padding="4dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -105,8 +106,8 @@
 
         <ImageView
             android:id="@+id/img_signout"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_marginStart="8dp"
             android:src="@drawable/ic_logout"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -120,14 +121,14 @@
             android:fontFamily="@font/roboto_regular"
             android:text="@string/log_out"
             android:textColor="@color/emergency_red"
-            android:textSize="20sp"
+            android:textSize="17sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/img_signout"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_marginEnd="8dp"
             android:src="@drawable/ic_arrow_settings_logout"
             app:layout_constraintBottom_toBottomOf="parent"
