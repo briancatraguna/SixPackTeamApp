@@ -38,7 +38,7 @@
       <a href="#steps">Steps</a>
     </li>
     <li>
-      <a href="#usage">Getting Started</a>
+      <a href="#run!">Run!</a>
     </li>
   </ol>
 </details>
@@ -142,7 +142,7 @@ python lapor_scraping.py
 - The program will keep running until `PAGE_START` even though the page is not found. Because of this, I find out the maximum page by myself.
 
 <!--  PREPROCESSING -->
-# Preprocessing
+# Preprocessing Scraping Results
 
 ## Steps
 From the scraping results, `preprocessing.py` will create two different files, `df1.csv` and `df2.csv` as shown below.
@@ -151,7 +151,7 @@ From the scraping results, `preprocessing.py` will create two different files, `
 </p>
 The columns of the second dataframe will be  `index` (nth report) and `report` which consists tokens, then we will tag each token.
 
-## Usage
+## Run!
 ```
 cd SixPackTeamApp/scraping
 ```
