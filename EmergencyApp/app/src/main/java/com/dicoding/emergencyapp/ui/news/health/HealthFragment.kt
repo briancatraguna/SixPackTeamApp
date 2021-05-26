@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.dicoding.emergencyapp.data.entity.ArticlesItem
 import com.dicoding.emergencyapp.data.remote.NewsDataSource
 import com.dicoding.emergencyapp.data.repository.NewsRepository
 import com.dicoding.emergencyapp.databinding.FragmentNewsListBinding
@@ -14,6 +15,8 @@ import com.dicoding.emergencyapp.ui.news.ListNewsAdapter
 class HealthFragment : Fragment() {
 
     private lateinit var binding: FragmentNewsListBinding
+    private val articlesObject = ArrayList<ArticlesItem?>()
+    private var fail: Boolean = false
 
     companion object{
         private const val CATEGORY = "health"
@@ -35,17 +38,20 @@ class HealthFragment : Fragment() {
         val listNewsAdapter = ListNewsAdapter()
 
         val viewModel = HealthNewsViewModel(NewsRepository.getInstance(NewsDataSource()))
-        val status = viewModel.getStatus()
-        if (!status){
-            binding.tvFail.visibility = View.VISIBLE
-        } else {
-            binding.tvFail.visibility = View.GONE
-        }
+        viewModel.getStatus().observe(requireActivity(),{success->
+            if (!success){
+                fail = true
+                binding.tvFail.visibility = View.VISIBLE
+            } else {
+                fail = false
+                binding.tvFail.visibility = View.GONE
+            }
+        })
 
         viewModel.getHealthNews().observe(requireActivity(),{articles->
-            listNewsAdapter.setData(articles)
-            listNewsAdapter.setCategory(CATEGORY)
-            rvNews.adapter = listNewsAdapter
+            for (article in articles){
+                articlesObject.add(article)
+            }
         })
 
         viewModel.isLoading().observe(requireActivity(),{isLoading->
@@ -53,6 +59,15 @@ class HealthFragment : Fragment() {
                 binding.progressBar.visibility = View.VISIBLE
             } else {
                 binding.progressBar.visibility = View.GONE
+                if (!fail){
+                    listNewsAdapter.setData(articlesObject)
+                    listNewsAdapter.setCategory(CATEGORY)
+                    rvNews.adapter = listNewsAdapter
+                } else {
+                    listNewsAdapter.clearData()
+                    rvNews.adapter = listNewsAdapter
+                }
+
             }
         })
 

@@ -13,10 +13,14 @@ import com.dicoding.emergencyapp.ui.news.detail.DetailNewsActivity
 
 class ListNewsAdapter: RecyclerView.Adapter<ListNewsAdapter.ListViewHolder>() {
 
-    private var listData: List<ArticlesItem?> = ArrayList<ArticlesItem>()
-    fun setData(list: List<ArticlesItem?>){
+    private var listData = ArrayList<ArticlesItem?>()
+    fun setData(list: ArrayList<ArticlesItem?>){
         this.listData = list
         notifyDataSetChanged()
+    }
+
+    fun clearData(){
+        this.listData.clear()
     }
 
     private var category: String? = null

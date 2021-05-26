@@ -21,13 +21,16 @@ class NewsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setUpTabs()
+    }
+
+    private fun setUpTabs(){
         val sectionsPagerAdapter = activity?.let {
             SectionsPagerAdapter(requireContext(),
-                it.supportFragmentManager)
+                    childFragmentManager)
         }
         binding.viewPager.adapter = sectionsPagerAdapter
         binding.tabs.setupWithViewPager(binding.viewPager)
-
     }
 
 }
