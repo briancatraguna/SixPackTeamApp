@@ -34,12 +34,14 @@ This program is to scrape user's reports on LAPOR! website (https://lapor.go.id)
 <br> Maximum reports per page on the website are 10.
 <br> See limitations of this program <a href="#limitations">here.</a>
 <br>Total datasets gathered are 1749 rows with queries below:
-<ul class="multi-col-list three-columns">
-  <li>kebakaran</li>
-  <li>tawuran</li>
-  <li>copet</li>
-  <li>luka parah</li>
-  <li>kdrt</li>
+```
+- kebakaran
+- tawuran
+- copet
+- luka parah
+- kdrt
+```
+```
   <li>ambulans</li>
   <li>terjadi banjir</li>
   <li>pingsan</li>
@@ -57,7 +59,7 @@ This program is to scrape user's reports on LAPOR! website (https://lapor.go.id)
   <li>pemerkosaan</li>
   <l>gigit ular</li>
 </ul>
-
+```
 #### Input
 `QUERY` -> the keyword you want to search, e.g 'kebakaran', 'kdrt'
 <br> `PAGE_START` -> starting page
