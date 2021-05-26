@@ -25,7 +25,8 @@
         android:roundIcon="@drawable/logo_notext"
         android:supportsRtl="true"
         android:theme="@style/Theme.EmergencyApp">
-        <activity android:name=".ui.authentication.signup.SignUpActivity"></activity>
+        <activity android:name=".ui.home.EditProfileActivity"></activity>
+        <activity android:name=".ui.authentication.signup.SignUpActivity" />
         <activity android:name=".ui.authentication.login.LoginActivity" />
         <activity android:name=".ui.typing.TypingActivity" />
         <!--

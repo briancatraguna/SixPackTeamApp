@@ -68,6 +68,11 @@ class HomeActivity : AppCompatActivity() {
             true
         }
 
+        binding.toolbarHome.tvEditProfile.setOnClickListener {
+            val intent = Intent(this,EditProfileActivity::class.java)
+            startActivity(intent)
+        }
+
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
         getLastLocation()
         binding.toolbarHome.seeLocationBtn.setOnClickListener {
