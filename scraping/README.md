@@ -145,10 +145,11 @@ python lapor_scraping.py
 # Preprocessing Scraping Results
 
 ## Steps
-From the scraping results, `preprocessing.py` will create two different files, `df1.csv` and `df2.csv` as shown below.
+From the scraping results, `preprocessing.py` will preprocessing the results, which do casefolding and tokenizing, the create two different files, `df1.csv` and `df2.csv` as shown below.
 <p align="center">
   <img src="https://user-images.githubusercontent.com/73707695/119653116-265a1b80-be51-11eb-8f91-8fa1231f288b.jpg" width="480">
 </p>
+
 The columns of the second dataframe will be  `index` (nth report) and `report` which consists tokens, then we will tag each token.
 
 ## Run!
