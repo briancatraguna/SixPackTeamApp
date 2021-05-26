@@ -31,7 +31,7 @@
 <!-- PREPROCESSING -->
 <details open="open">
   <summary>
-    <a href="#preprocessing">Preprocessing</a>
+    <a href="#preprocessing-scraping-results">Preprocessing</a>
   </summary>
   <ol>
     <li>
