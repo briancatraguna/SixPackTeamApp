@@ -66,4 +66,7 @@ And anyways, as Cecil Adams reasoned, “[Do you really] think graphic arts supp
     <string name="fire">Fire</string>
     <string name="traffic">Traffic</string>
     <string name="crime">Crime</string>
+    <string name="cancel">Cancel</string>
+    <string name="edit_profile_title">Edit Profile</string>
+    <string name="done">Done</string>
 </resources>

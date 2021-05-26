@@ -12,5 +12,9 @@ class EditProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityEditProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.tvCancel.setOnClickListener {
+            finish()
+        }
     }
 }
