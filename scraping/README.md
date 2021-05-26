@@ -1,14 +1,14 @@
 <!-- TABLE OF CONTENTS -->
 <details open="open">
-  <summary>Table of Contents</summary>
+  <summary>Scraping</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About</a>
+      <a href="#about">About</a>
       <ul>
         <li><a href="#input">Input</a></li>
       </ul>
       <ul>
-         <li><a href="output">Output</a></li>
+         <li><a href="#output">Output</a></li>
       </ul>
     </li>
     <li>
@@ -150,3 +150,5 @@ python lapor_scraping.py
 ## Limitations
 - If you have run the program and have the csv file output, and you wish to re-run it again, DELETE the csv file first. Otherwise it will have duplicate rows.
 - The program will keep running until `PAGE_START` even though the page is not found. Because of this, I find out the maximum page by myself.
+
+# Preprocessing
