@@ -34,27 +34,29 @@ This program is to scrape user's reports on LAPOR! website (https://lapor.go.id)
 <br> Maximum reports per page on the website are 10.
 <br> See limitations of this program <a href="#limitations">here.</a>
 <br>Total datasets gathered are 1749 rows with queries below:
-- kebakaran
-- tawuran
-- copet
-- luka parah
-- kdrt
-- ambulans
-- terjadi banjir
-- pingsan
-- pohon tumbang
-- tabrak lari
-- senjata tajam
-- dirampok
-- terjadi pelecehan
-- kekerasan
-- penyerangan
-- pelemparan
-- bencana alam
-- korban kecelakaan
-- kondisi korban
-- pemerkosaan
-- gigit ular
+<ul class="multi-col-list three-columns">
+  <li>kebakaran</li>
+  <li>tawuran</li>
+  <li>copet</li>
+  <li>luka parah</li>
+  <li>kdrt</li>
+  <li>ambulans</li>
+  <li>terjadi banjir</li>
+  <li>pingsan</li>
+  <li>pohon tumbang</li>
+  <li>tabrak lari</li>
+  <li>senjata tajam</li>
+  <li>dirampok</li>
+  <li>terjadi pelecehan</li>
+  <li>kekerasan</li>
+  <li>penyerangan</li>
+  <li>pelemparan</li>
+  <li>bencana alam</li>
+  <li>korban kecelakaan</li>
+  <li>kondisi korban</li>
+  <li>pemerkosaan</li>
+  <l>gigit ular</li>
+</ul>
 
 #### Input
 `QUERY` -> the keyword you want to search, e.g 'kebakaran', 'kdrt'
