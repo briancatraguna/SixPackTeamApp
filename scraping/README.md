@@ -27,6 +27,8 @@
   </ol>
 </details>
 
+# Scraping
+
 ##  About
 This program is to scrape user's reports on LAPOR! website (https://lapor.go.id).
 <br> Maximum reports per page on the website are 10.
