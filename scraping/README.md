@@ -35,21 +35,11 @@
   </summary>
   <ol>
     <li>
-      <a href="#steps">Step</a>
+      <a href="#steps">Steps</a>
     </li>
     <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
+      <a href="#usage">Getting Started</a>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#limitations">Limitations</a></li>
-<!--     <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li> -->
   </ol>
 </details>
 
@@ -142,7 +132,7 @@ cd SixPackTeamApp/scraping
     *You must update the value if you turn off your laptop, closing the tab, or get disconnected.*
     
 3. Finally, run the code on terminal/command prompt.
-```sh
+```
 python lapor_scraping.py
 ```
 **P.S**: there is also a notebook file for this! :)
@@ -159,4 +149,12 @@ From the scraping results, `preprocessing.py` will create two different files, `
 <p align="center">
   <img src="https://user-images.githubusercontent.com/73707695/119653116-265a1b80-be51-11eb-8f91-8fa1231f288b.jpg" width="480">
 </p>
-<br>The columns of the second dataframe will be  `index` (nth report) and `report` which consists tokens, then we will tag each token.
+The columns of the second dataframe will be  `index` (nth report) and `report` which consists tokens, then we will tag each token.
+
+## Usage
+```
+cd SixPackTeamApp/scraping
+```
+```
+python preprocessing.py
+```
