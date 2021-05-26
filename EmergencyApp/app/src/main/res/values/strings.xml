@@ -69,4 +69,7 @@ And anyways, as Cecil Adams reasoned, “[Do you really] think graphic arts supp
     <string name="cancel">Cancel</string>
     <string name="edit_profile_title">Edit Profile</string>
     <string name="done">Done</string>
+    <string name="change_profile_photo">Change Profile Photo</string>
+    <string name="name">Name</string>
+    <string name="full_name">Full Name</string>
 </resources>
