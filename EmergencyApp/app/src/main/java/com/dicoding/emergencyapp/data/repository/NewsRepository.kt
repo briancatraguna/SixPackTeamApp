@@ -25,6 +25,8 @@ class NewsRepository(private val newsDataSource: NewsDataSource) {
 
     val healthNewsLoadingStatus: Boolean = newsDataSource.loadHealthSuccess
 
+    val isLoadingHealth: LiveData<Boolean> = newsDataSource.isLoadingHealth
+
     fun getScienceNews(): LiveData<List<ArticlesItem?>>{
         newsDataSource.getScienceNews()
         return newsDataSource.scienceNews
@@ -32,11 +34,15 @@ class NewsRepository(private val newsDataSource: NewsDataSource) {
 
     val scienceNewsLoadingStatus: Boolean = newsDataSource.loadScienceSuccess
 
+    val isLoadingScience: LiveData<Boolean> = newsDataSource.isLoadingScience
+
     fun getEntertainmentNews(): LiveData<List<ArticlesItem?>>{
         newsDataSource.getEntertainmentNews()
         return newsDataSource.entertainmentNews
     }
 
     val entertainmentNewsLoadingStatus: Boolean = newsDataSource.loadEntertainmentSuccess
+
+    val isLoadingEntertainment: LiveData<Boolean> = newsDataSource.isLoadingEntertainment
 
 }

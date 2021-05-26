@@ -41,10 +41,19 @@ class HealthFragment : Fragment() {
         } else {
             binding.tvFail.visibility = View.GONE
         }
+
         viewModel.getHealthNews().observe(requireActivity(),{articles->
             listNewsAdapter.setData(articles)
             listNewsAdapter.setCategory(CATEGORY)
             rvNews.adapter = listNewsAdapter
+        })
+
+        viewModel.isLoading().observe(requireActivity(),{isLoading->
+            if (isLoading){
+                binding.progressBar.visibility = View.VISIBLE
+            } else {
+                binding.progressBar.visibility = View.GONE
+            }
         })
 
     }

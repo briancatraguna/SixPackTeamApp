@@ -15,4 +15,8 @@ class EntertainmentNewsViewModel(private val repository: NewsRepository): ViewMo
         return repository.entertainmentNewsLoadingStatus
     }
 
+    fun isLoading(): LiveData<Boolean>{
+        return repository.isLoadingEntertainment
+    }
+
 }

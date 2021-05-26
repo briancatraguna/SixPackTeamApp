@@ -15,4 +15,8 @@ class ScienceNewsViewModel(private val repository: NewsRepository): ViewModel() 
         return repository.scienceNewsLoadingStatus
     }
 
+    fun isLoading(): LiveData<Boolean>{
+        return repository.isLoadingScience
+    }
+
 }
