@@ -1,6 +1,8 @@
 <!-- TABLE OF CONTENTS -->
 <details open="open">
-  <summary>Scraping</summary>
+  <summary>
+    <a href="#scraping">Scraping</a>
+  </summary>
   <ol>
     <li>
       <a href="#about">About</a>
@@ -25,7 +27,9 @@
     <li><a href="#license">License</a></li>
     <li><a href="#acknowledgements">Acknowledgements</a></li> -->
   </ol>
-  
+</details>
+
+<details open="open">
   <summary>Preprocessing</summary>
   <ol>
     <li>
@@ -52,7 +56,6 @@
     <li><a href="#acknowledgements">Acknowledgements</a></li> -->
   </ol>
 </details>
-
 # Website Scraping
 
 ##  About
