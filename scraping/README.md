@@ -156,7 +156,7 @@ python lapor_scraping.py
 
 ## Steps
 From the scraping results, `preprocessing.py` will create two different files, `df1.csv` and `df2.csv` as shown below.
-<img src="https://user-images.githubusercontent.com/73707695/119653116-265a1b80-be51-11eb-8f91-8fa1231f288b.jpg" width="480">
-                                                                                                                             
-<!-- ![preprocessing](https://user-images.githubusercontent.com/73707695/119653116-265a1b80-be51-11eb-8f91-8fa1231f288b.jpg){width=190px} -->
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/73707695/119653116-265a1b80-be51-11eb-8f91-8fa1231f288b.jpg" width="480">
+</p>
 <br>The columns of the second dataframe will be  `index` (nth report) and `report` which consists tokens, then we will tag each token.
