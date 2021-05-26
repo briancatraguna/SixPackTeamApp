@@ -1,7 +1,7 @@
 <!-- TABLE OF CONTENTS -->
 <details open="open">
   <summary>
-    <a href="#scraping">Scraping</a>
+    <a href="#website-scraping">Scraping</a>
   </summary>
   <ol>
     <li>
@@ -56,6 +56,7 @@
     <li><a href="#acknowledgements">Acknowledgements</a></li> -->
   </ol>
 </details>
+
 # Website Scraping
 
 ##  About
