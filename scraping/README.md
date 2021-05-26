@@ -1,14 +1,16 @@
 <!-- TABLE OF CONTENTS -->
 <details open="open">
-  <summary>Table of Contents</summary>
+  <summary>
+    <a href="#website-scraping">Scraping</a>
+  </summary>
   <ol>
     <li>
-      <a href="#about-the-project">About</a>
+      <a href="#about">About</a>
       <ul>
         <li><a href="#input">Input</a></li>
       </ul>
       <ul>
-         <li><a href="output">Output</a></li>
+         <li><a href="#output">Output</a></li>
       </ul>
     </li>
     <li>
@@ -19,7 +21,6 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#limitations">Limitations</a></li>
 <!--     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
@@ -27,11 +28,29 @@
   </ol>
 </details>
 
+<!-- PREPROCESSING -->
+<details open="open">
+  <summary>
+    <a href="#preprocessing">Preprocessing</a>
+  </summary>
+  <ol>
+    <li>
+      <a href="#steps">Steps</a>
+    </li>
+    <li>
+      <a href="#run!">Run!</a>
+    </li>
+  </ol>
+</details>
+
+# Website Scraping
+
 ##  About
 This program is to scrape user's reports on LAPOR! website (https://lapor.go.id).
 <br> Maximum reports per page on the website are 10.
 <br> See limitations of this program <a href="#limitations">here.</a>
 <br>Total datasets gathered are 1749 rows with queries below:
+```
 - kebakaran
 - tawuran
 - copet
@@ -53,7 +72,7 @@ This program is to scrape user's reports on LAPOR! website (https://lapor.go.id)
 - kondisi korban
 - pemerkosaan
 - gigit ular
-
+```
 #### Input
 `QUERY` -> the keyword you want to search, e.g 'kebakaran', 'kdrt'
 <br> `PAGE_START` -> starting page
@@ -113,7 +132,7 @@ cd SixPackTeamApp/scraping
     *You must update the value if you turn off your laptop, closing the tab, or get disconnected.*
     
 3. Finally, run the code on terminal/command prompt.
-```sh
+```
 python lapor_scraping.py
 ```
 **P.S**: there is also a notebook file for this! :)
@@ -121,3 +140,22 @@ python lapor_scraping.py
 ## Limitations
 - If you have run the program and have the csv file output, and you wish to re-run it again, DELETE the csv file first. Otherwise it will have duplicate rows.
 - The program will keep running until `PAGE_START` even though the page is not found. Because of this, I find out the maximum page by myself.
+
+<!--  PREPROCESSING -->
+# Preprocessing Scraping Results
+
+## Steps
+From the scraping results, `preprocessing.py` will preprocessing the results, which do casefolding and tokenizing, the create two different files, `df1.csv` and `df2.csv` as shown below.
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/73707695/119653116-265a1b80-be51-11eb-8f91-8fa1231f288b.jpg" width="480">
+</p>
+
+The columns of the second dataframe will be  `index` (nth report) and `report` which consists tokens, then we will tag each token.
+
+## Run!
+```
+cd SixPackTeamApp/scraping
+```
+```
+python preprocessing.py
+```
