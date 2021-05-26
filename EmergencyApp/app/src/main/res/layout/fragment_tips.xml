@@ -59,12 +59,12 @@
                     android:layout_width="63dp"
                     android:layout_height="63dp"
                     android:layout_gravity="center"
-                    android:src="@drawable/ic_baseline_hospital" />
+                    android:src="@drawable/ic_baseline_traffic_24" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/hospital"
+                    android:text="@string/traffic"
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textSize="11sp" />
@@ -103,7 +103,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/police"
+                    android:text="@string/crime"
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textSize="11sp" />
@@ -142,7 +142,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/firefighter"
+                    android:text="@string/fire"
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textSize="11sp" />

@@ -63,4 +63,7 @@ And anyways, as Cecil Adams reasoned, “[Do you really] think graphic arts supp
     <string name="hello">Hello!</string>
     <string name="log_out">Log out</string>
     <string name="title_settings">Settings</string>
+    <string name="fire">Fire</string>
+    <string name="traffic">Traffic</string>
+    <string name="crime">Crime</string>
 </resources>
