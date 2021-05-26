@@ -27,7 +27,6 @@
         android:theme="@style/Theme.EmergencyApp">
         <activity android:name=".ui.authentication.signup.SignUpActivity"></activity>
         <activity android:name=".ui.authentication.login.LoginActivity" />
-        <activity android:name=".ui.news.detail.DetailNewsActivity" />
         <activity android:name=".ui.typing.TypingActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.

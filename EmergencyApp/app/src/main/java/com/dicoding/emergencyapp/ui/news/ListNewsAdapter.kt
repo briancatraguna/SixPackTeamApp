@@ -1,15 +1,16 @@
 package com.dicoding.emergencyapp.ui.news
 
 import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.dicoding.emergencyapp.R
 import com.dicoding.emergencyapp.data.entity.ArticlesItem
 import com.dicoding.emergencyapp.databinding.ItemNewsBinding
 import com.dicoding.emergencyapp.helpers.DateHelper
-import com.dicoding.emergencyapp.ui.news.detail.DetailNewsActivity
 
 class ListNewsAdapter: RecyclerView.Adapter<ListNewsAdapter.ListViewHolder>() {
 
@@ -35,22 +36,20 @@ class ListNewsAdapter: RecyclerView.Adapter<ListNewsAdapter.ListViewHolder>() {
                 val title = titleAndSource?.get(0)
                 val source = titleAndSource?.get(1)
                 tvNewsTitle.text = title
-                tvHoursAgo.text = DateHelper.getHoursAgo(article?.publishedAt)
+                tvHoursAgo.text = DateHelper.cleanDate(article?.publishedAt)
                 tvSource.text = source
-                Glide.with(itemView.context)
-                    .load(article?.urlToImage)
-                    .apply(RequestOptions().override(500,500))
-                    .into(imgNews)
+                if (article?.urlToImage == null){
+                    imgNews.setImageResource(R.drawable.ic_broken_image)
+                } else {
+                    Glide.with(itemView.context)
+                            .load(article?.urlToImage)
+                            .apply(RequestOptions().override(500,500))
+                            .into(imgNews)
+                }
             }
             itemView.setOnClickListener{
-                val intent = Intent(itemView.context, DetailNewsActivity::class.java)
-                intent.putExtra(DetailNewsActivity.EXTRA_AUTHOR,article?.author)//
-                intent.putExtra(DetailNewsActivity.EXTRA_DESCRIPTION,article?.description)//
-                intent.putExtra(DetailNewsActivity.EXTRA_PUBLISHED,article?.publishedAt)//
-                intent.putExtra(DetailNewsActivity.EXTRA_SOURCE,article?.source?.name)//
-                intent.putExtra(DetailNewsActivity.EXTRA_CONTENT,article?.content)
-                intent.putExtra(DetailNewsActivity.EXTRA_TITLE,article?.title)//
-                intent.putExtra(DetailNewsActivity.EXTRA_CATEGORY,category)//
+                val intent = Intent(Intent.ACTION_VIEW)
+                intent.data = Uri.parse(article?.url)
                 itemView.context.startActivity(intent)
             }
         }
