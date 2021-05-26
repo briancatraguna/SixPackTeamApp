@@ -468,7 +468,8 @@
   "se7": "setuju",
   "sebelas dua belas": "mirip",
   "sembako": "sembilan bahan pokok",
-  "sempet": "sempat", "sendratari": "seni drama tari",
+  "sempet": "sempat",
+  "sendratari": "seni drama tari",
   "sgt": "sangat",
   "shg": "sehingga",
   "siech": "sih",
@@ -941,8 +942,8 @@
   "togel": "toto gelap", 
   "tp": "tapi", 
   "tq": "terima kasih", 
-  "trgntg": "tergantung", "trims": 
-  "terima kasih", 
+  "trgntg": "tergantung",
+  "trims": "terima kasih", 
   "cb": "coba", 
   "y": "ya", 
   "munfik": 
@@ -1020,5 +1021,10 @@
   "mgkin": "mungkin",
   "sy": "saya",
   "dr": "dari",
-  "jum'at": "jumat"
+  "jum'at": "jumat",
+  "mhon": "mohon",
+  "tsb": "tersebut",
+  "berintaya": "beritanya",
+  "emergenvy": "emergency",
+  "yng": "yang"
 }
