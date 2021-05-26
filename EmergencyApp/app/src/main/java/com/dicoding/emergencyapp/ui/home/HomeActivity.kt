@@ -1,5 +1,6 @@
 package com.dicoding.emergencyapp.ui.home
 
+import android.Manifest
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -52,13 +53,7 @@ class HomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        try {
-            binding = ActivityHomeBinding.inflate(layoutInflater)
-        } catch (e: Exception){
-            Log.e(TAG,"onCreateView",e)
-            throw(e)
-        }
-
+        binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         sosFragment.arguments = bundle
@@ -121,6 +116,11 @@ class HomeActivity : AppCompatActivity() {
         locationRequest.interval = 0
         locationRequest.fastestInterval = 0
         locationRequest.numUpdates = 1
+        if (
+                ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
+                ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            return
+        }
         fusedLocationProviderClient.requestLocationUpdates(
                 locationRequest,locationCallback, Looper.myLooper()
         )

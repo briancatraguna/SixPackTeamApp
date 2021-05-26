@@ -11,7 +11,7 @@ class EntertainmentNewsViewModel(private val repository: NewsRepository): ViewMo
         return repository.getEntertainmentNews()
     }
 
-    fun getStatus(): Boolean{
+    fun getStatus(): LiveData<Boolean>{
         return repository.entertainmentNewsLoadingStatus
     }
 

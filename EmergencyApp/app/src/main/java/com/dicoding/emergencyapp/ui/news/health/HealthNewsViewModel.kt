@@ -11,7 +11,7 @@ class HealthNewsViewModel(private val repository: NewsRepository): ViewModel() {
         return repository.getHealthNews()
     }
 
-    fun getStatus(): Boolean{
+    fun getStatus(): LiveData<Boolean>{
         return repository.healthNewsLoadingStatus
     }
 

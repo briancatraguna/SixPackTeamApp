@@ -23,7 +23,7 @@ class NewsRepository(private val newsDataSource: NewsDataSource) {
         return newsDataSource.healthNews
     }
 
-    val healthNewsLoadingStatus: Boolean = newsDataSource.loadHealthSuccess
+    val healthNewsLoadingStatus: LiveData<Boolean> = newsDataSource.loadHealthSuccess
 
     val isLoadingHealth: LiveData<Boolean> = newsDataSource.isLoadingHealth
 
@@ -32,7 +32,7 @@ class NewsRepository(private val newsDataSource: NewsDataSource) {
         return newsDataSource.scienceNews
     }
 
-    val scienceNewsLoadingStatus: Boolean = newsDataSource.loadScienceSuccess
+    val scienceNewsLoadingStatus: LiveData<Boolean> = newsDataSource.loadScienceSuccess
 
     val isLoadingScience: LiveData<Boolean> = newsDataSource.isLoadingScience
 
@@ -41,7 +41,7 @@ class NewsRepository(private val newsDataSource: NewsDataSource) {
         return newsDataSource.entertainmentNews
     }
 
-    val entertainmentNewsLoadingStatus: Boolean = newsDataSource.loadEntertainmentSuccess
+    val entertainmentNewsLoadingStatus: LiveData<Boolean> = newsDataSource.loadEntertainmentSuccess
 
     val isLoadingEntertainment: LiveData<Boolean> = newsDataSource.isLoadingEntertainment
 
