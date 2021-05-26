@@ -21,7 +21,6 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#limitations">Limitations</a></li>
 <!--     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
@@ -29,17 +28,14 @@
   </ol>
 </details>
 
+<!-- PREPROCESSING -->
 <details open="open">
-  <summary>Preprocessing</summary>
+  <summary>
+    <a href="#preprocessing">Preprocessing</a>
+  </summary>
   <ol>
     <li>
-      <a href="#about-the-project">About</a>
-      <ul>
-        <li><a href="#input">Input</a></li>
-      </ul>
-      <ul>
-         <li><a href="output">Output</a></li>
-      </ul>
+      <a href="#steps">Step</a>
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
@@ -155,4 +151,10 @@ python lapor_scraping.py
 - If you have run the program and have the csv file output, and you wish to re-run it again, DELETE the csv file first. Otherwise it will have duplicate rows.
 - The program will keep running until `PAGE_START` even though the page is not found. Because of this, I find out the maximum page by myself.
 
+<!--  PREPROCESSING -->
 # Preprocessing
+
+## Steps
+From the scraping results, `preprocessing.py` will create two different files, `df1.csv` and `df2.csv` as shown below.
+![preprocessing](https://user-images.githubusercontent.com/73707695/119653116-265a1b80-be51-11eb-8f91-8fa1231f288b.jpg)
+The columns of the second dataframe will be  `index` (nth report) and `report` which consists tokens, then we will tag each token.
