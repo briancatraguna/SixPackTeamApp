@@ -40,25 +40,22 @@ This program is to scrape user's reports on LAPOR! website (https://lapor.go.id)
 - copet
 - luka parah
 - kdrt
-```
-```
-  <li>ambulans</li>
-  <li>terjadi banjir</li>
-  <li>pingsan</li>
-  <li>pohon tumbang</li>
-  <li>tabrak lari</li>
-  <li>senjata tajam</li>
-  <li>dirampok</li>
-  <li>terjadi pelecehan</li>
-  <li>kekerasan</li>
-  <li>penyerangan</li>
-  <li>pelemparan</li>
-  <li>bencana alam</li>
-  <li>korban kecelakaan</li>
-  <li>kondisi korban</li>
-  <li>pemerkosaan</li>
-  <l>gigit ular</li>
-</ul>
+- ambulans
+- terjadi banjir
+- pingsan
+- pohon tumbang
+- tabrak lari
+- senjata tajam
+- dirampok
+- terjadi pelecehan
+- kekerasan
+- penyerangan
+- pelemparan
+- bencana alam
+- korban kecelakaan
+- kondisi korban
+- pemerkosaan
+- gigit ular
 ```
 #### Input
 `QUERY` -> the keyword you want to search, e.g 'kebakaran', 'kdrt'
