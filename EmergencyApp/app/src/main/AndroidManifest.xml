@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.dicoding.emergencyapp">
-    <!--
-         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
-         Google Maps Android API v2, but you must specify either coarse or fine
-         location permissions for the "MyLocation" functionality.
-    -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.INTERNET" />
 
     <queries>
         <intent>
             <action android:name="android.speech.RecognitionService" />
         </intent>
     </queries>
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -26,7 +22,11 @@
         android:roundIcon="@drawable/logo_notext"
         android:supportsRtl="true"
         android:theme="@style/Theme.EmergencyApp">
-        <activity android:name=".ui.home.EditProfileActivity"></activity>
+        <activity android:name=".ui.tips.lifestyle.LifestyleActivity"></activity>
+        <activity android:name=".ui.tips.traffic.TrafficActivity" />
+        <activity android:name=".ui.tips.fire.FireActivity" />
+        <activity android:name=".ui.tips.crime.CrimeActivity" />
+        <activity android:name=".ui.home.EditProfileActivity" />
         <activity android:name=".ui.authentication.signup.SignUpActivity" />
         <activity android:name=".ui.authentication.login.LoginActivity" />
         <activity android:name=".ui.typing.TypingActivity" />

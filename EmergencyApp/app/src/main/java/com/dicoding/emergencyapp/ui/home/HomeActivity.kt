@@ -17,7 +17,7 @@ import androidx.fragment.app.Fragment
 import com.dicoding.emergencyapp.R
 import com.dicoding.emergencyapp.databinding.ActivityHomeBinding
 import com.dicoding.emergencyapp.ui.googlemapsactivity.MapsActivity
-import com.dicoding.emergencyapp.ui.help.TipsFragment
+import com.dicoding.emergencyapp.ui.tips.TipsFragment
 import com.dicoding.emergencyapp.ui.news.NewsFragment
 import com.dicoding.emergencyapp.ui.settings.SettingsFragment
 import com.dicoding.emergencyapp.ui.sos.SosFragment

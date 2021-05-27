@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.help.TipsFragment">
+    tools:context=".ui.tips.TipsFragment">
 
 
     <TextView
@@ -35,7 +35,7 @@
         app:layout_constraintVertical_bias="0.433">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cv_hospital"
+            android:id="@+id/cv_traffic"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_row="0"
@@ -74,7 +74,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cv_police"
+            android:id="@+id/cv_crime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_row="0"

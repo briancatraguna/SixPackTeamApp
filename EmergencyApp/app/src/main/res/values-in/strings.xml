@@ -28,6 +28,33 @@
     <string name="science">Ilmu pengetahuan</string>
     <string name="entertainment">Hiburan</string>
 
+    <string name="login">Masuk</string>
+    <string name="email">Email</string>
+    <string name="password">Kata sandi</string>
+    <string name="sign_in">Masuk</string>
+    <string name="forgot_password">Lupa kata sandi</string>
+    <string name="don_t_have_an_account">Tidak punya akun?</string>
+    <string name="sign_up">Daftar</string>
+    <string name="create">Membuat</string>
+    <string name="account">Akun</string>
+    <string name="confirm_password">Konfirmasi kata sandi</string>
+    <string name="already_have_an_account">Sudah memiliki akun?</string>
+    <string name="keep_your_safety">Jaga keamananmu.</string>
+    <string name="join_tolong_app">Ikuti kami</string>
+    <string name="edit_profile">Ganti profil</string>
+    <string name="hello">Halo!</string>
+    <string name="log_out">Keluar</string>
+    <string name="title_settings">Setelan</string>
+    <string name="fire">Api</string>
+    <string name="traffic">Lalu lintas</string>
+    <string name="crime">Kriminal</string>
+    <string name="cancel">Batal</string>
+    <string name="edit_profile_title">Ubah Profil</string>
+    <string name="done">Selesai</string>
+    <string name="change_profile_photo">Ganti Profil Foto</string>
+    <string name="name">Nama</string>
+    <string name="full_name">Nama Lengkap</string>
+
     <!--typing activity-->
     <string name="name_type">Nama</string>
     <string name="location">Lokasi</string>
