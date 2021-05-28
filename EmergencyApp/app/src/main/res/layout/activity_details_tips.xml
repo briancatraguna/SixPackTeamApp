@@ -4,17 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.tips.fire.FireActivity">
+    tools:context=".ui.tips.DetailsTipsActivity">
+
+    <include android:id="@+id/toolbar" layout="@layout/details_tips_toolbar"/>
 
     <VideoView
-        android:id="@+id/trailer"
         android:layout_width="match_parent"
-        android:layout_height="260dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="200dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

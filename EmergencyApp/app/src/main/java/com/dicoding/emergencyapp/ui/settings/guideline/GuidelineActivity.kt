@@ -1,4 +1,4 @@
-package com.dicoding.emergencyapp.ui.guideline
+package com.dicoding.emergencyapp.ui.settings.guideline
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

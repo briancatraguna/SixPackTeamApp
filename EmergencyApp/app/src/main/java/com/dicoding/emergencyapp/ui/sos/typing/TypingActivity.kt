@@ -1,4 +1,4 @@
-package com.dicoding.emergencyapp.ui.typing
+package com.dicoding.emergencyapp.ui.sos.typing
 
 import android.os.Bundle
 import android.util.Log
@@ -8,11 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.dicoding.emergencyapp.R
 import com.google.android.material.textfield.TextInputLayout
 import com.jakewharton.rxbinding2.widget.RxTextView
-import io.reactivex.Flowable.just
-import io.reactivex.Maybe.just
-import io.reactivex.Observable.just
 import io.reactivex.Observer
-import java.util.*
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import java.util.concurrent.TimeUnit

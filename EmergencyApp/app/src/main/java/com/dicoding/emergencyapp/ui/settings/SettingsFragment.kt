@@ -10,13 +10,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.app.ActivityCompat.recreate
 import com.dicoding.emergencyapp.databinding.FragmentSettingsBinding
 import com.dicoding.emergencyapp.ui.authentication.login.LoginActivity
-import com.dicoding.emergencyapp.ui.guideline.GuidelineActivity
+import com.dicoding.emergencyapp.ui.settings.guideline.GuidelineActivity
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import java.util.*
 
 class SettingsFragment : Fragment() {

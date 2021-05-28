@@ -9,14 +9,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.RadioGroup
 import android.widget.Toast
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.dicoding.emergencyapp.R
 import com.dicoding.emergencyapp.databinding.FragmentSosBinding
-import com.dicoding.emergencyapp.ui.home.HomeActivity
-import com.dicoding.emergencyapp.ui.typing.TypingActivity
+import com.dicoding.emergencyapp.ui.sos.typing.TypingActivity
 import java.util.*
 
 class SosFragment : Fragment() {

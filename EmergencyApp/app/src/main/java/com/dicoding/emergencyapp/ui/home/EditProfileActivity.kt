@@ -68,6 +68,7 @@ class EditProfileActivity : AppCompatActivity() {
                 binding.edittextName.error = "Enter name"
             } else {
                 updateNameAndPhoto()
+                finish()
             }
         }
     }
