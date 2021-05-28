@@ -2,6 +2,8 @@ package com.dicoding.emergencyapp.ui.tips
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.dicoding.emergencyapp.data.local.TipsLocalDataSource
+import com.dicoding.emergencyapp.data.repository.TipsRepository
 import com.dicoding.emergencyapp.databinding.ActivityDetailsTipsBinding
 
 class DetailsTipsActivity : AppCompatActivity() {
@@ -21,10 +23,20 @@ class DetailsTipsActivity : AppCompatActivity() {
         binding = ActivityDetailsTipsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.toolbar.backBtn.setOnClickListener {
+            finish()
+        }
+
         populateView()
     }
 
     private fun populateView() {
-
+        val viewModel = TipsViewModel(TipsRepository.getInstance(TipsLocalDataSource(this)))
+        val key = intent.getStringExtra(TOPIC_KEY)
+        if (key!=null){
+            val tips = viewModel.getTips(key)
+            binding.toolbar.tvTitle.text = tips?.title
+            binding.tvDescription.text = tips?.description
+        }
     }
 }

@@ -35,6 +35,7 @@
     <string name="dummy_news_title" translatable="false">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</string>
     <string name="dummy_hours_ago" translatable="false">4 hours ago</string>
     <string name="dummy_source" translatable="false">Tempo.co</string>
+    <string name="dummy_text" translatable="false"></string>
     <string name="dummy_content" translatable="false">
         So how did the classical Latin become so incoherent? According to McClintock, a 15th century typesetter likely scrambled part of Cicero\'s De Finibus in order to provide placeholder text to mockup various fonts for a type specimen book.
 
@@ -85,7 +86,7 @@ And anyways, as Cecil Adams reasoned, “[Do you really] think graphic arts supp
     <string-array name="tips_traffic">
         <item>Make sure that your vehicle is in good condition.</item>
         <item>Make sure that the driver is fit and healthy.</item>
-        <item>Wear your safety belts or other safety gears like a helmet if you're riding a motorcycler</item>
+        <item>Wear your safety belts or other safety gears like a helmet if you\'re riding a motorcycler</item>
         <item>Follow the traffic rules.</item>
     </string-array>
     //Crime
@@ -97,8 +98,8 @@ And anyways, as Cecil Adams reasoned, “[Do you really] think graphic arts supp
         the tips below for you to be safe!
     </string>
     <string-array name="tips_crime">
-        <item>Don't wear excessive jewelry.</item>
-        <item>Don't bring too many items.</item>
+        <item>Don\'t wear excessive jewelry.</item>
+        <item>Don\'t bring too many items.</item>
         <item>Avoid traveling alone in risky places.</item>
         <item>Always keep an eye on your surroundings.</item>
         <item>Be friends with people you can trust.</item>
