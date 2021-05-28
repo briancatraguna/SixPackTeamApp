@@ -6,8 +6,11 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
+import android.view.View
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
+import androidx.core.view.isGone
 import com.bumptech.glide.Glide
 import com.dicoding.emergencyapp.R
 import com.dicoding.emergencyapp.databinding.ActivityEditProfileBinding
@@ -30,7 +33,6 @@ class EditProfileActivity : AppCompatActivity() {
     private var localFileUri: Uri? = null
     private lateinit var serverFileUri: Uri
 
-    private lateinit var pd: ProgressDialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,6 +51,7 @@ class EditProfileActivity : AppCompatActivity() {
         mAuth = FirebaseAuth.getInstance()
         user = mAuth.currentUser
 
+        binding.edittextName.setText(user?.displayName)
         val photoUri: Uri? = user?.photoUrl
         if (photoUri!=null){
             Glide.with(this)
@@ -59,7 +62,7 @@ class EditProfileActivity : AppCompatActivity() {
         }
 
         binding.tvChangePhoto.setOnClickListener {
-            val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+            val intent = Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
             startActivityForResult(intent,101)
         }
 
@@ -68,7 +71,6 @@ class EditProfileActivity : AppCompatActivity() {
                 binding.edittextName.error = "Enter name"
             } else {
                 updateNameAndPhoto()
-                finish()
             }
         }
     }
@@ -84,12 +86,11 @@ class EditProfileActivity : AppCompatActivity() {
     }
 
     private fun updateNameAndPhoto(){
-        pd = ProgressDialog.show(this,"","Updating Profile",true)
+        binding.progressBar.visibility = View.VISIBLE
         val fileName: String = user?.uid + ".jpg"
         val fileRef: StorageReference = mRootStorage.child("images/"+fileName)
         localFileUri?.let { fileRef.putFile(it) }
             ?.addOnSuccessListener(OnSuccessListener {
-                pd.dismiss()
                 fileRef.downloadUrl.addOnSuccessListener(OnSuccessListener<Uri>(){
                     serverFileUri = it
                     val request = UserProfileChangeRequest.Builder()
@@ -103,6 +104,8 @@ class EditProfileActivity : AppCompatActivity() {
                         } else {
                             Toast.makeText(this,"Failed to update Profile: ${it.exception}", Toast.LENGTH_SHORT).show()
                         }
+                        binding.progressBar.visibility = View.GONE
+                        finish()
                     })
 
                 })

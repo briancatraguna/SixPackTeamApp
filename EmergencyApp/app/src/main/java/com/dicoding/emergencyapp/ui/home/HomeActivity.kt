@@ -7,6 +7,7 @@ import android.content.pm.PackageManager
 import android.location.Geocoder
 import android.location.Location
 import android.location.LocationManager
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Looper
@@ -14,6 +15,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
+import com.bumptech.glide.Glide
 import com.dicoding.emergencyapp.R
 import com.dicoding.emergencyapp.databinding.ActivityHomeBinding
 import com.dicoding.emergencyapp.ui.googlemapsactivity.MapsActivity
@@ -22,6 +24,10 @@ import com.dicoding.emergencyapp.ui.news.NewsFragment
 import com.dicoding.emergencyapp.ui.settings.SettingsFragment
 import com.dicoding.emergencyapp.ui.sos.SosFragment
 import com.google.android.gms.location.*
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 import kotlinx.android.synthetic.main.activity_home.*
 import java.util.*
 
@@ -37,6 +43,10 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var fusedLocationProviderClient: FusedLocationProviderClient
     private lateinit var locationRequest: LocationRequest
 
+    private lateinit var mAuth: FirebaseAuth
+    private var user: FirebaseUser? = null
+    private lateinit var mRootStorage: StorageReference
+
     private var cityName: String? = null
     private var longitude: Double? = null
     private var latitude: Double? = null
@@ -49,6 +59,11 @@ class HomeActivity : AppCompatActivity() {
         const val LONGITUDE_KEY = "longitude"
         const val LATITUDE_KEY = "latitude"
         const val CITY_KEY = "city"
+    }
+
+    override fun onStart() {
+        super.onStart()
+        populateProfile()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -68,6 +83,8 @@ class HomeActivity : AppCompatActivity() {
             true
         }
 
+        populateProfile()
+
         binding.toolbarHome.tvEditProfile.setOnClickListener {
             val intent = Intent(this,EditProfileActivity::class.java)
             startActivity(intent)
@@ -85,6 +102,26 @@ class HomeActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(this,"Please allow app to access location service.",Toast.LENGTH_SHORT).show()
             }
+        }
+    }
+
+    private fun populateProfile() {
+        mRootStorage = FirebaseStorage.getInstance().getReference()
+        mAuth = FirebaseAuth.getInstance()
+        user = mAuth.currentUser
+
+        val name = user?.displayName
+        val firstName = name?.split(" ")?.get(0)
+        val helloString = "Hello ${firstName}!"
+        binding.toolbarHome.tvHelloName.text = helloString
+
+        val photoUri: Uri? = user?.photoUrl
+        if (photoUri!=null){
+            Glide.with(this)
+                .load(photoUri)
+                .placeholder(R.drawable.default_profile_picture)
+                .error(R.drawable.default_profile_picture)
+                .into(binding.toolbarHome.circleImageView)
         }
     }
 
