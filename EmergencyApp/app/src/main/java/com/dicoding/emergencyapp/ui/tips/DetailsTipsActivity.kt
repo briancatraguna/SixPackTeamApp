@@ -20,5 +20,11 @@ class DetailsTipsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailsTipsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        populateView()
+    }
+
+    private fun populateView() {
+
     }
 }

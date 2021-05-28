@@ -72,4 +72,49 @@ And anyways, as Cecil Adams reasoned, “[Do you really] think graphic arts supp
     <string name="change_profile_photo">Change Profile Photo</string>
     <string name="name">Name</string>
     <string name="full_name">Full Name</string>
+    
+    //Tips data
+    //Traffic
+    <string name="title_traffic">Traffic Tips</string>
+    <string name="description_traffic">
+        To be a safe driver, you will need a disciplined attitude to follow all the rules that are
+        there. It is true that all drivers want a fast route and get to their destinations as quick as
+        possible, but you need to realize that the road is not yours and there are other people too.
+        These are the tips for you to be a more safer driver!
+    </string>
+    <string-array name="tips_traffic">
+        <item>Make sure that your vehicle is in good condition.</item>
+        <item>Make sure that the driver is fit and healthy.</item>
+        <item>Wear your safety belts or other safety gears like a helmet if you're riding a motorcycler</item>
+        <item>Follow the traffic rules.</item>
+    </string-array>
+    //Crime
+    <string name="title_crime">Crime Tips</string>
+    <string name="description_crime">
+        Crime threats are now circulating in the public, making people who love to spend time outdoors
+        in danger. Crime can be in many forms, whether it is pickpocketing, fraud, or even sexual harrasment.
+        Avoiding criminal threats is one of the most important thing to do for you to be safe. Check out
+        the tips below for you to be safe!
+    </string>
+    <string-array name="tips_crime">
+        <item>Don't wear excessive jewelry.</item>
+        <item>Don't bring too many items.</item>
+        <item>Avoid traveling alone in risky places.</item>
+        <item>Always keep an eye on your surroundings.</item>
+        <item>Be friends with people you can trust.</item>
+    </string-array>
+    //Fire
+    <string name="title_fire">Fire Tips</string>
+    <string name="description_fire">
+        An enlarged and uncontrolled fire is a terrible thing considering its potential to have an impact
+        on the fire in the area. We need to minimize the possibility of an unwanted fire around our area or
+        something terrible and unexpected can happen. These are some tips to prevent such tragedy to happen!
+    </string>
+    <string-array name="tips_fire">
+        <item>Keep flammable objects away from heat.</item>
+        <item>Turn off the power before travelling far.</item>
+        <item>Remove the socket when not in use.</item>
+        <item>Keep fire out of reach from children.</item>
+        <item>Always check the electric current to prevent from short circuit.</item>
+    </string-array>
 </resources>
