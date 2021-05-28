@@ -32,9 +32,6 @@ class TipsFragment : Fragment() {
         binding.cvFire.setOnClickListener {
             directToDetails(DetailsTipsActivity.FIRE_KEY)
         }
-        binding.cvLifestyle.setOnClickListener {
-            directToDetails(DetailsTipsActivity.LIFESTYLE_KEY)
-        }
     }
 
     private fun directToDetails(key: String){

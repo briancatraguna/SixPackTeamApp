@@ -113,6 +113,7 @@ And anyways, as Cecil Adams reasoned, “[Do you really] think graphic arts supp
         on the fire in the area. We need to minimize the possibility of an unwanted fire around our area or
         something terrible and unexpected can happen. These are some tips to prevent such tragedy to happen!
     </string>
+    <string name="pick_one_of_the_topics_below">Pick one of the topics below!</string>
     <string-array name="tips_fire">
         <item>Keep flammable objects away from heat.</item>
         <item>Turn off the power before travelling far.</item>
