@@ -52,6 +52,15 @@ class DetailsTipsActivity : AppCompatActivity() {
             videoView!!.setVideoURI(Uri.parse(uri))
             videoView!!.requestFocus()
             videoView!!.start()
+
+            var tipsString = ""
+            val listTips = tips?.tips
+            var count = 1
+            for (tip in listTips!!){
+                tipsString += "${count}. ${tip}\n"
+                count += 1
+            }
+            binding.listTips.text = tipsString
         }
     }
 }
