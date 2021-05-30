@@ -8,7 +8,7 @@
     <string name="sos_service_title">Butuh bantuan SOS?</string>
     <string name="press_here_to_call">Tekan tombol merah untuk meminta bantuan</string>
     <string name="need_help">Butuh bantuan?</string>
-    <string name="click_here_for_guidance">Tekan disini untuk pedoman</string>
+    <string name="click_here_for_guidance">Tekan disini untuk mode ketik</string>
     <string name="ambulance">Ambulans</string>
     <string name="police">Polisi</string>
     <string name="firefighter">Pemadam Kebakaran</string>
@@ -20,7 +20,7 @@
     <string name="title_activity_maps">Peta</string>
     <string name="language">Ganti bahasa</string>
     <string name="cant_talk">Tidak bisa bicara?</string>
-    <string name="settings">Setelan</string>
+    <string name="settings">Pengaturan</string>
     <string name="hospital">Rumah sakit</string>
     <string name="tips">Tips</string>
     <string name="news">Berita</string>
@@ -64,5 +64,51 @@
     <string name="write_down_your_current_situation">Tuliskan situasi-mu saat ini</string>
     <string name="lifestyle">Lifestyle</string>
 
-
+    //Tips data
+    //Traffic
+    <string name="title_traffic">Tips Berkendara</string>
+    <string name="description_traffic">
+        Untuk menjadi pengemudi yang aman, Anda membutuhkan sikap disiplin untuk mengikuti semua aturan yang ada
+        . Memang benar bahwa semua pengemudi menginginkan rute yang cepat untuk mencapai tujuan secepat
+        mungkin, tetapi Anda perlu menyadari bahwa jalan itu bukan milik Anda sendiri.
+        Ini adalah tips agar Anda menjadi pengemudi yang lebih aman!
+    </string>
+    <string-array name="tips_traffic">
+        <item>Pastikan kendaraan dalam kondisi yang baik.</item>
+        <item>Pastikan pengemudi dalam keadaan sehat.</item>
+        <item>Pastikan memakai pengaman seperti safety belt atau helm jika mengendarai motor.</item>
+        <item>Ikuti peraturan lalu lintas.</item>
+    </string-array>
+    //Crime
+    <string name="title_crime">Tips Menghindari Kriminal</string>
+    <string name="description_crime">
+        Ancaman kejahatan yang kini beredar di masyarakat membuat masyarakat yang gemar menghabiskan waktu di luar ruangan
+        dalam bahaya. Kejahatan bisa dalam berbagai bentuk, baik itu pencopetan, penipuan, atau bahkan pelecehan seksual.
+         Menghindari ancaman kriminal adalah salah satu hal terpenting yang harus dilakukan agar Anda aman. Lihat
+         tips di bawah ini agar Anda aman!
+    </string>
+    <string-array name="tips_crime">
+        <item>Jangan menggunakan perhiasan berlebih.</item>
+        <item>Jangan membawa terlalu banyak uang.</item>
+        <item>Hindari berpergian di tempat yang rawan.</item>
+        <item>Selalu awasi keadaan sekitar.</item>
+        <item>Selalu berteman dengan orang terpercaya.</item>
+    </string-array>
+    //Fire
+    <string name="title_fire">Tips Kebakaran</string>
+    <string name="description_fire">
+        Kebakaran yang membesar dan tidak terkendali merupakan hal yang mengerikan mengingat potensinya dapat menimbulkan dampak
+         terbakar di area Anda. Kami perlu meminimalkan kemungkinan kebakaran yang tidak diinginkan di sekitar Anda atau
+         sesuatu yang buruk dan tidak terduga bisa terjadi. Inilah beberapa tips untuk mencegah tragedi seperti itu terjadi!
+    </string>
+    <string name="pick_one_of_the_topics_below">Pilih salah satu topik di bawah!</string>
+    <string-array name="tips_fire">
+        <item>Jauhkan benda mudah terbakar dari panas.</item>
+        <item>Matikan arus listrik sebelum berpergian jauh.</item>
+        <item>Lepas stopkontak setelah tidak digunakan.</item>
+        <item>Jauhkan api dari jangkauan anak anak.</item>
+        <item>Selalu periksa arus listrik untuk mencegah korsletting.</item>
+    </string-array>
+    <string name="need_emergency_tips">Butuh tips gawat darurat?</string>
+    <string name="history">Sejarah</string>
 </resources>

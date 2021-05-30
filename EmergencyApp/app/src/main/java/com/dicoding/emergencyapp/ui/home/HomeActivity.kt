@@ -15,10 +15,12 @@ import android.util.Log
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
+import com.blogspot.atifsoftwares.animatoolib.Animatoo
 import com.bumptech.glide.Glide
 import com.dicoding.emergencyapp.R
 import com.dicoding.emergencyapp.databinding.ActivityHomeBinding
 import com.dicoding.emergencyapp.ui.googlemapsactivity.MapsActivity
+import com.dicoding.emergencyapp.ui.history.HistoryFragment
 import com.dicoding.emergencyapp.ui.tips.TipsFragment
 import com.dicoding.emergencyapp.ui.news.NewsFragment
 import com.dicoding.emergencyapp.ui.settings.SettingsFragment
@@ -36,6 +38,7 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
 
     private val sosFragment = SosFragment()
+    private val historyFragment = HistoryFragment()
     private val newsFragment = NewsFragment()
     private val helpFragment = TipsFragment()
     private val settingsFragment = SettingsFragment()
@@ -76,6 +79,7 @@ class HomeActivity : AppCompatActivity() {
         binding.bottomNavigation.setOnNavigationItemSelectedListener {
             when(it.itemId){
                 R.id.ic_sos -> replaceFragment(sosFragment)
+                R.id.ic_history -> replaceFragment(historyFragment)
                 R.id.ic_news -> replaceFragment(newsFragment)
                 R.id.ic_tips -> replaceFragment(helpFragment)
                 R.id.ic_settings -> replaceFragment(settingsFragment)
@@ -88,6 +92,7 @@ class HomeActivity : AppCompatActivity() {
         binding.toolbarHome.tvEditProfile.setOnClickListener {
             val intent = Intent(this,EditProfileActivity::class.java)
             startActivity(intent)
+            Animatoo.animateSwipeRight(this)
         }
 
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
@@ -99,6 +104,7 @@ class HomeActivity : AppCompatActivity() {
                 locationIntent.putExtra(LATITUDE_KEY,latitude)
                 locationIntent.putExtra(CITY_KEY,cityName)
                 startActivity(locationIntent)
+                Animatoo.animateSwipeLeft(this)
             } else {
                 Toast.makeText(this,"Please allow app to access location service.",Toast.LENGTH_SHORT).show()
             }
@@ -112,7 +118,11 @@ class HomeActivity : AppCompatActivity() {
 
         val name = user?.displayName
         val firstName = name?.split(" ")?.get(0)
-        val helloString = "Hello ${firstName}!"
+        val helloString = if (firstName=="null"){
+            "Hello!"
+        } else{
+            "Hello ${firstName}!"
+        }
         binding.toolbarHome.tvHelloName.text = helloString
 
         val photoUri: Uri? = user?.photoUrl

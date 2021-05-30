@@ -6,17 +6,22 @@
         android:title="@string/sos_menu"/>
 
     <item
+        android:id="@+id/ic_history"
+        android:icon="@drawable/ic_history"
+        android:title="@string/history"/>
+
+    <item
         android:id="@+id/ic_news"
         android:icon="@drawable/news"
         android:title="@string/news"/>
 
     <item
         android:id="@+id/ic_tips"
-        android:icon="@drawable/ic_help"
+        android:icon="@drawable/ic_tips"
         android:title="@string/tips"/>
     <item
         android:id="@+id/ic_settings"
         android:icon="@drawable/ic_settings"
-        android:title="Settings"/>
+        android:title="@string/settings"/>
 
 </menu>
