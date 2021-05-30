@@ -80,7 +80,7 @@ COMING SOON!
 We do scraping from https://lapor.go.id
 
 #### Word Vectors
-We use pretrained from the corpus of of Indonesian Wikipedia article.
+We use pretrained word vectors from the corpus of of Indonesian Wikipedia article using the CBOW training algorithm, see [here](https://github.com/yoseflaw/nerindo).
 
 #### Entity Tag
 

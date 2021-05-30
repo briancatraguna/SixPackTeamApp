@@ -1,6 +1,7 @@
 import re
 import json
 import pandas as pd
+from nltk.tokenize import word_tokenize
 
 def _casefold(sentence):
     '''
@@ -50,7 +51,7 @@ def to_DF1(df):
     reports = df.report.tolist()
     preprocessed = [preprocess(report) for report in reports]
     df['report'] = preprocessed
-    df.to_csv('data/df1.csv', index=False)
+    df.to_csv('data/preprocessed.csv', index=False)
     return df
   
 def to_DF2(df):
@@ -65,16 +66,20 @@ def to_DF2(df):
               1     | sentence1_token2
               2     | sentence2_token1
     '''
+    nltk.download('punkt')
+
     df2 = df.copy()
     df2.drop(['query', 'institute', 'category', 'label'], axis=1, inplace=True)
     df2.insert(0, 'report_num', pd.factorize(df['report'])[0]+1)
-    df2.report = [r.split() for r in df.report]
+
+    df2.report = [word_tokenize(r) for r in df2.report]
+    
     df2 = df2.explode('report')
-    df2.to_csv('data/df2.csv', index=False)
+    df2.to_csv('data/token.csv', index=False)
     return df2
   
 def main():
-    df = pd.read_csv('data/lapor_scraping_results.csv')
+    df = pd.read_csv('filtered.csv')
     df1 = to_DF1(df)
     to_DF2(df1)
     
