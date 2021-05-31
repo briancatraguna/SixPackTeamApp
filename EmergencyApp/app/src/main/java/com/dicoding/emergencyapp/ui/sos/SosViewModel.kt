@@ -42,4 +42,17 @@ class SosViewModel: ViewModel() {
             })
     }
 
+    fun addToDatabase(
+            userId: String?,
+            userPhoto: String?,
+            transcription: String,
+            report: String,
+            latitude: Double?,
+            longitude: Double?,
+            status: String
+        ){
+
+
+    }
+
 }

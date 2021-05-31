@@ -41,11 +41,6 @@ class SosFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(requireActivity(),ViewModelProvider.NewInstanceFactory())[SosViewModel::class.java]
-        viewModel.getStatus().observe(requireActivity(),{
-            if (!it.isEmpty()){
-                Toast.makeText(context,it,Toast.LENGTH_SHORT).show()
-            }
-        })
 
         val emergencyButton = binding.sosButtonContainer
         emergencyButton.setOnClickListener {
@@ -78,6 +73,11 @@ class SosFragment : Fragment() {
                     status = getString(R.string.status_find)
             )
         }
+        viewModel.getStatus().observe(requireActivity(),{
+            if (!it.isEmpty()){
+                Toast.makeText(context,it,Toast.LENGTH_SHORT).show()
+            }
+        })
     }
 
     private fun askSpeechInput() {
