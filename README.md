@@ -66,7 +66,6 @@
 </details>
 
 
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
@@ -75,6 +74,16 @@
 `deskripsi, UI, fitur apa aja, kelebihan, etc. idk..
 COMING SOON!
 `
+
+### Directory Guide
+
+No. | Dir | Details
+--- | --- | ---
+1 | `EmergencyApp` | Android application.
+2 | `scraping` | Code for [website](https://lapor.go.id) scraping.
+3 | `build_df` | Processing raw results from scraping and generate dataframes.
+4 | `data` | Consists all data: raw, preprocessed, and NE-tagged dataset.
+
 ### Machine Learning
 #### Dataset
 We do scraping from https://lapor.go.id
