@@ -11,15 +11,18 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import com.dicoding.emergencyapp.R
 import com.dicoding.emergencyapp.databinding.FragmentSosBinding
 import com.dicoding.emergencyapp.ui.sos.typing.TypingActivity
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.storage.StorageReference
 import java.util.*
 
 class SosFragment : Fragment() {
 
     private lateinit var binding: FragmentSosBinding
     private lateinit var transcription: String
-    private lateinit var type: String
     private lateinit var viewModel: SosViewModel
 
     companion object {
@@ -37,7 +40,12 @@ class SosFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        viewModel = ViewModelProvider(requireActivity(),ViewModelProvider.NewInstanceFactory())[SosViewModel::class.java]
+        viewModel.getStatus().observe(requireActivity(),{
+            if (!it.isEmpty()){
+                Toast.makeText(context,it,Toast.LENGTH_SHORT).show()
+            }
+        })
 
         val emergencyButton = binding.sosButtonContainer
         emergencyButton.setOnClickListener {
@@ -53,13 +61,22 @@ class SosFragment : Fragment() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        viewModel = ViewModelProvider(requireActivity(),ViewModelProvider.NewInstanceFactory())[SosViewModel::class.java]
+        val userId = arguments?.getString("userId")
+        val userPhoto = arguments?.getString("userPhoto")
         val latitude = arguments?.getDouble("lat")
         val longitude = arguments?.getDouble("long")
         if (requestCode == RQ_SPEECH_REC && resultCode == Activity.RESULT_OK){
             val result = data?.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS)
             transcription = result?.get(0).toString()
-            viewModel.postData(type,latitude,longitude,transcription)
+            viewModel.postData(
+                    userId = userId,
+                    userPhoto = userPhoto,
+                    transcription = transcription,
+                    report = "Empty",
+                    latitude = latitude,
+                    longitude = longitude,
+                    status = getString(R.string.status_find)
+            )
         }
     }
 

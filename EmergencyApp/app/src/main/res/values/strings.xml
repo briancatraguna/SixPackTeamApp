@@ -75,10 +75,10 @@ And anyways, as Cecil Adams reasoned, “[Do you really] think graphic arts supp
     <string name="change_profile_photo">Change Profile Photo</string>
     <string name="name">Name</string>
     <string name="full_name">Full Name</string>
-    
+
     //Tips data
     //Traffic
-    <string name="title_traffic">Traffic Tips</string>
+    <string name="title_traffic">Driving Tips</string>
     <string name="description_traffic">
         To be a safe driver, you will need a disciplined attitude to follow all the rules that are
         there. It is true that all drivers want a fast route and get to their destinations as quick as
@@ -92,7 +92,7 @@ And anyways, as Cecil Adams reasoned, “[Do you really] think graphic arts supp
         <item>Follow the traffic rules.</item>
     </string-array>
     //Crime
-    <string name="title_crime">Crime Tips</string>
+    <string name="title_crime">Crime Prevention Tips</string>
     <string name="description_crime">
         Crime threats are now circulating in the public, making people who love to spend time outdoors
         in danger. Crime can be in many forms, whether it is pickpocketing, fraud, or even sexual harrasment.
@@ -114,6 +114,8 @@ And anyways, as Cecil Adams reasoned, “[Do you really] think graphic arts supp
         something terrible and unexpected can happen. These are some tips to prevent such tragedy to happen!
     </string>
     <string name="pick_one_of_the_topics_below">Pick one of the topics below!</string>
+    <string name="need_emergency_tips">Need emergency tips?</string>
+    <string name="history">History</string>
     <string-array name="tips_fire">
         <item>Keep flammable objects away from heat.</item>
         <item>Turn off the power before travelling far.</item>
@@ -121,4 +123,6 @@ And anyways, as Cecil Adams reasoned, “[Do you really] think graphic arts supp
         <item>Keep fire out of reach from children.</item>
         <item>Always check the electric current to prevent from short circuit.</item>
     </string-array>
+
+    <string name="status_find">Finding responder</string>
 </resources>

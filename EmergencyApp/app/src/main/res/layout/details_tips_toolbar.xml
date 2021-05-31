@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/roboto_bold"
         android:textColor="@color/black"
-        android:textSize="27sp"
+        android:textSize="23sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

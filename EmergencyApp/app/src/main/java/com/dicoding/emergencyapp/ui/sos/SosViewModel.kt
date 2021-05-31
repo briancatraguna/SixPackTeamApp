@@ -13,9 +13,17 @@ class SosViewModel: ViewModel() {
     private val _status = MutableLiveData<String>()
     fun getStatus(): LiveData<String> = _status
 
-    fun postData(type: String,latitude: Double?,longitude: Double?,situation: String){
+    fun postData(
+            userId: String?,
+            userPhoto: String?,
+            transcription: String,
+            report: String,
+            latitude: Double?,
+            longitude: Double?,
+            status: String
+    ){
         SheetRetrofitClient.instance
-            .postData(type,latitude,longitude,situation)
+            .postData(userId,userPhoto,transcription,report,latitude,longitude,status)
             .enqueue(object : Callback<PostResponse>{
                 override fun onResponse(
                     call: Call<PostResponse>,

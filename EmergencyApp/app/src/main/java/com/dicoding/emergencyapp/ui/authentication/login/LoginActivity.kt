@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import com.blogspot.atifsoftwares.animatoolib.Animatoo
 import com.dicoding.emergencyapp.R
 import com.dicoding.emergencyapp.databinding.ActivityLoginBinding
 import com.dicoding.emergencyapp.ui.authentication.signup.SignUpActivity
@@ -79,6 +80,7 @@ class LoginActivity : AppCompatActivity(),View.OnClickListener {
     private fun redirect() {
         val intent = Intent(this, HomeActivity::class.java)
         startActivity(intent)
+        Animatoo.animateFade(this)
         finish()
     }
 
