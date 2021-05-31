@@ -40,7 +40,12 @@ class SosFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        viewModel = ViewModelProvider(requireActivity(),ViewModelProvider.NewInstanceFactory())[SosViewModel::class.java]
+        viewModel.getStatus().observe(requireActivity(),{
+            if (!it.isEmpty()){
+                Toast.makeText(context,it,Toast.LENGTH_SHORT).show()
+            }
+        })
 
         val emergencyButton = binding.sosButtonContainer
         emergencyButton.setOnClickListener {
@@ -56,7 +61,6 @@ class SosFragment : Fragment() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        viewModel = ViewModelProvider(requireActivity(),ViewModelProvider.NewInstanceFactory())[SosViewModel::class.java]
         val userId = arguments?.getString("userId")
         val userPhoto = arguments?.getString("userPhoto")
         val latitude = arguments?.getDouble("lat")
