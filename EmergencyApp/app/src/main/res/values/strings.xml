@@ -123,4 +123,6 @@ And anyways, as Cecil Adams reasoned, “[Do you really] think graphic arts supp
         <item>Keep fire out of reach from children.</item>
         <item>Always check the electric current to prevent from short circuit.</item>
     </string-array>
+
+    <string name="status_find">Finding responder</string>
 </resources>

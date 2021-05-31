@@ -116,6 +116,8 @@ class HomeActivity : AppCompatActivity() {
         mAuth = FirebaseAuth.getInstance()
         user = mAuth.currentUser
 
+        val userId = user?.uid.toString()
+
         val name = user?.displayName
         val firstName = name?.split(" ")?.get(0)
         val helloString = if (firstName=="null"){
@@ -133,6 +135,9 @@ class HomeActivity : AppCompatActivity() {
                 .error(R.drawable.default_profile_picture)
                 .into(binding.toolbarHome.circleImageView)
         }
+        bundle.putString("userId",userId)
+        val userPhoto = photoUri.toString()
+        bundle.putString("userPhoto",userPhoto)
     }
 
     private fun getLastLocation(){
@@ -141,8 +146,6 @@ class HomeActivity : AppCompatActivity() {
                 fusedLocationProviderClient.lastLocation.addOnCompleteListener { task->
                     var location: Location? = task.result
                     if (location == null){
-                        //If the location is null we will get the new user location
-                        //So we need to create a new function
                         getNewLocation()
                     } else {
                         latitude = location.latitude

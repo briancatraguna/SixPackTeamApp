@@ -111,4 +111,5 @@
     </string-array>
     <string name="need_emergency_tips">Butuh tips gawat darurat?</string>
     <string name="history">Sejarah</string>
+    <string name="status_find">Mencari responder</string>
 </resources>

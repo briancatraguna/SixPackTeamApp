@@ -10,10 +10,13 @@ interface SheetApiService {
     @FormUrlEncoded
     @POST("exec")
     fun postData(
-            @Field("type") type: String,
+            @Field("userId") userId: String?,
+            @Field("userPhoto") userPhoto: String?,
+            @Field("transcription") transcription: String,
+            @Field("report") report: String,
             @Field("latitude") latitude: Double?,
             @Field("longitude") longitude: Double?,
-            @Field("situation") situation: String
+            @Field("status") status: String
     ): Call<PostResponse>
 
 }
