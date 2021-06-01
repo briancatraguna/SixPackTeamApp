@@ -10,13 +10,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.lifecycle.ViewModelProvider
 import com.dicoding.emergencyapp.R
+import com.dicoding.emergencyapp.data.remote.FirebaseDataSource
+import com.dicoding.emergencyapp.data.repository.FirebaseRepository
 import com.dicoding.emergencyapp.databinding.FragmentSosBinding
+import com.dicoding.emergencyapp.helpers.DateHelper
 import com.dicoding.emergencyapp.ui.sos.typing.TypingActivity
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.storage.StorageReference
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import java.util.*
 
 class SosFragment : Fragment() {
@@ -40,13 +41,12 @@ class SosFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel = ViewModelProvider(requireActivity(),ViewModelProvider.NewInstanceFactory())[SosViewModel::class.java]
+        viewModel = SosViewModel(FirebaseRepository(FirebaseDataSource()))
 
         val emergencyButton = binding.sosButtonContainer
         emergencyButton.setOnClickListener {
             askSpeechInput()
         }
-
         val guidelineBtn = binding.guideline
         guidelineBtn.setOnClickListener {
             val intent = Intent(context, TypingActivity::class.java)
@@ -63,19 +63,19 @@ class SosFragment : Fragment() {
         if (requestCode == RQ_SPEECH_REC && resultCode == Activity.RESULT_OK){
             val result = data?.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS)
             transcription = result?.get(0).toString()
-            viewModel.postData(
-                    userId = userId,
-                    userPhoto = userPhoto,
-                    transcription = transcription,
-                    report = "Empty",
-                    latitude = latitude,
-                    longitude = longitude,
-                    status = getString(R.string.status_find)
-            )
         }
+        viewModel.uploadData(
+            DateHelper.getDate(),
+            userId,
+            transcription,
+            "Empty report",
+            latitude,
+            longitude,
+            "Waiting for responder"
+        )
         viewModel.getStatus().observe(requireActivity(),{
-            if (!it.isEmpty()){
-                Toast.makeText(context,it,Toast.LENGTH_SHORT).show()
+            if (it){
+                Toast.makeText(context,"Data succesfully uploaded. Waiting for responder.",Toast.LENGTH_SHORT).show()
             }
         })
     }

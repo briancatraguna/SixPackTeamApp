@@ -1,16 +1,12 @@
 package com.dicoding.emergencyapp.ui.home
 
-import android.app.ProgressDialog
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.MediaStore
 import android.view.View
-import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
-import androidx.core.view.isGone
 import com.bumptech.glide.Glide
 import com.dicoding.emergencyapp.R
 import com.dicoding.emergencyapp.databinding.ActivityEditProfileBinding
@@ -47,7 +43,7 @@ class EditProfileActivity : AppCompatActivity() {
         arrayOf(android.Manifest.permission.READ_EXTERNAL_STORAGE),
         100)
 
-        mRootStorage = FirebaseStorage.getInstance().getReference()
+        mRootStorage = FirebaseStorage.getInstance().reference
         mAuth = FirebaseAuth.getInstance()
         user = mAuth.currentUser
 
@@ -89,26 +85,25 @@ class EditProfileActivity : AppCompatActivity() {
         binding.progressBar.visibility = View.VISIBLE
         val fileName: String = user?.uid + ".jpg"
         val fileRef: StorageReference = mRootStorage.child("images/"+fileName)
-        localFileUri?.let { fileRef.putFile(it) }
-            ?.addOnSuccessListener(OnSuccessListener {
-                fileRef.downloadUrl.addOnSuccessListener(OnSuccessListener<Uri>(){
+        fileRef.putFile(localFileUri!!)
+            .addOnSuccessListener(OnSuccessListener {
+                fileRef.downloadUrl.addOnSuccessListener {
                     serverFileUri = it
                     val request = UserProfileChangeRequest.Builder()
-                        .setPhotoUri(serverFileUri)
                         .setDisplayName(binding.edittextName.text.toString())
+                        .setPhotoUri(serverFileUri)
                         .build()
 
-                    user?.updateProfile(request)?.addOnCompleteListener(this, OnCompleteListener<Void>(){
+                    user?.updateProfile(request)?.addOnCompleteListener {
                         if (it.isSuccessful){
-                            Toast.makeText(this,"Profile Updated Succesfully", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this,"Profile updated succesfully",Toast.LENGTH_SHORT).show()
                         } else {
-                            Toast.makeText(this,"Failed to update Profile: ${it.exception}", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this,"Failed to update: ${it.exception}",Toast.LENGTH_SHORT).show()
                         }
                         binding.progressBar.visibility = View.GONE
                         finish()
-                    })
-
-                })
+                    }
+                }
             })
     }
 }

@@ -17,4 +17,10 @@ object DateHelper {
         return date
     }
 
+    fun getDate():String{
+        val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
+        val currentDate = sdf.format(Date())
+        return currentDate
+    }
+
 }
