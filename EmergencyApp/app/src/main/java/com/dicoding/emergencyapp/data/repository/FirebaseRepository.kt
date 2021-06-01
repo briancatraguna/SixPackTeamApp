@@ -23,7 +23,7 @@ class FirebaseRepository(private val dataSource: FirebaseDataSource) {
         dataSource.uploadData(timestamp,userId,transcription,report,latitude,longitude,status)
     }
 
-    fun readUserReports(userId: String?): MutableLiveData<List<ReportEntity?>>{
+    fun readUserReports(userId: String?): MutableLiveData<ArrayList<ReportEntity?>>{
         return dataSource.readUserReports(userId)
     }
 }

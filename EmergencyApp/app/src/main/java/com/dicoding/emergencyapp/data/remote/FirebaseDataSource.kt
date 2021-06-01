@@ -41,9 +41,9 @@ class FirebaseDataSource {
         }
     }
 
-    fun readUserReports(userId: String?): MutableLiveData<List<ReportEntity?>> {
+    fun readUserReports(userId: String?): MutableLiveData<ArrayList<ReportEntity?>> {
         val userRef = myRef.child(userId.toString())
-        val result = MutableLiveData<List<ReportEntity?>>()
+        val result = MutableLiveData<ArrayList<ReportEntity?>>()
         val reportList = arrayListOf<ReportEntity?>()
         userRef.addValueEventListener(object: ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
@@ -52,6 +52,7 @@ class FirebaseDataSource {
                         val reportObject = report.getValue(ReportEntity::class.java)
                         reportList.add(reportObject)
                     }
+                    reportList.reverse()
                     result.value = reportList
                 }
             }
