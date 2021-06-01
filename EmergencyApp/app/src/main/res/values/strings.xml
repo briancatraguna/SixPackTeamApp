@@ -125,4 +125,9 @@ And anyways, as Cecil Adams reasoned, “[Do you really] think graphic arts supp
     </string-array>
 
     <string name="status_find">Finding responder</string>
+    <string name="status_on_progress">On progress</string>
+    <string name="status_resolved">Resolved</string>
+
+    <string name="pickpocket" translatable="false">Pickpocket</string>
+    <string name="status" translatable="false">Status:</string>
 </resources>

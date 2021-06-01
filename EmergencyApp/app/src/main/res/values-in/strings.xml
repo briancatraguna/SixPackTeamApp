@@ -112,4 +112,6 @@
     <string name="need_emergency_tips">Butuh tips gawat darurat?</string>
     <string name="history">Sejarah</string>
     <string name="status_find">Mencari responder</string>
+    <string name="status_on_progress">Dalam progres</string>
+    <string name="status_resolved">Terselesaikan</string>
 </resources>
