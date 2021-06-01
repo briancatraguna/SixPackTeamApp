@@ -4,13 +4,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
+    android:layout_height="80dp"
     android:background="@drawable/bottom_border">
 
-    <de.hdodenhof.circleimageview.CircleImageView
+    <ImageView
         android:id="@+id/img_logo"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_marginStart="8dp"
         android:background="@color/purple_200"
         android:src="@drawable/ic_baseline_fire"
@@ -23,11 +23,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/roboto_bold"
         android:text="@string/pickpocket"
         android:textColor="@color/black"
-        android:textSize="25sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/img_logo"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -40,14 +40,14 @@
         android:fontFamily="@font/roboto_regular"
         android:text="@string/status"
         android:textColor="@color/subtext"
-        android:textSize="15sp"
+        android:textSize="13sp"
         app:layout_constraintStart_toEndOf="@+id/img_logo"
         app:layout_constraintTop_toBottomOf="@+id/tv_report_title" />
 
     <ImageView
         android:id="@+id/img_status"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="3dp"
         android:src="@drawable/ic_finding_responder"
@@ -63,7 +63,7 @@
         android:fontFamily="@font/roboto_regular"
         android:text="@string/status_find"
         android:textColor="@color/subtext"
-        android:textSize="15sp"
+        android:textSize="13sp"
         app:layout_constraintStart_toEndOf="@+id/img_status"
         app:layout_constraintTop_toBottomOf="@+id/tv_report_title" />
 

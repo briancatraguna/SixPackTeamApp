@@ -5,8 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.dicoding.emergencyapp.R
+import com.dicoding.emergencyapp.data.entity.ReportEntity
+import com.dicoding.emergencyapp.data.remote.FirebaseDataSource
+import com.dicoding.emergencyapp.data.repository.FirebaseRepository
 import com.dicoding.emergencyapp.databinding.FragmentHistoryBinding
+import com.dicoding.emergencyapp.ui.sos.SosViewModel
 
 class HistoryFragment : Fragment() {
 
@@ -23,5 +28,16 @@ class HistoryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val viewModel = SosViewModel(FirebaseRepository(FirebaseDataSource()))
+        val userId = arguments?.getString("userId")
+
+        val rvReports = binding.rvReports
+        rvReports.layoutManager = LinearLayoutManager(context)
+        val listReportsAdapter = ListReportsAdapter()
+
+        viewModel.readUserReports(userId).observe(requireActivity(),{
+            listReportsAdapter.setData(it)
+            rvReports.adapter = listReportsAdapter
+        })
     }
 }

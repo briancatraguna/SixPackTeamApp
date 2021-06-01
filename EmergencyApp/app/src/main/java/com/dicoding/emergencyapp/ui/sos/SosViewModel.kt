@@ -29,7 +29,7 @@ class SosViewModel(private val repository: FirebaseRepository): ViewModel() {
         repository.uploadData(timestamp,userId,transcription,report,latitude,longitude,status)
     }
 
-    fun readUserReports(userId: String?): MutableLiveData<List<ReportEntity?>>{
+    fun readUserReports(userId: String?): MutableLiveData<ArrayList<ReportEntity?>>{
         return repository.readUserReports(userId)
     }
 
