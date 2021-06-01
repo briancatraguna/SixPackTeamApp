@@ -46,7 +46,7 @@
     <string name="log_out">Keluar</string>
     <string name="title_settings">Setelan</string>
     <string name="fire">Api</string>
-    <string name="traffic">Lalu lintas</string>
+    <string name="traffic">Mengendara</string>
     <string name="crime">Kriminal</string>
     <string name="cancel">Batal</string>
     <string name="edit_profile_title">Ubah Profil</string>
@@ -112,4 +112,7 @@
     <string name="need_emergency_tips">Butuh tips gawat darurat?</string>
     <string name="history">Sejarah</string>
     <string name="status_find">Mencari responder</string>
+    <string name="status_on_progress">Dalam progres</string>
+    <string name="status_resolved">Terselesaikan</string>
+    <string name="report_details">Detail Laporan</string>
 </resources>

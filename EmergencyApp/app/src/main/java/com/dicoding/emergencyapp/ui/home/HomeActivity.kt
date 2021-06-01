@@ -75,6 +75,7 @@ class HomeActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         sosFragment.arguments = bundle
+        historyFragment.arguments = bundle
         replaceFragment(sosFragment)
         binding.bottomNavigation.setOnNavigationItemSelectedListener {
             when(it.itemId){

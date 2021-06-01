@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.dicoding.emergencyapp.data.entity.PostResponse
+import com.dicoding.emergencyapp.data.entity.ReportEntity
 import com.dicoding.emergencyapp.data.repository.FirebaseRepository
 import com.dicoding.emergencyapp.data.retrofit.SheetRetrofitClient
 import retrofit2.Call
@@ -26,6 +27,10 @@ class SosViewModel(private val repository: FirebaseRepository): ViewModel() {
         status: String
     ){
         repository.uploadData(timestamp,userId,transcription,report,latitude,longitude,status)
+    }
+
+    fun readUserReports(userId: String?): MutableLiveData<ArrayList<ReportEntity?>>{
+        return repository.readUserReports(userId)
     }
 
 }
