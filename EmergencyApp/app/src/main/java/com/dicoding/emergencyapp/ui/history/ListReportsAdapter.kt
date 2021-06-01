@@ -1,6 +1,7 @@
 package com.dicoding.emergencyapp.ui.history
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -19,7 +20,7 @@ class ListReportsAdapter: RecyclerView.Adapter<ListReportsAdapter.ListViewHolder
 
     inner class ListViewHolder(private val binding: ItemReportBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(report: ReportEntity?){
-            with(binding){ 
+            with(binding){
                 //TODO ML RESULT
                 tvReportTitle.text = "ML RESULT"
                 tvStatus.text = report?.status
@@ -32,6 +33,11 @@ class ListReportsAdapter: RecyclerView.Adapter<ListReportsAdapter.ListViewHolder
                 } else {
                     imgStatus.setImageResource(R.drawable.ic_broken_image)
                 }
+            }
+
+            itemView.setOnClickListener{
+                val intent = Intent(itemView.context,DetailReportActivity::class.java)
+                itemView.context.startActivity(intent)
             }
         }
 
