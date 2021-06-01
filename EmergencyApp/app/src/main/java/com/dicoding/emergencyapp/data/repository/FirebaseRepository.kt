@@ -1,6 +1,8 @@
 package com.dicoding.emergencyapp.data.repository
 
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import com.dicoding.emergencyapp.data.entity.ReportEntity
 import com.dicoding.emergencyapp.data.remote.FirebaseDataSource
 
 class FirebaseRepository(private val dataSource: FirebaseDataSource) {
@@ -19,5 +21,9 @@ class FirebaseRepository(private val dataSource: FirebaseDataSource) {
         status: String
     ){
         dataSource.uploadData(timestamp,userId,transcription,report,latitude,longitude,status)
+    }
+
+    fun readUserReports(userId: String?): MutableLiveData<List<ReportEntity?>>{
+        return dataSource.readUserReports(userId)
     }
 }
