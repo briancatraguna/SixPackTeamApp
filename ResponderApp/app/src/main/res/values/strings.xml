@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Responder App</string>
+    <string name="current_emergency_cases">Current Emergency Cases</string>
 </resources>
