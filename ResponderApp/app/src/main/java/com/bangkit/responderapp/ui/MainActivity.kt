@@ -1,4 +1,4 @@
-package com.bangkit.responderapp
+package com.bangkit.responderapp.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        
+
     }
 
     private fun testFirebase(){
