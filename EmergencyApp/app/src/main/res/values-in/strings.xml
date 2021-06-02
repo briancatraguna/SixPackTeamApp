@@ -114,5 +114,19 @@
     <string name="status_find">Mencari responder</string>
     <string name="status_on_progress">Dalam progres</string>
     <string name="status_resolved">Terselesaikan</string>
+    <string name="pickpocket">Pencopet</string>
     <string name="report_details">Detail Laporan</string>
+    <string name="how_to_call_for_emergency">Bagaimana cara untuk hubungi panggilan darurat?</string>
+    <string name="content_call_for_emergency_1">- Pergi ke menu SOS  pada halaman utama</string>
+    <string name="content_call_for_emergency_2">- Klick tombol panik dan mulai menjelaskan keadaan yang terjadi. Data anda akan langsung dikirim kepada pihak perespon</string>
+    <string name="how_to_use_the_news_feed">Bagaimana cara menggunakan news feed?</string>
+    <string name="content_call_for_emergency_3">- Pergi pada menu riwayat untuk melihat status dari perespon</string>
+    <string name="content_news_feeds_1">- Pergi ke menu berita</string>
+    <string name="content_news_feeds_2">- Tunggu sampai berita diperbaharui</string>
+    <string name="content_news_feeds_3">- Geser untuk mencari berita pada daftar berita</string>
+    <string name="content_news_feeds_4">- Klik pada tab judul untuk ganti topik berita</string>
+    <string name="how_to_use_tips_feature">Bagaimana cara menggunakan fitur tips?</string>
+    <string name="content_tips_feature_1">- Pergi ke fitur tips</string>
+    <string name="content_tips_feature_2">- Pilih topik untuk melihat tips yang diinginkan</string>
+    <string name="content_tips_feature_3">- Nonton video dan bacalah tipsnya</string>
 </resources>

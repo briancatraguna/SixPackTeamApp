@@ -128,7 +128,20 @@ And anyways, as Cecil Adams reasoned, “[Do you really] think graphic arts supp
     <string name="status_on_progress">On progress</string>
     <string name="status_resolved">Resolved</string>
 
-    <string name="pickpocket" translatable="false">Pickpocket</string>
+    <string name="pickpocket">Pickpocket</string>
     <string name="status" translatable="false">Status:</string>
     <string name="report_details">Report Details</string>
+    <string name="how_to_call_for_emergency">How to call for emergency?</string>
+    <string name="content_call_for_emergency_1">- Go to the SOS menu on the main page</string>
+    <string name="content_call_for_emergency_2">- Click the panic button and start speaking your situation. Your data is sent straight away to the responder</string>
+    <string name="how_to_use_the_news_feed">How to use the news feed?</string>
+    <string name="content_call_for_emergency_3">- Go to history menu to see the status of the responder</string>
+    <string name="content_news_feeds_1">- Go to the news menu</string>
+    <string name="content_news_feeds_2">- Wait until the news gets updated</string>
+    <string name="content_news_feeds_3">- Scroll to navigate through the list of news</string>
+    <string name="content_news_feeds_4">- Click the title tabs to switch news topic</string>
+    <string name="how_to_use_tips_feature">How to use tips feature?</string>
+    <string name="content_tips_feature_1">- Go to the tips feature</string>
+    <string name="content_tips_feature_2">- Select the topic you want to see the tips on</string>
+    <string name="content_tips_feature_3">- Watch the video and read the tips</string>
 </resources>
