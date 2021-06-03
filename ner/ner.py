@@ -1,5 +1,15 @@
-import pandas as pd
 import numpy as np
+import pandas as pd
+import os
+import glob
+import json
+import tensorflow as tf
+import tensorflow_hub as hub
+from contextlib import redirect_stdout
+from tensorflow import keras
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
+from tensorflow.keras.utils import plot_model
 
 def load_data(trainData, testData):
     # we haven't finished labelling sooo..
@@ -24,11 +34,6 @@ def load_data(trainData, testData):
 
 
 x, y = load_data('train_token.csv', 'test_token.csv')
-
-import tensorflow as tf
-from tensorflow import keras
-from tensorflow.keras.models import Sequential
-import tensorflow_hub as hub
 
 embed = "https://tfhub.dev/google/nnlm-id-dim50-with-normalization/2"
 
