@@ -46,6 +46,18 @@ model.summary()
 
 tf.saved_model.save(model, 'savedmodel1')
 
+# save to tflite
+converter = tf.lite.TFLiteConverter.from_saved_model('savedmodel1')
+converter.target_spec.supported_ops = [
+  tf.lite.OpsSet.TFLITE_BUILTINS, # enable TensorFlow Lite ops.
+  tf.lite.OpsSet.SELECT_TF_OPS # enable TensorFlow ops.
+]
+
+tflite_model = converter.convert()
+
+with open('model.tflite', 'wb') as f:
+  f.write(tflite_model)
+
 def predict(testData, index):
     pred = model.predict(testData)[index] # output array
     label = np.argmax(pred) # output index label
