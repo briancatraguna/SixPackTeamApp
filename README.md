@@ -82,18 +82,9 @@ No. | Dir | Details
 1 | `EmergencyApp` | Android application.
 2 | `scraping` | Code for [website](https://lapor.go.id) scraping.
 3 | `build_df` | Processing raw results from scraping and generate dataframes.
-4 | `data` | Consists all data: raw, preprocessed, and NE-tagged dataset.
-
-### Machine Learning
-#### Dataset
-We do scraping from https://lapor.go.id
-
-#### Word Vectors
-We use pretrained word vectors from the corpus of of Indonesian Wikipedia article using the CBOW training algorithm, see [here](https://github.com/yoseflaw/nerindo).
-
-#### Entity Tag
-
-#### Method Used
+4 | `data` | Consists all data: raw, preprocessed, filtered, data for classification and NER.
+5 | `classification`| TBA
+6 | `ner` | TBA
 
 ### Built With
 
