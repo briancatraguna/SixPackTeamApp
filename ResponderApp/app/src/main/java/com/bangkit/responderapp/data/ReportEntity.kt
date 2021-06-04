@@ -1,8 +1,8 @@
-package com.dicoding.emergencyapp.data.entity
+package com.bangkit.responderapp.data
 
 data class ReportEntity (
-    val usersName: String = "",
-    val usersPhoto: String = "",
+    val usersName: String,
+    val usersPhoto: String,
     val date: String = "",
     val transcription: String = "",
     val report: String = "",
