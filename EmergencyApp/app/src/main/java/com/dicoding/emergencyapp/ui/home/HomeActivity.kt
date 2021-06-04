@@ -25,6 +25,7 @@ import com.dicoding.emergencyapp.ui.tips.TipsFragment
 import com.dicoding.emergencyapp.ui.news.NewsFragment
 import com.dicoding.emergencyapp.ui.settings.SettingsFragment
 import com.dicoding.emergencyapp.ui.sos.SosFragment
+import com.dicoding.emergencyapp.ui.sos.typing.TypingActivity
 import com.google.android.gms.location.*
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -74,6 +75,9 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
+        getLastLocation()
+
         sosFragment.arguments = bundle
         historyFragment.arguments = bundle
         replaceFragment(sosFragment)
@@ -91,13 +95,18 @@ class HomeActivity : AppCompatActivity() {
         populateProfile()
 
         binding.toolbarHome.tvEditProfile.setOnClickListener {
-            val intent = Intent(this,EditProfileActivity::class.java)
-            startActivity(intent)
-            Animatoo.animateSwipeRight(this)
+            if (cityName != null){
+                val intent = Intent(this@HomeActivity,EditProfileActivity::class.java)
+                intent.putExtra(LATITUDE_KEY,latitude)
+                intent.putExtra(LONGITUDE_KEY,longitude)
+                startActivity(intent)
+                Animatoo.animateSwipeRight(this)
+            } else {
+                Toast.makeText(this,"Please allow app to access location service.",Toast.LENGTH_SHORT).show()
+            }
+
         }
 
-        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
-        getLastLocation()
         binding.toolbarHome.seeLocationBtn.setOnClickListener {
             if (cityName!= null){
                 val locationIntent = Intent(this@HomeActivity,MapsActivity::class.java)
@@ -129,6 +138,7 @@ class HomeActivity : AppCompatActivity() {
         binding.toolbarHome.tvHelloName.text = helloString
 
         val photoUri: Uri? = user?.photoUrl
+        val usersName: String = user?.displayName.toString()
         if (photoUri!=null){
             Glide.with(this)
                 .load(photoUri)
@@ -139,6 +149,7 @@ class HomeActivity : AppCompatActivity() {
         bundle.putString("userId",userId)
         val userPhoto = photoUri.toString()
         bundle.putString("userPhoto",userPhoto)
+        bundle.putString("usersName",usersName)
     }
 
     private fun getLastLocation(){

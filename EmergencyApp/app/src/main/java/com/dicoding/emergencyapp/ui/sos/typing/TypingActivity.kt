@@ -1,12 +1,33 @@
 package com.dicoding.emergencyapp.ui.sos.typing
 
+import android.Manifest
+import android.content.Context
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.location.Location
+import android.location.LocationManager
 import android.os.Bundle
+import android.os.Looper
 import android.util.Log
 import android.widget.EditText
 import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.lifecycle.ViewModel
 import com.dicoding.emergencyapp.R
+import com.dicoding.emergencyapp.data.remote.FirebaseDataSource
+import com.dicoding.emergencyapp.data.repository.FirebaseRepository
+import com.dicoding.emergencyapp.databinding.ActivityTypingBinding
+import com.dicoding.emergencyapp.helpers.DateHelper
+import com.dicoding.emergencyapp.ui.home.HomeActivity
+import com.dicoding.emergencyapp.ui.sos.SosViewModel
+import com.google.android.gms.location.*
 import com.google.android.material.textfield.TextInputLayout
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 import com.jakewharton.rxbinding2.widget.RxTextView
 import io.reactivex.Observer
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -14,89 +35,129 @@ import io.reactivex.disposables.Disposable
 import java.util.concurrent.TimeUnit
 
 class TypingActivity : AppCompatActivity() {
-    private lateinit var nameEdit: EditText
-    private lateinit var locationEdit: EditText
-    private lateinit var situationEdit: EditText
-    private lateinit var nameInput: TextInputLayout
-    private lateinit var locationInput: TextInputLayout
-    private lateinit var situationInput: TextInputLayout
-    private lateinit var sendButton: LinearLayout
+
+    private lateinit var binding: ActivityTypingBinding
+    private lateinit var viewModel: SosViewModel
+    private lateinit var mAuth: FirebaseAuth
+    private var user: FirebaseUser? = null
+    private lateinit var mRootStorage: StorageReference
+    private var latitude: Double? = 0.0
+    private var longitude: Double? = 0.0
+    private lateinit var fusedLocationProviderClient: FusedLocationProviderClient
+    private lateinit var locationRequest: LocationRequest
+
+    companion object {
+        //Unique int for permission ID
+        private const val PERMISSION_ID = 1001
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_typing)
+        binding = ActivityTypingBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        viewModel = SosViewModel(FirebaseRepository(FirebaseDataSource()))
 
-        nameEdit = findViewById(R.id.name_edit)
-        locationEdit = findViewById(R.id.location_edit)
-        situationEdit = findViewById(R.id.situation_edit)
-        nameInput = findViewById(R.id.name_input)
-        locationInput = findViewById(R.id.location_edit)
-        situationInput = findViewById(R.id.situation_edit)
-        sendButton = findViewById(R.id.send_btn)
+        mRootStorage = FirebaseStorage.getInstance().getReference()
+        mAuth = FirebaseAuth.getInstance()
+        user = mAuth.currentUser
 
-        sendButton.setOnClickListener {
-            clickSendButton()
+        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
+        getLastLocation()
+
+        val userId = user?.uid.toString()
+        val userName = user?.displayName.toString()
+        val userPhoto = user?.photoUrl.toString()
+
+        binding.sendBtn.setOnClickListener {
+            viewModel.uploadData(
+                userName,
+                userPhoto,
+                DateHelper.getDate(),
+                userId,
+                binding.situationEdit.text.toString(),
+                "Empty report",
+                "Empty classification",
+                latitude,
+                longitude,
+                "Waiting for responder"
+            )
+            viewModel.getStatus().observe(this,{
+                if (it){
+                    Toast.makeText(this,"Data succesfully uploaded. Waiting for responder.",
+                        Toast.LENGTH_SHORT).show()
+                }
+            })
+        }
+
+        binding.buttonBack.setOnClickListener { finish() }
+    }
+
+    private fun getLastLocation(){
+        if(checkPermission()){
+            if (isLocationEnabled()){
+                fusedLocationProviderClient.lastLocation.addOnCompleteListener { task->
+                    var location: Location? = task.result
+                    if (location == null){
+                        getNewLocation()
+                    } else {
+                        latitude = location.latitude
+                        longitude = location.longitude
+                    }
+                }
+            } else {
+                Toast.makeText(this,"Please enable your location service", Toast.LENGTH_SHORT).show()
+            }
+        } else {
+            RequestPermission()
         }
 
     }
 
-    private fun clickSendButton() {
-        if(nameEdit != null) {
-            RxTextView.afterTextChangeEvents(nameEdit)
-                    .skipInitialValue()
-                    .debounce(400, TimeUnit.MILLISECONDS)
-                    .observeOn(AndroidSchedulers.mainThread())
-                    .subscribe()
+    private fun getNewLocation(){
+        locationRequest = LocationRequest()
+        locationRequest.priority = LocationRequest.PRIORITY_HIGH_ACCURACY
+        locationRequest.interval = 0
+        locationRequest.fastestInterval = 0
+        locationRequest.numUpdates = 1
+        if (
+            ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
+            ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            return
         }
-        else {
-            nameInput.error = "Require name"
-        }
-
-        if(locationEdit != null) {
-            RxTextView.afterTextChangeEvents(locationEdit)
-                    .skipInitialValue()
-                    .debounce(400, TimeUnit.MILLISECONDS)
-                    .observeOn(AndroidSchedulers.mainThread())
-                    .subscribe()
-        }
-        else {
-            nameInput.error = "Require location"
-        }
-
-        if(situationEdit != null) {
-            RxTextView.afterTextChangeEvents(locationEdit)
-                    .skipInitialValue()
-                    .debounce(400, TimeUnit.MILLISECONDS)
-                    .observeOn(AndroidSchedulers.mainThread())
-                    .subscribe()
-        }
-        else {
-            situationInput.error = "Require situation"
-        }
-
+        fusedLocationProviderClient.requestLocationUpdates(
+            locationRequest,locationCallback, Looper.myLooper()
+        )
     }
 
-    private fun getObserver() : io.reactivex.Observer<String> {
-        return object: Observer<String> {
-            override fun onSubscribe(d: Disposable) {
-                Log.d("TAG", "On Subscribe")
-            }
-
-            override fun onNext(t: String) {
-                Log.d("TAG", "On Next $t")
-            }
-
-            override fun onError(e: Throwable) {
-                Log.d("TAG", "On Error" + e.message)
-            }
-
-            override fun onComplete() {
-                Log.d("TAG", "On Complete")
-            }
-
+    private val locationCallback = object: LocationCallback(){
+        override fun onLocationResult(p0: LocationResult) {
+            var lastLocation = p0.lastLocation
+            latitude = lastLocation.latitude
+            longitude = lastLocation.longitude
         }
     }
 
-//    private fun getObservable() : io.reactivex.Observable<EditText> {
-//        return Observable.just(nameEdit, locationEdit, situationEdit)
-//    }
+    private fun checkPermission():Boolean{
+        if (ActivityCompat.checkSelfPermission(this,android.Manifest.permission.ACCESS_FINE_LOCATION)== PackageManager.PERMISSION_GRANTED ||
+            ActivityCompat.checkSelfPermission(this,android.Manifest.permission.ACCESS_COARSE_LOCATION)== PackageManager.PERMISSION_GRANTED){
+            return true
+        }
+        return false
+    }
+
+    private fun RequestPermission(){
+        ActivityCompat.requestPermissions(
+            this,
+            arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION,android.Manifest.permission.ACCESS_COARSE_LOCATION),
+            TypingActivity.PERMISSION_ID
+        )
+    }
+
+    private fun isLocationEnabled():Boolean{
+
+        var locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
+        return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) || locationManager.isProviderEnabled(
+            LocationManager.NETWORK_PROVIDER)
+    }
+
 }

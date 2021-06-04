@@ -18,19 +18,26 @@ class SosViewModel(private val repository: FirebaseRepository): ViewModel() {
     }
 
     fun uploadData(
+        usersName: String,
+        usersPhoto: String,
         timestamp: String,
         userId: String?,
         transcription: String,
         report: String,
+        classification: String,
         latitude: Double?,
         longitude: Double?,
         status: String
     ){
-        repository.uploadData(timestamp,userId,transcription,report,latitude,longitude,status)
+        repository.uploadData(usersName,usersPhoto,timestamp,userId,transcription,report,classification, latitude, longitude, status)
     }
 
     fun readUserReports(userId: String?): MutableLiveData<ArrayList<ReportEntity?>>{
         return repository.readUserReports(userId)
+    }
+
+    fun isReadSuccess(): LiveData<Boolean>{
+        return repository.isReadSuccess()
     }
 
 }

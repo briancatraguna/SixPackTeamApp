@@ -39,5 +39,13 @@ class HistoryFragment : Fragment() {
             listReportsAdapter.setData(it)
             rvReports.adapter = listReportsAdapter
         })
+
+        viewModel.isReadSuccess().observe(requireActivity(),{success->
+            if (!success){
+                binding.tvFail.visibility = View.VISIBLE
+            } else {
+                binding.tvFail.visibility = View.GONE
+            }
+        })
     }
 }

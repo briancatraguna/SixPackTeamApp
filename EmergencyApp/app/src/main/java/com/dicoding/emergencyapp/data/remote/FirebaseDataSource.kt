@@ -17,11 +17,17 @@ class FirebaseDataSource {
     private var _uploadStatus = MutableLiveData<Boolean>()
     var uploadStatus: LiveData<Boolean> = _uploadStatus
 
+    private var _readSuccess = MutableLiveData<Boolean>()
+    var readSuccess: LiveData<Boolean> = _readSuccess
+
     fun uploadData(
+        usersName: String,
+        usersPhoto: String,
         timestamp: String,
         userId: String?,
         transcription: String,
         report: String,
+        classification: String,
         latitude: Double?,
         longitude: Double?,
         status: String
@@ -29,9 +35,12 @@ class FirebaseDataSource {
         val userRef = myRef.child(userId.toString())
         val reportRef = userRef.push().key.toString()
         val report = ReportEntity(
+            usersName,
+            usersPhoto,
             timestamp,
             transcription,
             report,
+            classification,
             latitude,
             longitude,
             status
@@ -42,6 +51,7 @@ class FirebaseDataSource {
     }
 
     fun readUserReports(userId: String?): MutableLiveData<ArrayList<ReportEntity?>> {
+        _readSuccess.value = true
         val userRef = myRef.child(userId.toString())
         val result = MutableLiveData<ArrayList<ReportEntity?>>()
         val reportList = arrayListOf<ReportEntity?>()
@@ -58,7 +68,7 @@ class FirebaseDataSource {
             }
 
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
+                _readSuccess.value = false
             }
         })
         return result
