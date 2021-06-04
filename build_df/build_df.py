@@ -135,7 +135,12 @@ def factorize(preprocessedData):
       Output: factorized dataframe.
               query | report | institute | category | label (integer)
     '''
-    preprocessedData.label = pd.factorize(preprocessedData.label)[0]
+    factorizedData = preprocessedData.copy()
+    factorizedData.label = pd.factorize(factorizedData.label)[0]
+    for i in range(5):
+        index_list = factorizedData.index[factorizedData["label"] == i].tolist()
+        index = index_list[0]
+        print(str(i) + ' : ' + str(preprocessedData.label[index]))
     
 def main():
     df = pd.read_csv('filtered.csv')
