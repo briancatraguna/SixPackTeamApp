@@ -169,7 +169,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 2. Brian Mohammed Catraguna [Github](https://github.com/briancatraguna) [LinkedIn](https://linkedin.com/)
 3. Fadia Haniwa Suwandoko [Github](https://github.com/fadiahanifa) [LinkedIn](https://linkedin.com/)
 4. Michael Wijaya [Github](https://github.com/Michael-Wijayaa) [LinkedIn](https://linkedin.com/)
-5. Rahmat Syawaludin [Github](https://github.com/rahmatsywldn) [LinkedIn](https://linkedin.com/)
+5. Rahmat Syawaludin [Github](https://github.com/rahmatsywldn) [LinkedIn](https://www.linkedin.com/in/rahmatsywldn/)
 6. Septin Lutfiyatul Munawaroh [Github](https://github.com/septinlutf) [LinkedIn](https://linkedin.com/)
 
 
