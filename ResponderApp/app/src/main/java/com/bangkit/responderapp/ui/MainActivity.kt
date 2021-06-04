@@ -19,24 +19,4 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
     }
-
-    private fun testFirebase(){
-        val database = Firebase.database
-        val myRef = database.getReference("users")
-        myRef.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                if (snapshot.exists()){
-                    val snapshotChildren = snapshot.children
-                    for (user in snapshotChildren){
-                        println(user.key)
-                    }
-                }
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
-            }
-
-        })
-    }
 }
