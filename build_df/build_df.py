@@ -100,7 +100,7 @@ def tokenDF(df):
     '''
     Args:
       Input : splitted dataframe.
-              report | label
+              query | report | institute | category | label
       Output: tokenized, for named entity recognition.
                report# | token
                    --- | ---
@@ -125,12 +125,30 @@ def tokenDF(df):
     test.token = [word_tokenize(word) for word in test.token]
     test = test.explode('token')
     test.to_csv(os.path.join(TEST_PATH, 'test_token.csv'), index=False)
+
+def factorize(preprocessedData):
+    '''
+    Args:
+      Change label from string to (integer)
+      Input : preprocessed dataframe.
+              query | report | institute | category | label (string)
+      Output: factorized dataframe.
+              query | report | institute | category | label (integer)
+    '''
+    preprocessedData.label = pd.factorize(preprocessedData.label)[0]
     
 def main():
     df = pd.read_csv('filtered.csv')
     preprocessedDF = preprocessingDF(df)
-    splitDF = splitData(preprocessedDF)
+    
+    # Dataframe for NER
+    # splitDF = splitData(preprocessedDF)
+    # classificationDF(splitDF)
+    # tokenDF(splitDF)
+    
+    # Dataframe for classification
+    factorizedDF = factorize(preprocessedDF)
+    splitDF = splitData(factorizedDF)
     classificationDF(splitDF)
-    tokenDF(splitDF)
     
 main()
