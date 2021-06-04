@@ -142,6 +142,8 @@ def factorize(preprocessedData):
         index = index_list[0]
         print(str(i) + ' : ' + str(preprocessedData.label[index]))
     
+    return factorizedData
+    
 def main():
     df = pd.read_csv('filtered.csv')
     preprocessedDF = preprocessingDF(df)
