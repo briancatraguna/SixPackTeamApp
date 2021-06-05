@@ -3,7 +3,7 @@
 ## Introduction
 
 ## Labels
-`PERSON`, `LOCATION`, `WEAPON`, `PERSON`, `DESCRIPTION
+`PERSON`, `LOCATION`, `WEAPON`, `PERSON`, `DESCRIPTION`
 
 ## Notation
 BILOU tagging.
