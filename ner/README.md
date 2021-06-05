@@ -3,10 +3,10 @@
 ## Introduction
 
 ## Labels
-`PERSON`, `LOCATION`, `WEAPON`, `PERSON`, `DESCRIPTION`
+`PERSON`, `LOCATION`, `WEAPON`, `DESCRIPTION`
 
 ## Notation
-BILOU tagging.
+BIO tagging.
 
 ## Embeddings
 We use pretrained embedding from ..
@@ -16,3 +16,5 @@ We use pretrained embedding from ..
 ## Train data
 
 ## Test data
+
+## Results
