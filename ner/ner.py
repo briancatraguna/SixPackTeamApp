@@ -117,6 +117,8 @@ class Model:
                 pred = self.model.predict(self.Xtest)[i]
                 labelIndex = np.argmax(pred)
                 print('{:20} {}'.format(self.Xtest[i], self.labelOutput.get(labelIndex)))
+        else:
+            print('Train model first.')
 
 
 if __name__ == '__main__': 
