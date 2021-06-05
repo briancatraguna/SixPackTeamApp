@@ -1,9 +1,11 @@
 package com.bangkit.responderapp.ui
 
 import android.content.Context
+import android.content.Intent
 import android.location.Geocoder
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bangkit.responderapp.data.ReportEntity
 import com.bangkit.responderapp.databinding.ItemReportBinding
@@ -25,6 +27,11 @@ class ListReportsAdapter(private val context: Context): RecyclerView.Adapter<Lis
                 tvReportTitle.text = report?.classification
                 tvLocation.text = getLocation(report?.latitude,report?.longitude)
                 tvDate.text = report?.date
+            }
+            itemView.setOnClickListener {
+                val intent = Intent(itemView.context,DetailReportActivity::class.java)
+                intent.putExtra(DetailReportActivity.EXTRA_REPORT,report)
+                itemView.context.startActivity(intent)
             }
         }
     }

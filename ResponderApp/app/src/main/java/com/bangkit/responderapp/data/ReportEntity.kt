@@ -1,5 +1,9 @@
 package com.bangkit.responderapp.data
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class ReportEntity (
     val usersName: String = "",
     val usersPhoto: String = "",
@@ -10,4 +14,4 @@ data class ReportEntity (
     val latitude: Double? = 0.0,
     val longitude: Double? = 0.0,
     val status: String = ""
-)
+): Parcelable
