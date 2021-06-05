@@ -45,26 +45,26 @@ class Data:
 
 class Model:
     def __init__(self, X, Y):
+        self.X = X
+        self.Y = Y
         self.MODEL_PATH = 'model/'
         self.embedding = "https://tfhub.dev/google/nnlm-id-dim50-with-normalization/2"
         self.optimizer ="rmsprop"
         self.loss = "sparse_categorical_crossentropy"
         self.metrics = ["accuracy"]
+        self.nOutput = len(set(self.Y))
         self.model = self.layer()
-        self.X = X
-        self.Y = Y
 
         self.has_trained = False
 
     def layer(self):
-        self.output = len(d.tagList)
         self.model = Sequential([hub.KerasLayer(self.embedding,
                                                 input_shape=[],
                                                 dtype=tf.string,
                                                 trainable=True),
                                 Dense(128, activation='relu'),
                                 # Dense(64, activation='relu'),
-                                Dense(self.output, activation='softmax')
+                                Dense(self.nOutput, activation='softmax')
                                 ])
         return self.model
 
@@ -94,7 +94,7 @@ class Model:
         plot_model(self.model, to_file=os.path.join(self.workingDir, 'model.png'), show_shapes=True, show_layer_names=True)
         self.model.save_weights(os.path.join(self.workingDir, 'model.h5'))
     
-    def load(self, processID):
+    def loadModel(self, processID):
         self.path = self.MODEL_PATH +'run_'+str(self.processID)
         with open(os.path.join(self.path, 'model_config.json'), 'r') as json_file:
             json_file = json.load(json_file)
@@ -102,8 +102,17 @@ class Model:
         self.model.load_weights(os.path.join(self.path, 'model_weight.h5'))
         return self.model
 
-    def test(self):
-        pass
+    def test(self, testData, tag):
+        self.testData = testData
+        self.tag = tag
+
+        self.Xtest = list(self.testData.token)
+        self.labelOutput = {index: tag for index, tag in enumerate(self.tag)}
+
+        for i in range(len(self.Xtest)):
+            pred = self.model.predict(self.Xtest)[i]
+            labelIndex = np.argmax(pred)
+            print('{:20} {}'.format(self.Xtest[i], self.labelOutput.get(labelIndex)))
 
 
 if __name__ == '__main__': 
