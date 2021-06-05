@@ -21,8 +21,7 @@ class ListReportsAdapter: RecyclerView.Adapter<ListReportsAdapter.ListViewHolder
     inner class ListViewHolder(private val binding: ItemReportBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(report: ReportEntity?){
             with(binding){
-                //TODO ML RESULT
-                tvReportTitle.text = "ML RESULT"
+                tvReportTitle.text = report?.classification
                 tvStatus.text = report?.status
                 if (report?.status == "Waiting for responder"){
                     imgStatus.setImageResource(R.drawable.ic_finding_responder)
