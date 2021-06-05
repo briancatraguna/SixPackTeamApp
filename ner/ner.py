@@ -79,20 +79,23 @@ class Model:
         def getLastIndex(self):
             folder = [f for f in glob.iglob(self.MODEL_PATH+'run_*')]
             return len(folder)
+        
+        if self.has_trained == True:
+            self.processID = getLastIndex(self)+1
+            self.workingDir = self.MODEL_PATH+'run_'+str(self.processID)
+            os.makedirs(self.workingDir)
 
-        self.processID = getLastIndex(self)+1
-        self.workingDir = self.MODEL_PATH+'run_'+str(self.processID)
-        os.makedirs(self.workingDir)
+            with open(os.path.join(self.workingDir, 'model_config.json'), 'w') as fw : 
+                json.dump(self.layer().get_config(), fw)
 
-        with open(os.path.join(self.workingDir, 'model_config.json'), 'w') as fw : 
-            json.dump(self.layer().get_config(), fw)
+            with open(os.path.join(self.workingDir, 'architecture.txt'),'w+') as f:
+                with redirect_stdout(f):
+                    self.model.summary()
 
-        with open(os.path.join(self.workingDir, 'architecture.txt'),'w+') as f:
-            with redirect_stdout(f):
-                self.model.summary()
-
-        plot_model(self.model, to_file=os.path.join(self.workingDir, 'model.png'), show_shapes=True, show_layer_names=True)
-        self.model.save_weights(os.path.join(self.workingDir, 'model.h5'))
+            plot_model(self.model, to_file=os.path.join(self.workingDir, 'model.png'), show_shapes=True, show_layer_names=True)
+            self.model.save_weights(os.path.join(self.workingDir, 'model.h5'))
+        else:
+            print('Train model first.')
     
     def loadModel(self, processID):
         self.path = self.MODEL_PATH +'run_'+str(self.processID)
