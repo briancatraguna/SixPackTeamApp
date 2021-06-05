@@ -53,7 +53,7 @@ history = model.fit(train_data, train_label, epochs=num_epochs, validation_data=
 
 """**Save Model**"""
 
-tf.saved_model.save(model, 'classification_model') #saving model
+tf.saved_model.save(model, 'classification_model') # saving model
 
 !zip -r /content/classification_model.zip /content/classification_model
 
@@ -67,6 +67,7 @@ converter.target_spec.supported_ops = [
   tf.lite.OpsSet.TFLITE_BUILTINS, # enable TensorFlow Lite ops.
   tf.lite.OpsSet.SELECT_TF_OPS # enable TensorFlow ops.
 ]
+converter.optimizations = [tf.lite.Optimize.OPTIMIZE_FOR_SIZE] # optimize for size
 
 tflite_model = converter.convert()
 
