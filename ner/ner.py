@@ -118,4 +118,10 @@ class Model:
 if __name__ == '__main__': 
     load = Data('train.csv', 'test.csv')
     x, y = load.X, load.Y
+    testData = load.testData
+    tag = load.getTagIndex()
+    
     model = Model(x, y)
+    model.train()
+    model.save()
+    model.test(testData, tag)
