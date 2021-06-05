@@ -18,5 +18,11 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        populateView()
+    }
+
+    private fun populateView() {
+        val rvReports = binding.rvReports
+
     }
 }

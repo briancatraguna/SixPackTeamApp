@@ -3,4 +3,6 @@
     <string name="current_emergency_cases">Current Emergency Cases</string>
     <string name="pickpocket">Pickpocket</string>
     <string name="status">Status:</string>
+    <string name="date_of_occurence">Date of Occurence</string>
+    <string name="location">Location</string>
 </resources>

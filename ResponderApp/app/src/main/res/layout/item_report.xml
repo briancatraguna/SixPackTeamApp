@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="85dp"
+    android:layout_height="95dp"
     android:background="@drawable/bottom_border">
 
     <ImageView
@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:fontFamily="@font/roboto_bold"
         android:text="@string/pickpocket"
         android:textColor="@color/black"
@@ -38,10 +38,68 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="2dp"
         android:fontFamily="@font/roboto_regular"
-        android:text="@string/status"
+        android:text="@string/date_of_occurence"
         android:textColor="@color/subtext"
-        android:textSize="18sp"
+        android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/img_logo"
         app:layout_constraintTop_toBottomOf="@+id/tv_report_title" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="2dp"
+        android:src="@drawable/ic_date"
+        app:layout_constraintStart_toEndOf="@+id/textView11"
+        app:layout_constraintTop_toBottomOf="@+id/tv_report_title" />
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/roboto_black"
+        android:text="16/07/23"
+        android:textColor="@color/subtext"
+        android:textSize="13sp"
+        app:layout_constraintStart_toEndOf="@+id/img_logo"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="2dp"
+        android:fontFamily="@font/roboto_regular"
+        android:text="@string/location"
+        android:textColor="@color/subtext"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_report_title" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="0dp"
+        android:layout_height="14dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="3dp"
+        android:src="@drawable/ic_location"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/tv_report_title" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="2dp"
+        android:fontFamily="@font/roboto_black"
+        android:text="Kecamatan Pancoran"
+        android:textColor="@color/subtext"
+        android:textSize="13sp"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
