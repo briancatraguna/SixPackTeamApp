@@ -5,4 +5,5 @@
     <string name="status">Status:</string>
     <string name="date_of_occurence">Date of Occurence</string>
     <string name="location">Location</string>
+    <string name="tvfail">Check your internet connection and try again.</string>
 </resources>
