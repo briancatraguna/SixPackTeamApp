@@ -16,8 +16,9 @@ class Data:
         self.trainData = pd.read_csv(trainData)[:21200].append(pd.read_csv(trainData)[26485:32445])
         self.testData = pd.read_csv(testData)[:2000]
         self.token = self.trainData.token
-        self.label = self.trainData.tag
-        self.tagList = list(self.label.unique())
+        self.tag = self.trainData.tag
+        self.tagList = list(self.tag.unique())
+        self.tagIndex = self.getTagIndex()
         self.X = self.getX()
         self.Y = self.getY()
 
@@ -26,9 +27,13 @@ class Data:
         return self.X
 
     def getY(self):
-        tag2idx = {tag: index for index, tag in enumerate(self.tagList)}
-        self.Y = [tag2idx[l] for l in self.label]
+        self.tagIndex = {tag: index for index, tag in enumerate(self.tagList)}
+        self.Y = [self.tagIndex[l] for l in self.tag]
         return self.Y
+    
+    def getTagIndex(self):
+        self.tagIndex = {tag: index for index, tag in enumerate(self.tagList)}
+        return self.tagIndex
 
     def getInfo(self):
         self.nTags = len(self.tagList)
