@@ -109,13 +109,14 @@ class Model:
         self.testData = testData
         self.tag = tag
 
-        self.Xtest = list(self.testData.token)
-        self.labelOutput = {index: tag for index, tag in enumerate(self.tag)}
+        if self.has_trained == True:
+            self.Xtest = list(self.testData.token)
+            self.labelOutput = {index: tag for index, tag in enumerate(self.tag)}
 
-        for i in range(len(self.Xtest)):
-            pred = self.model.predict(self.Xtest)[i]
-            labelIndex = np.argmax(pred)
-            print('{:20} {}'.format(self.Xtest[i], self.labelOutput.get(labelIndex)))
+            for i in range(len(self.Xtest)):
+                pred = self.model.predict(self.Xtest)[i]
+                labelIndex = np.argmax(pred)
+                print('{:20} {}'.format(self.Xtest[i], self.labelOutput.get(labelIndex)))
 
 
 if __name__ == '__main__': 
