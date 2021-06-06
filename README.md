@@ -57,7 +57,6 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Our Team</a></li>
@@ -69,11 +68,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+Did you know that a huge amount of emergency cases remain unhandled? Some of the victims may lose their lives because of the long response time of the emergency service. While emergency services must always be a priority, we are here to help Indonesia to have a better emergency service. 
 
-`deskripsi, UI, fitur apa aja, kelebihan, etc. idk..
-COMING SOON!
-`
+[![Product Name Screen Shot][product-screenshot]](https://example.com)
 
 ### Directory Guide
 
@@ -88,9 +85,8 @@ No. | Dir | Details
 
 ### Built With
 
-This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-* [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
+* [Tensorflow](https://tensorflow.com)
+* [Android Studio](https://developer.android.com/studio/)
 * [Laravel](https://laravel.com)
 
 
@@ -124,8 +120,6 @@ This is an example of how to list things you need to use the software and how to
    const API_KEY = 'ENTER YOUR API';
    ```
 
-
-
 <!-- USAGE EXAMPLES -->
 ## Usage
 
@@ -133,14 +127,7 @@ Use this space to show useful examples of how a project can be used. Additional 
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
-
-
 <!-- ROADMAP -->
-## Roadmap
-
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a list of proposed features (and known issues).
-
-
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -153,43 +140,28 @@ Contributions are what make the open source community such an amazing place to b
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-
-
 <!-- LICENSE -->
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
-
-
 <!-- OUR TEAM -->
 ## Our Team
-
-1. Annisa Nuri Nabila [Github](https://github.com/annisann) [LinkedIn](https://linkedin.com/annisann)
-2. Brian Mohammed Catraguna [Github](https://github.com/briancatraguna) [LinkedIn](https://linkedin.com/)
-3. Fadia Haniwa Suwandoko [Github](https://github.com/fadiahanifa) [LinkedIn](https://linkedin.com/)
-4. Michael Wijaya [Github](https://github.com/Michael-Wijayaa) [LinkedIn](https://linkedin.com/)
-5. Rahmat Syawaludin [Github](https://github.com/rahmatsywldn) [LinkedIn](https://www.linkedin.com/in/rahmatsywldn/)
-6. Septin Lutfiyatul Munawaroh [Github](https://github.com/septinlutf) [LinkedIn](https://linkedin.com/)
-
+` insert picture here`
+1. Annisa Nuri Nabila <a href="https://github.com/annisann"><img src="imgs/github.svg" alt="GitHub"></a> <a href="https://www.linkedin.com/in/annisann"><img src="imgs/linkedin.svg" alt="LinkedIn"></a>
+2. Brian Mohammed Catraguna <a href="https://github.com/briancatraguna"><img src="imgs/github.svg" alt="GitHub"></a><a href="https://www.linkedin.com/in/"><img src="imgs/linkedin.svg" alt="LinkedIn"></a>
+3. Fadia Haniwa Suwandoko <a href="https://github.com/fadiahanifa"><img src="imgs/github.svg" alt="GitHub"></a><a href="https://www.linkedin.com/in/"><img src="imgs/linkedin.svg" alt="LinkedIn"></a>
+4. Michael Wijaya <a href="https://github.com/Michael-Wijayaa"><img src="imgs/github.svg" alt="GitHub"></a><a href="https://www.linkedin.com/in/"><img src="imgs/linkedin.svg" alt="LinkedIn"></a>
+5. Rahmat Syawaludin <a href="https://github.com/rahmatsywldn"><img src="imgs/github.svg" alt="GitHub"></a><a href="https://www.linkedin.com/in/rahmatsywldn"><img src="imgs/linkedin.svg" alt="LinkedIn"></a>
+6. Septin Lutfiyatul Munawaroh <a href="https://github.com/septinlutf"><img src="imgs/github.svg" alt="GitHub"></a><a href="https://www.linkedin.com/in/"><img src="imgs/linkedin.svg" alt="LinkedIn"></a>
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 `insert references etc`
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
 * [Img Shields](https://shields.io)
 * [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Pages](https://pages.github.com)
-* [Animate.css](https://daneden.github.io/animate.css)
-* [Loaders.css](https://connoratherton.com/loaders)
-* [Slick Carousel](https://kenwheeler.github.io/slick)
-* [Smooth Scroll](https://github.com/cferdinandi/smooth-scroll)
 * [Sticky Kit](http://leafo.net/sticky-kit)
-* [JVectorMap](http://jvectormap.com)
-* [Font Awesome](https://fontawesome.com)
 * [README Template](https://github.com/othneildrew/Best-README-Template/)
-
-
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->

@@ -6,4 +6,6 @@
     <string name="date_of_occurence">Date of Occurence</string>
     <string name="location">Location</string>
     <string name="tvfail">Check your internet connection and try again.</string>
+    <string name="report_details">Report Details</string>
+    <string name="fire">Fire</string>
 </resources>

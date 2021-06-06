@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 
 # get model path (ganti ini yak wkwk)
-MODEL_PATH = '/content/classification_keras'
+MODEL_PATH = '/content/content/classification_keras'
 
 # Load Model
   model = tf.keras.models.load_model(MODEL_PATH)
@@ -12,13 +12,13 @@ def classification(report):
   '''
     Args:
       Input : string; raw sentence.
-      Output: string; category
+      Output: json; {category: ...}
               list of categories:
               crime | medical | fire | natural disaster | traffice accident
   '''
 
   # get predictions number
-  predictions = model.predict([test_data[0]])[0]
+  predictions = model.predict(prediction)[0]
 
   # get classification based on the index
   classification = np.where(predictions == np.max(predictions))[0][0]

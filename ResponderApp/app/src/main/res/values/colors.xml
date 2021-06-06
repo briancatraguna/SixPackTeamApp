@@ -8,4 +8,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="subtext">#75777E</color>
+    <color name="emergency_red">#C30000</color>
 </resources>
