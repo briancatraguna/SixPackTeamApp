@@ -18,7 +18,7 @@ def classification(report):
   '''
 
   # get predictions number
-  predictions = model.predict([test_data[0]])[0]
+  predictions = model.predict(prediction)[0]
 
   # get classification based on the index
   classification = np.where(predictions == np.max(predictions))[0][0]
