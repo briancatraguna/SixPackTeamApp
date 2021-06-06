@@ -28,8 +28,7 @@ def classification(report):
             3: "natural disaster",
             4: "traffic accident"
             }
-  category = switcher.get(classification, "nothing")
-  return (jsonify({"category": category}))
+  return (switcher.get(classification, "nothing"))
 
 # Driver function
 if __name__ == "__main__":
