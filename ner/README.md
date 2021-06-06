@@ -1,23 +1,23 @@
-<p align="center"><b>Named Entity Recognition</b></p>
+# Named Entity Recognition
 
-## Introduction
+### Introduction
 
-## Labels
+### Labels
 `PERSON`, `LOCATION`, `WEAPON`, `DESCRIPTION`
 
-## Notation
+### Notation
 BIO tagging.
 
-## Embeddings
+### Embeddings
 We use pretrained embedding from [TF Hub](https://tfhub.dev/google/nnlm-id-dim50-with-normalization/2)
 
-## Layers
+### Layers
 
-## Train data
+### Train data
 
 Train data is [here](https://github.com/annisann/SixPackTeamApp/blob/ner-patch/data/NE/train.csv)
 
-## Test data
+### Test data
 Test data is [here](https://github.com/annisann/SixPackTeamApp/blob/ner-patch/data/NE/test.csv)
 
-## Results
+### Results
