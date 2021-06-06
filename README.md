@@ -70,10 +70,11 @@
 ## About The Project
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
+###### Background
 
-`deskripsi, UI, fitur apa aja, kelebihan, etc. idk..
-COMING SOON!
-`
+Emergency is a life-threatening situation where could cause permanent disability and even death. Every day, around the world, people who are sick and injured seek treatment, especially in some countries with a high potential for emergencies, such as Indonesia1. Many things could cause emergency: traffic accident, fire, disease, natural disaster, crime, and etc. This condition requires appropriate and immediate emergency treatment. In anticipating this situation, Indonesia has established an emergency service as the main media for reporting that prioritizes fast processing of complaints for optimal implementation of emergency mitigation. However, this emergency service still has weaknesses, especially in the movement of its mitigation unit which is still slow in responding to emergency reports that are forwarded from the call center. While emergency services are something that has a high level of urgency and must always be a priority in its services.
+
+We are here to help Indonesia to have a better emergency service.
 
 ### Directory Guide
 
