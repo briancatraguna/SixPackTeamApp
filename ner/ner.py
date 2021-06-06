@@ -13,6 +13,11 @@ from tensorflow.keras.utils import plot_model
 
 class Data:
     def __init__(self, trainData, testData):
+        '''
+        Initialize class attributes.
+        Args: 
+            trainData & testData: csv files.
+        '''
         self.trainData = pd.read_csv(trainData)[:21200].append(pd.read_csv(trainData)[26485:32445])
         self.testData = pd.read_csv(testData)[:2000]
         self.token = self.trainData.token
@@ -23,19 +28,31 @@ class Data:
         self.Y = self.getY()
 
     def getX(self):
+        '''
+        Return list of tokens of train data.
+        '''
         self.X = list(self.token)
         return self.X
 
     def getY(self):
+        '''
+        Return list of indexed tag of train data
+        '''
         self.tagIndex = {tag: index for index, tag in enumerate(self.tagList)}
         self.Y = [self.tagIndex[l] for l in self.tag]
         return self.Y
     
     def getTagIndex(self):
+        '''
+        Return a dictionary of tags and its indexes.
+        '''
         self.tagIndex = {tag: index for index, tag in enumerate(self.tagList)}
         return self.tagIndex
 
     def getInfo(self):
+        '''
+        Return information about train dataset.
+        '''
         self.nTags = len(self.tagList)
         self.lenX = len(self.X)
         self.lenY = len(self.Y)
@@ -45,6 +62,12 @@ class Data:
 
 class Model:
     def __init__(self, X, Y):
+        '''
+        Initialize class attributes.
+        Args:
+            X: list of tokens.
+            Y: list of tags.
+        '''
         self.X = X
         self.Y = Y
         self.MODEL_PATH = 'model/'
@@ -58,6 +81,9 @@ class Model:
         self.has_trained = False
 
     def layer(self):
+        '''
+        Keras layers.
+        '''
         self.model = Sequential([hub.KerasLayer(self.embedding,
                                                 input_shape=[],
                                                 dtype=tf.string,
@@ -69,6 +95,12 @@ class Model:
         return self.model
 
     def train(self, epochs, verbose):
+        '''
+        A method to train the model.
+        Args:
+            epochs: number of epoch.
+            verbose: number of verbose.
+        '''
         self.has_trained = True
         self.epochs = epochs
         self.verbose = verbose
@@ -76,6 +108,10 @@ class Model:
         return self.model.fit(self.X, self.Y, self.epochs, self.verbose)
 
     def save(self):
+        '''
+        Save the trained model into each folder.
+        Contain its configuration, architecture summary, keras file, and model plot.
+        '''
         def getLastIndex(self):
             folder = [f for f in glob.iglob(self.MODEL_PATH+'run_*')]
             return len(folder)
@@ -98,6 +134,9 @@ class Model:
             print('Train model first.')
     
     def loadModel(self, processID):
+        '''
+        Load model from trained model folder.
+        '''
         self.path = self.MODEL_PATH +'run_'+str(self.processID)
         with open(os.path.join(self.path, 'model_config.json'), 'r') as json_file:
             json_file = json.load(json_file)
@@ -106,6 +145,12 @@ class Model:
         return self.model
 
     def test(self, testData, tag):
+        '''
+        Test the model with test set.
+        Args:
+            testData: csv file of test dataset.
+            tag     : tag index.
+        '''
         self.testData = testData
         self.tag = tag
 
