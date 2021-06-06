@@ -12,7 +12,7 @@ def classification(report):
   '''
     Args:
       Input : string; raw sentence.
-      Output: string; category
+      Output: json; {category: ...}
               list of categories:
               crime | medical | fire | natural disaster | traffice accident
   '''
@@ -28,7 +28,8 @@ def classification(report):
             3: "natural disaster",
             4: "traffic accident"
             }
-  return (switcher.get(classification, "nothing"))
+  category = switcher.get(classification, "nothing")
+  return (jsonify({"category": category}))
 
 # Driver function
 if __name__ == "__main__":
