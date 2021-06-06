@@ -57,7 +57,6 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Our Team</a></li>
@@ -69,12 +68,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
+Did you know that a huge amount of emergency cases remain unhandled? Some of the victims may lose their lives because of the long response time of the emergency service. While emergency services must always be a priority, we are here to help Indonesia to have a better emergency service. 
+
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
-###### Background
-
-Emergency is a life-threatening situation where could cause permanent disability and even death. Every day, around the world, people who are sick and injured seek treatment, especially in some countries with a high potential for emergencies, such as Indonesia1. Many things could cause emergency: traffic accident, fire, disease, natural disaster, crime, and etc. This condition requires appropriate and immediate emergency treatment. In anticipating this situation, Indonesia has established an emergency service as the main media for reporting that prioritizes fast processing of complaints for optimal implementation of emergency mitigation. However, this emergency service still has weaknesses, especially in the movement of its mitigation unit which is still slow in responding to emergency reports that are forwarded from the call center. While emergency services are something that has a high level of urgency and must always be a priority in its services.
-
-We are here to help Indonesia to have a better emergency service.
 
 ### Directory Guide
 
@@ -89,9 +85,8 @@ No. | Dir | Details
 
 ### Built With
 
-This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-* [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
+* [Tensorflow](https://tensorflow.com)
+* [Android Studio](https://developer.android.com/studio/)
 * [Laravel](https://laravel.com)
 
 
@@ -125,8 +120,6 @@ This is an example of how to list things you need to use the software and how to
    const API_KEY = 'ENTER YOUR API';
    ```
 
-
-
 <!-- USAGE EXAMPLES -->
 ## Usage
 
@@ -134,14 +127,7 @@ Use this space to show useful examples of how a project can be used. Additional 
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
-
-
 <!-- ROADMAP -->
-## Roadmap
-
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a list of proposed features (and known issues).
-
-
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -154,43 +140,28 @@ Contributions are what make the open source community such an amazing place to b
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-
-
 <!-- LICENSE -->
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
-
-
 <!-- OUR TEAM -->
 ## Our Team
-
-1. Annisa Nuri Nabila [Github](https://github.com/annisann) [LinkedIn](https://linkedin.com/annisann)
-2. Brian Mohammed Catraguna [Github](https://github.com/briancatraguna) [LinkedIn](https://linkedin.com/)
-3. Fadia Haniwa Suwandoko [Github](https://github.com/fadiahanifa) [LinkedIn](https://linkedin.com/)
-4. Michael Wijaya [Github](https://github.com/Michael-Wijayaa) [LinkedIn](https://linkedin.com/)
-5. Rahmat Syawaludin [Github](https://github.com/rahmatsywldn) [LinkedIn](https://www.linkedin.com/in/rahmatsywldn/)
-6. Septin Lutfiyatul Munawaroh [Github](https://github.com/septinlutf) [LinkedIn](https://linkedin.com/)
-
+` insert picture here`
+1. Annisa Nuri Nabila [Github](https://github.com/annisann) ![LinkedIn][linkedin-shield]][https://linkedin.com/annisann]
+2. Brian Mohammed Catraguna [Github](https://github.com/briancatraguna) ![LinkedIn][linkedin-shield]][https://linkedin.com/]
+3. Fadia Haniwa Suwandoko [Github](https://github.com/fadiahanifa) ![LinkedIn][linkedin-shield]][https://linkedin.com/]
+4. Michael Wijaya [Github](https://github.com/Michael-Wijayaa) ![LinkedIn][linkedin-shield]][https://linkedin.com/]
+5. Rahmat Syawaludin [Github](https://github.com/rahmatsywldn) ![LinkedIn][linkedin-shield]][https://linkedin.com/rahmatsywldn/]
+6. Septin Lutfiyatul Munawaroh [Github](https://github.com/septinlutf) ![LinkedIn][linkedin-shield]][https://linkedin.com/]
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 `insert references etc`
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
 * [Img Shields](https://shields.io)
 * [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Pages](https://pages.github.com)
-* [Animate.css](https://daneden.github.io/animate.css)
-* [Loaders.css](https://connoratherton.com/loaders)
-* [Slick Carousel](https://kenwheeler.github.io/slick)
-* [Smooth Scroll](https://github.com/cferdinandi/smooth-scroll)
 * [Sticky Kit](http://leafo.net/sticky-kit)
-* [JVectorMap](http://jvectormap.com)
-* [Font Awesome](https://fontawesome.com)
 * [README Template](https://github.com/othneildrew/Best-README-Template/)
-
-
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
