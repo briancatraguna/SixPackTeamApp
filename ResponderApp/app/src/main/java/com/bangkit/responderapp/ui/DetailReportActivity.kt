@@ -19,5 +19,7 @@ class DetailReportActivity : AppCompatActivity() {
         binding = ActivityDetailReportBinding.inflate(layoutInflater)
         report = intent.getParcelableExtra<ReportEntity>(EXTRA_REPORT)
         setContentView(binding.root)
+
+        binding.tvTest.text = report?.usersName
     }
 }
