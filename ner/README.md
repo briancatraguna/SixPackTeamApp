@@ -15,8 +15,8 @@ We use pretrained embedding from [here](https://tfhub.dev/google/nnlm-id-dim50-w
 
 
 ## Train data
-```
 report#  | token | tag
+--- | --- | ---
 1 | pak | O
 1 | , | O
 1 | tolong | O
