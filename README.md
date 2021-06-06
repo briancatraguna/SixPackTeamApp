@@ -148,12 +148,12 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- OUR TEAM -->
 ## Our Team
 ` insert picture here`
-1. Annisa Nuri Nabila [Github](https://github.com/annisann) ![LinkedIn][linkedin-shield]][https://linkedin.com/annisann]
-2. Brian Mohammed Catraguna [Github](https://github.com/briancatraguna) ![LinkedIn][linkedin-shield]][https://linkedin.com/]
-3. Fadia Haniwa Suwandoko [Github](https://github.com/fadiahanifa) ![LinkedIn][linkedin-shield]][https://linkedin.com/]
-4. Michael Wijaya [Github](https://github.com/Michael-Wijayaa) ![LinkedIn][linkedin-shield]][https://linkedin.com/]
-5. Rahmat Syawaludin [Github](https://github.com/rahmatsywldn) ![LinkedIn][linkedin-shield]][https://linkedin.com/rahmatsywldn/]
-6. Septin Lutfiyatul Munawaroh [Github](https://github.com/septinlutf) ![LinkedIn][linkedin-shield]][https://linkedin.com/]
+1. Annisa Nuri Nabila [Github](https://github.com/annisann) ![LinkedIn][linkedin-shield][https://linkedin.com/annisann]
+2. Brian Mohammed Catraguna [Github](https://github.com/briancatraguna) ![LinkedIn][linkedin-shield][https://linkedin.com/]
+3. Fadia Haniwa Suwandoko [Github](https://github.com/fadiahanifa) ![LinkedIn][linkedin-shield][https://linkedin.com/]
+4. Michael Wijaya [Github](https://github.com/Michael-Wijayaa) ![LinkedIn][linkedin-shield][https://linkedin.com/]
+5. Rahmat Syawaludin [Github](https://github.com/rahmatsywldn) ![LinkedIn][linkedin-shield][https://linkedin.com/rahmatsywldn/]
+6. Septin Lutfiyatul Munawaroh [Github](https://github.com/septinlutf) ![LinkedIn][linkedin-shield][https://linkedin.com/]
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
