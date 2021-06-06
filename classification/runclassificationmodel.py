@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 
 # get model path (ganti ini yak wkwk)
-MODEL_PATH = '/content/classification_keras'
+MODEL_PATH = '/content/content/classification_keras'
 
 # Load Model
   model = tf.keras.models.load_model(MODEL_PATH)
