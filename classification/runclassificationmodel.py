@@ -5,6 +5,9 @@ import numpy as np
 # get model path (ganti ini yak wkwk)
 MODEL_PATH = '/content/classification_keras'
 
+# Load Model
+  model = tf.keras.models.load_model(MODEL_PATH)
+
 def classification(report):
   '''
     Args:
@@ -13,8 +16,6 @@ def classification(report):
               list of categories:
               crime | medical | fire | natural disaster | traffice accident
   '''
-  # Load Model
-  model = tf.keras.models.load_model(MODEL_PATH)
 
   # get predictions number
   predictions = model.predict([test_data[0]])[0]
