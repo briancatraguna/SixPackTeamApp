@@ -148,12 +148,12 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- OUR TEAM -->
 ## Our Team
 ` insert picture here`
-1. Annisa Nuri Nabila [Github](https://github.com/annisann) ![LinkedIn][linkedin-shield][https://linkedin.com/annisann]
-2. Brian Mohammed Catraguna [Github](https://github.com/briancatraguna) ![LinkedIn][linkedin-shield][https://linkedin.com/]
-3. Fadia Haniwa Suwandoko [Github](https://github.com/fadiahanifa) ![LinkedIn][linkedin-shield][https://linkedin.com/]
-4. Michael Wijaya [Github](https://github.com/Michael-Wijayaa) ![LinkedIn][linkedin-shield][https://linkedin.com/]
-5. Rahmat Syawaludin [Github](https://github.com/rahmatsywldn) ![LinkedIn][linkedin-shield][https://linkedin.com/rahmatsywldn/]
-6. Septin Lutfiyatul Munawaroh [Github](https://github.com/septinlutf) ![LinkedIn][linkedin-shield][https://linkedin.com/]
+1. Annisa Nuri Nabila <a href="https://github.com/annisann"><img src="imgs/github.svg" alt="GitHub"></a> <a href="https://www.linkedin.com/in/annisann"><img src="imgs/linkedin.svg" alt="LinkedIn"></a>
+2. Brian Mohammed Catraguna <a href="https://github.com/briancatraguna"><img src="imgs/github.svg" alt="GitHub"></a><a href="https://www.linkedin.com/in/"><img src="imgs/linkedin.svg" alt="LinkedIn"></a>
+3. Fadia Haniwa Suwandoko <a href="https://github.com/fadiahanifa"><img src="imgs/github.svg" alt="GitHub"></a><a href="https://www.linkedin.com/in/"><img src="imgs/linkedin.svg" alt="LinkedIn"></a>
+4. Michael Wijaya <a href="https://github.com/Michael-Wijayaa"><img src="imgs/github.svg" alt="GitHub"></a><a href="https://www.linkedin.com/in/"><img src="imgs/linkedin.svg" alt="LinkedIn"></a>
+5. Rahmat Syawaludin <a href="https://github.com/rahmatsywldn"><img src="imgs/github.svg" alt="GitHub"></a><a href="https://www.linkedin.com/in/rahmatsywldn"><img src="imgs/linkedin.svg" alt="LinkedIn"></a>
+6. Septin Lutfiyatul Munawaroh <a href="https://github.com/septinlutf"><img src="imgs/github.svg" alt="GitHub"></a><a href="https://www.linkedin.com/in/"><img src="imgs/linkedin.svg" alt="LinkedIn"></a>
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
