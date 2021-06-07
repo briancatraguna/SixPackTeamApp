@@ -1,0 +1,6 @@
+seqeval
+tensorflow==2.5.0
+tensorflow-hub==0.12.0
+nltk==3.2.5
+numpy==1.19.5
+pandas==1.1.5
