@@ -148,14 +148,15 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- OUR TEAM -->
 ## Our Team
 ` insert picture here`
-<li>
-  Annisa Nuri Nabila <a href="https://github.com/annisann"> <img src="imgs/github.svg" alt="GitHub"></a> <a href="https://www.linkedin.com/in/annisann"><img src="imgs/linkedin.svg" alt="LinkedIn"> </a>
+name | github | linkedin
+---  |  ---   | ---
+Annisa Nuri Nabila | <a href="https://github.com/annisann"> <img src="imgs/github.svg" alt="GitHub"></a> | <a href="https://www.linkedin.com/in/annisann"><img src="imgs/linkedin.svg" alt="LinkedIn"> </a>
 </li>
-2. Brian Mohammed Catraguna <a href="https://github.com/briancatraguna"><img src="imgs/github.svg" alt="GitHub"></a><a href="https://www.linkedin.com/in/"><img src="imgs/linkedin.svg" alt="LinkedIn"></a>
-3. Fadia Haniwa Suwandoko <a href="https://github.com/fadiahanifa"><img src="imgs/github.svg" alt="GitHub"></a><a href="https://www.linkedin.com/in/"><img src="imgs/linkedin.svg" alt="LinkedIn"></a>
-4. Michael Wijaya <a href="https://github.com/Michael-Wijayaa"><img src="imgs/github.svg" alt="GitHub"></a><a href="https://www.linkedin.com/in/"><img src="imgs/linkedin.svg" alt="LinkedIn"></a>
-5. Rahmat Syawaludin <a href="https://github.com/rahmatsywldn"><img src="imgs/github.svg" alt="GitHub"></a><a href="https://www.linkedin.com/in/rahmatsywldn"><img src="imgs/linkedin.svg" alt="LinkedIn"></a>
-6. Septin Lutfiyatul Munawaroh <a href="https://github.com/septinlutf"><img src="imgs/github.svg" alt="GitHub"></a><a href="https://www.linkedin.com/in/"><img src="imgs/linkedin.svg" alt="LinkedIn"></a>
+Brian Mohammed Catraguna | <a href="https://github.com/briancatraguna"><img src="imgs/github.svg" alt="GitHub"></a> | <a href="https://www.linkedin.com/in/"><img src="imgs/linkedin.svg" alt="LinkedIn"></a>
+Fadia Haniwa Suwandoko | <a href="https://github.com/fadiahanifa"><img src="imgs/github.svg" alt="GitHub"></a> | <a href="https://www.linkedin.com/in/"><img src="imgs/linkedin.svg" alt="LinkedIn"></a>
+Michael Wijaya | <a href="https://github.com/Michael-Wijayaa"><img src="imgs/github.svg" alt="GitHub"></a> | <a href="https://www.linkedin.com/in/"><img src="imgs/linkedin.svg" alt="LinkedIn"></a>
+Rahmat Syawaludin | <a href="https://github.com/rahmatsywldn"><img src="imgs/github.svg" alt="GitHub"></a> | <a href="https://www.linkedin.com/in/rahmatsywldn"><img src="imgs/linkedin.svg" alt="LinkedIn"></a>
+Septin Lutfiyatul Munawaroh | <a href="https://github.com/septinlutf"><img src="imgs/github.svg" alt="GitHub"></a> | <a href="https://www.linkedin.com/in/"><img src="imgs/linkedin.svg" alt="LinkedIn"></a>
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
