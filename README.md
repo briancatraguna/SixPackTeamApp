@@ -18,7 +18,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/briancatraguna/SixPackTeamApp/">
-    <img src="https://user-images.githubusercontent.com/32363208/119332765-40f68e00-bcb3-11eb-9517-ff4fa1104210.jpg" alt="Logo" width="187" height="244">
+    <img src="assets/logo.png" alt="Logo">
   </a>
 
   <h3 align="center">An Emergency Service App</h3>
