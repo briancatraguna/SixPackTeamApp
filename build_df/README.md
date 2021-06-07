@@ -22,7 +22,7 @@ This code is to convert raw dataset to NER and classification train and test dat
 From the scraping results, `build_df.py` will preprocessing the results, which do casefolding and tokenizing, the create two different files, `train.csv` and `test.csv` on each `classification` and `ner` folder as shown below.
 
 <p align="center">
-  <img src="https://github.com/annisann/SixPackTeamApp/blob/40e2e7250c37eb458b5286b5e039fa95bd440b94/assets/builddf.png">
+  <img src="https://github.com/briancatraguna/SixPackTeamApp/blob/349dbd53ec38870ad536e4d95dd24310eafe0620/assets/builddf.png">
 </p>
 
 The columns of the second dataframe will be  `index` (nth report) and `report` which consists tokens, then we will tag each token.
@@ -30,6 +30,9 @@ The columns of the second dataframe will be  `index` (nth report) and `report` w
 ## Run!
 ```
 cd SixPackTeamApp/build_df
+```
+```
+pip install requirements.txt
 ```
 ```
 python build_df.py
