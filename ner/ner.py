@@ -119,7 +119,7 @@ class Model:
             folder = [f for f in glob.iglob(self.MODEL_PATH+'run_*')]
             return len(folder)
         
-        if self.has_trained == True:
+        if self.has_trained == True: # can only save if you have call `train()` method.
             self.processID = getLastIndex(self)+1
             self.workingDir = self.MODEL_PATH+'run_'+str(self.processID)
             os.makedirs(self.workingDir)
@@ -160,9 +160,12 @@ class Model:
         '''
         self.data = data
         
+        # if you want predict the `test.csv`
         if type(self.data) is pd.DataFrame:
             self.word = list(self.data.token)
-        elif type(self.data) is str:
+         
+        # if you want to predict your own sentence!`
+        elif type(self.data) is str:            
             self.word = word_tokenize(self.data)
 
         self.labelOutput = {index: tag for index, tag in enumerate(self.tag)}
