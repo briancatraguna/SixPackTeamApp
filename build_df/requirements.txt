@@ -1,0 +1,3 @@
+sklearn=0.22.2
+nltk==3.2.5
+pandas==1.1.5
