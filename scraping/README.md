@@ -28,21 +28,6 @@
   </ol>
 </details>
 
-<!-- PREPROCESSING -->
-<details open="open">
-  <summary>
-    <a href="#preprocessing-scraping-results">Preprocessing</a>
-  </summary>
-  <ol>
-    <li>
-      <a href="#steps">Steps</a>
-    </li>
-    <li>
-      <a href="#run!">Run!</a>
-    </li>
-  </ol>
-</details>
-
 # Website Scraping
 
 ##  About
@@ -140,22 +125,3 @@ python lapor_scraping.py
 ## Limitations
 - If you have run the program and have the csv file output, and you wish to re-run it again, DELETE the csv file first. Otherwise it will have duplicate rows.
 - The program will keep running until `PAGE_START` even though the page is not found. Because of this, I find out the maximum page by myself.
-
-<!--  PREPROCESSING -->
-# Preprocessing Scraping Results
-
-## Steps
-From the scraping results, `preprocessing.py` will preprocessing the results, which do casefolding and tokenizing, the create two different files, `df1.csv` and `df2.csv` as shown below.
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/73707695/119653116-265a1b80-be51-11eb-8f91-8fa1231f288b.jpg" width="480">
-</p>
-
-The columns of the second dataframe will be  `index` (nth report) and `report` which consists tokens, then we will tag each token.
-
-## Run!
-```
-cd SixPackTeamApp/scraping
-```
-```
-python preprocessing.py
-```
