@@ -21,7 +21,7 @@ This code is to convert raw dataset to NER and classification train and test dat
 ## Steps
 From the scraping results, `build_df.py` will preprocessing the results, which do casefolding and tokenizing, the create two different files, `train.csv` and `test.csv` on each `classification` and `ner` folder as shown below.
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/73707695/119653116-265a1b80-be51-11eb-8f91-8fa1231f288b.jpg" width="480">
+  <img src="assets/dataframe for classification and ner.png" width="480">
 </p>
 
 The columns of the second dataframe will be  `index` (nth report) and `report` which consists tokens, then we will tag each token.
