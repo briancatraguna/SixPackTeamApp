@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.DetailReportActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include android:id="@+id/toolbar" layout="@layout/detail_report_toolbar"/>
+
+        <FrameLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:background="@drawable/bottom_border"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            tools:layout_editor_absoluteX="-16dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="2dp"
+                android:src="@drawable/dummy_person_picture" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="115dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/roboto_italic"
+                android:text="Reported By"
+                android:textColor="@color/subtext"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="115dp"
+                android:layout_marginTop="35dp"
+                android:fontFamily="@font/roboto_black"
+                android:text="John Doe"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/frameLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:background="@drawable/bottom_border"
+            app:layout_constraintTop_toBottomOf="@+id/frameLayout"
+            tools:layout_editor_absoluteX="32dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/roboto_italic"
+                android:text="Type of Emergency"
+                android:textColor="@color/subtext"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="35dp"
+                android:fontFamily="@font/roboto_black"
+                android:text="Natural Disaster"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="32dp"
+                android:src="@drawable/ic_fire_type" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/frameLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:background="@drawable/bottom_border"
+            app:layout_constraintTop_toBottomOf="@+id/frameLayout2"
+            tools:layout_editor_absoluteX="0dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/roboto_italic"
+                android:text="Time of Occurence"
+                android:textColor="@color/subtext"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="35dp"
+                android:fontFamily="@font/roboto_black"
+                android:text="6/6/2021 00:00:00"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/frameLayout4"
+            android:layout_width="match_parent"
+            android:layout_height="145dp"
+            android:background="@drawable/bottom_border"
+            app:layout_constraintTop_toBottomOf="@+id/frameLayout3"
+            tools:layout_editor_absoluteX="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/roboto_italic"
+                android:text="Details"
+                android:textColor="@color/subtext"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="32dp"
+                android:fontFamily="@font/roboto_black"
+                android:lineSpacingExtra="2dp"
+                android:text="People involved:\nDescription:\nLocation mentioned:\nWeapons:\n"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="145dp"
+            android:background="@drawable/bottom_border"
+            app:layout_constraintTop_toBottomOf="@+id/frameLayout4"
+            tools:layout_editor_absoluteX="0dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/roboto_italic"
+                android:text="Report Transcription"
+                android:textColor="@color/subtext"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="32dp"
+                android:fontFamily="@font/roboto_black"
+                android:lineSpacingExtra="2dp"
+                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="135dp"
+            android:background="@drawable/bottom_border"
+            app:layout_constraintTop_toBottomOf="@+id/frameLayout4"
+            tools:layout_editor_absoluteX="0dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/roboto_italic"
+                android:text="Location"
+                android:textColor="@color/subtext"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="32dp"
+                android:fontFamily="@font/roboto_black"
+                android:lineSpacingExtra="2dp"
+                android:text="Kecamatan Pancoran\nLatitude: 10.10\nLongitude: 20.20"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:text="Maps"
+                android:layout_marginTop="50dp"
+                android:layout_marginLeft="250dp"/>
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="135dp"
+            android:background="@drawable/bottom_border"
+            app:layout_constraintTop_toBottomOf="@+id/frameLayout4"
+            tools:layout_editor_absoluteX="0dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/roboto_italic"
+                android:text="Status"
+                android:textColor="@color/subtext"
+                android:textSize="14sp" />
+
+        </FrameLayout>
+
+
+    </LinearLayout>
+</ScrollView>

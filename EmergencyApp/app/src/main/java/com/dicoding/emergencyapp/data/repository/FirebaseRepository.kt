@@ -12,18 +12,25 @@ class FirebaseRepository(private val dataSource: FirebaseDataSource) {
     }
 
     fun uploadData(
+        usersName: String,
+        usersPhoto: String,
         timestamp: String,
         userId: String?,
         transcription: String,
         report: String,
+        classification: String,
         latitude: Double?,
         longitude: Double?,
         status: String
     ){
-        dataSource.uploadData(timestamp,userId,transcription,report,latitude,longitude,status)
+        dataSource.uploadData(usersName,usersPhoto,timestamp,userId,transcription,report,classification,latitude,longitude,status)
     }
 
     fun readUserReports(userId: String?): MutableLiveData<ArrayList<ReportEntity?>>{
         return dataSource.readUserReports(userId)
+    }
+
+    fun isReadSuccess(): LiveData<Boolean>{
+        return dataSource.readSuccess
     }
 }

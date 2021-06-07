@@ -129,4 +129,5 @@
     <string name="content_tips_feature_1">- Pergi ke fitur tips</string>
     <string name="content_tips_feature_2">- Pilih topik untuk melihat tips yang diinginkan</string>
     <string name="content_tips_feature_3">- Nonton video dan bacalah tipsnya</string>
+    <string name="send">Kirim</string>
 </resources>

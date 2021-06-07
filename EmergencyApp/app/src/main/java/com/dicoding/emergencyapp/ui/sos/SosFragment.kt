@@ -57,7 +57,8 @@ class SosFragment : Fragment() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         val userId = arguments?.getString("userId")
-        val userPhoto = arguments?.getString("userPhoto")
+        val userPhoto = arguments?.getString("userPhoto").toString()
+        val usersName = arguments?.getString("usersName").toString()
         val latitude = arguments?.getDouble("lat")
         val longitude = arguments?.getDouble("long")
         if (requestCode == RQ_SPEECH_REC && resultCode == Activity.RESULT_OK){
@@ -65,10 +66,13 @@ class SosFragment : Fragment() {
             transcription = result?.get(0).toString()
         }
         viewModel.uploadData(
+            usersName,
+            userPhoto,
             DateHelper.getDate(),
             userId,
             transcription,
             "Empty report",
+            "Empty classification",
             latitude,
             longitude,
             "Waiting for responder"
