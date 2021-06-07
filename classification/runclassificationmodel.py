@@ -12,7 +12,7 @@ def classification(report):
   '''
     Args:
       Input : string; raw sentence.
-      Output: json; {category: ...}
+      Output: string; category
               list of categories:
               crime | medical | fire | natural disaster | traffice accident
   '''
