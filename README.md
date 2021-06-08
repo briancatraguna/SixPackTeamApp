@@ -57,22 +57,26 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#contributing">Contributing</a></li>
+<!--     <li><a href="#contributing">Contributing</a></li> -->
     <li><a href="#license">License</a></li>
-    <li><a href="#contact">Our Team</a></li>
+    <li><a href="#our-team">Our Team</a></li>
     <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
 </details>
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## 🎉 About The Project
 
-Did you know that a huge amount of emergency cases remain unhandled? Some of the victims may lose their lives because of the long response time of the emergency service. While emergency services must always be a priority, we are here to help Indonesia to have a better emergency service. 
+Did you know that a huge amount of emergency cases remain unhandled? Some of the victims may lose their lives because of the long response time of the emergency service. While emergency services must always be a priority, we are here to help Indonesia to have a better emergency service. 🇮🇩
 
-<a href="https://github.com/briancatraguna/SixPackTeamApp/"> <img src="assets/implementation.png" alt="Logo"> </a>
+Our app integrates machine learning technology to correctly classify what kind of emergency the reporter is in so that processing reporters’ situations would be automated and important things can be extracted from the user’s report. Our superior technology can accelerate responders to respond appropriately according to the user’s needs.
 
-### Directory Guide
+<p align='center'>
+  <a href="https://github.com/briancatraguna/SixPackTeamApp/"> <img src="assets/implementation.png" alt="Logo"> </a>
+</p>
+
+### 🦮 Directory Guide
 
 No. | Dir | Details
 --- | --- | ---
@@ -84,20 +88,19 @@ No. | Dir | Details
 6 | `ner` | TBA
 7 | `flask` | Contains API for NER and classification model.
 
-### Built With
+### 🏗️ Built With
 
 * [Tensorflow](https://tensorflow.com)
 * [Android Studio](https://developer.android.com/studio/)
-* [Laravel](https://laravel.com)
-
+* [Google App Engine](https://cloud.google.com/appengine/)
 
 <!-- GETTING STARTED -->
-## Getting Started
+## ⭐ Getting Started
 
 This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
+### ❗ Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
 * npm
@@ -105,7 +108,7 @@ This is an example of how to list things you need to use the software and how to
   npm install npm@latest -g
   ```
 
-### Installation
+### ⚙️ Installation
 `EXAMPLE:`
 1. Get a free API Key at [https://example.com](https://example.com)
 2. Clone the repo
@@ -122,7 +125,7 @@ This is an example of how to list things you need to use the software and how to
    ```
 
 <!-- USAGE EXAMPLES -->
-## Usage
+## 📱 Usage
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
@@ -131,7 +134,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 
 <!-- CONTRIBUTING -->
-## Contributing
+<!-- ## Contributing
 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
@@ -139,7 +142,7 @@ Contributions are what make the open source community such an amazing place to b
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+5. Open a Pull Request -->
 
 <!-- LICENSE -->
 ## License
@@ -147,7 +150,7 @@ Contributions are what make the open source community such an amazing place to b
 Distributed under the MIT License. See `LICENSE` for more information.
 
 <!-- OUR TEAM -->
-## Our Team
+## 🧑‍🤝‍🧑 Our Team
 ` insert picture here`
  name | github | linkedin 
  ---  |  ---   | ---      
@@ -159,12 +162,13 @@ Rahmat Syawaludin | <a href="https://github.com/rahmatsywldn"><img src="assets/g
 Septin Lutfiyatul Munawaroh | <a href="https://github.com/septinlutf"><img src="assets/github.svg" alt="GitHub"></a> | <a href="https://www.linkedin.com/in/"><img src="assets/linkedin.svg" alt="LinkedIn"></a>
 
 <!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
-`insert references etc`
+## 💌 Acknowledgements
+* [Bangkit Team] 🤍
 * [Img Shields](https://shields.io)
 * [Choose an Open Source License](https://choosealicense.com)
-* [Sticky Kit](http://leafo.net/sticky-kit)
 * [README Template](https://github.com/othneildrew/Best-README-Template/)
+* 
+
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
