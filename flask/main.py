@@ -50,14 +50,14 @@ def getEntity(predOutput):
                 }
 
     for pred in predOutput:
-        if p[1].endswith('PERSON'):
-            entities['PERSON'].append(p[0])
-        elif p[1].endswith('LOCATION'):
-            entities['LOCATION'].append(p[0])
-        elif p[1].endswith('DESCRIPTION'):
-            entities['DESCRIPTION'].append(p[0])
-        elif p[1].endswith('WEAPON'):
-            entities['WEAPON'].append(p[0])
+        if pred[1].endswith('PERSON'):
+            entities['PERSON'].append(pred[0])
+        elif pred[1].endswith('LOCATION'):
+            entities['LOCATION'].append(pred[0])
+        elif pred[1].endswith('DESCRIPTION'):
+            entities['DESCRIPTION'].append(pred[0])
+        elif pred[1].endswith('WEAPON'):
+            entities['WEAPON'].append(pred[0])
     return entities
 
 entities = getEntity(label)
