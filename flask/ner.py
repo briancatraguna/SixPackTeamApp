@@ -1,20 +1,12 @@
 import numpy as np
 import tensorflow_hub as hub
-from flask import Flask, request
-from flask_restful import Api
+from flask import Flask, request, jsonify
 from tensorflow.keras.models import load_model
 
 app = Flask(__name__)
-api = Api(app)
 
-model = load_model('model.h5', custom_objects={'KerasLayer':hub.KerasLayer})
+model = load_model('classification.h5', custom_objects={'KerasLayer':hub.KerasLayer})
 
-# get input from args
-@app.route('/')
-def getInput():
-    return request.args.get('input')
-
-# do prediction
 def pred(sentence):
     """
     Get predictions from model.
@@ -33,14 +25,14 @@ def pred(sentence):
                  8: 'I-WEAPON',
                  0: 'O'
                  }
-    input = sentence.split()
+    words = sentence.split()
 
     label = []
-    for i in range(len(input)):
-        prediction = model.predict(input)[i]
+    for i in range(len(words)):
+        prediction = model.predict(words)[i]
         labelIndex = np.argmax(prediction)
         label.append(labelDict.get(labelIndex))
-    return input, label
+    return list(zip(words, label))
 
 def getEntity(predOutput):
     entities = {'PERSON': [],
@@ -60,9 +52,13 @@ def getEntity(predOutput):
             entities['WEAPON'].append(pred[0])
     return entities
 
-entities = getEntity(label)
-sentence = getInput()
-predOutput = pred(sentence)
+@app.route("/")
+def ner():
+    inputString = request.args.get('input')
+    predOutput = pred(inputString)
+    entities = getEntity(predOutput)
+    return jsonify(entities)
 
-if __name__ == '__main__':
-    app.run(debug=True)
+
+if __name__ == "__main__":
+    app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
