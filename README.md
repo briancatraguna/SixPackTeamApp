@@ -13,7 +13,6 @@
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url] -->
 
-
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
@@ -36,8 +35,6 @@
     <a href="https://github.com/briancatraguna/SixPackTeamApp/">Slide Deck</a>
   </p>
 </p>
-
-
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
@@ -95,36 +92,22 @@ No. | Dir | Details
 * [Tensorflow](https://tensorflow.com)
 * [Android Studio](https://developer.android.com/studio/)
 * [Google App Engine](https://cloud.google.com/appengine/)
+* [Flask](https://flask.palletsprojects.com)
 
 <!-- GETTING STARTED -->
 ## ⭐ Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
 
 ### ❗ Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+* Android version ......
+* Internet connection
+* Location services (GPS)
 
 ### ⚙️ Installation
-`EXAMPLE:`
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/briancatraguna/SixPackTeamApp/
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```JS
-   const API_KEY = 'ENTER YOUR API';
-   ```
+1. Download our APK at ..
 
 <!-- USAGE EXAMPLES -->
 ## 📱 Usage
@@ -169,7 +152,6 @@ Septin Lutfiyatul Munawaroh | <a href="https://github.com/septinlutf"><img src="
 * [Img Shields](https://shields.io)
 * [Choose an Open Source License](https://choosealicense.com)
 * [README Template](https://github.com/othneildrew/Best-README-Template/)
-* 
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
