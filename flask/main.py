@@ -33,7 +33,7 @@ def pred(sentence):
                  8: 'I-WEAPON',
                  0: 'O'
                  }
-    input = input_for_model.split()
+    input = sentence.split()
 
     label = []
     for i in range(len(input)):
