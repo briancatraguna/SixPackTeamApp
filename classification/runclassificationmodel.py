@@ -18,17 +18,17 @@ def classification(report):
   '''
 
   # get predictions number
-  predictions = model.predict(prediction)[0]
+  predictions = model.predict([report])[0]
 
   # get classification based on the index
   classification = np.where(predictions == np.max(predictions))[0][0]
   switcher = {0: "crime",
-            1: "medical",
-            2: "fire",
-            3: "natural disaster",
-            4: "traffic accident"
-            }
-  return (switcher.get(classification, "nothing"))
+              1: "medical",
+              2: "fire",
+              3: "natural disaster",
+              4: "traffic accident"
+             }
+  return switcher.get(classification, "nothing")
 
 # Driver function
 if __name__ == "__main__":
