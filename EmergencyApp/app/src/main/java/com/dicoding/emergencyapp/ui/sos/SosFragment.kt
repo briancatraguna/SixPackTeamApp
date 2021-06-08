@@ -18,6 +18,7 @@ import com.dicoding.emergencyapp.data.repository.NerRepository
 import com.dicoding.emergencyapp.databinding.FragmentSosBinding
 import com.dicoding.emergencyapp.helpers.ClassificationAlgorithm
 import com.dicoding.emergencyapp.helpers.DateHelper
+import com.dicoding.emergencyapp.helpers.NerResponseParser
 import com.dicoding.emergencyapp.ui.sos.typing.TypingActivity
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
@@ -75,23 +76,21 @@ class SosFragment : Fragment() {
         val classifiedClass = classificationObject.getClass()
 
         nerViewModel.getResults(transcription).observe(this,{ response ->
-            if (response!=null){
-                println(response.lOCATION)
-            }
+            val parser = NerResponseParser(response)
+            val report = parser.getStringFormat()
+            viewModel.uploadData(
+                usersName,
+                userPhoto,
+                DateHelper.getDate(),
+                userId,
+                transcription,
+                report,
+                classifiedClass,
+                latitude,
+                longitude,
+                "Waiting for responder"
+            )
         })
-
-        viewModel.uploadData(
-            usersName,
-            userPhoto,
-            DateHelper.getDate(),
-            userId,
-            transcription,
-            "Empty report",
-            classifiedClass,
-            latitude,
-            longitude,
-            "Waiting for responder"
-        )
         viewModel.getStatus().observe(requireActivity(),{
             if (it){
                 Toast.makeText(context,"Data succesfully uploaded. Waiting for responder.",Toast.LENGTH_SHORT).show()
