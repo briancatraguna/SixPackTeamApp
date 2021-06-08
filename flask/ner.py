@@ -46,7 +46,7 @@ def getEntity(predOutput):
             entities['PERSON'].append(pred[0])
         elif pred[1].endswith('LOCATION'):
             entities['LOCATION'].append(pred[0])
-        elif pred[1].endswith('DESCRIPTION'):
+        elif pred[1].endswith('DESC'):
             entities['DESCRIPTION'].append(pred[0])
         elif pred[1].endswith('WEAPON'):
             entities['WEAPON'].append(pred[0])
