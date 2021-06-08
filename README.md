@@ -148,11 +148,16 @@ Septin Lutfiyatul Munawaroh | <a href="https://github.com/septinlutf"><img src="
 
 <!-- ACKNOWLEDGEMENTS -->
 ## 💌 Acknowledgements
-* [Bangkit Team] 🤍
+* [Bangkit Academy 2021](https://grow.google/intl/id_id/bangkit/) 🤍
 * [Img Shields](https://shields.io)
 * [Choose an Open Source License](https://choosealicense.com)
 * [README Template](https://github.com/othneildrew/Best-README-Template/)
 
+```
+1. Hossain, M. M., Sharmin, M., & Ahmed, S. (2018). Bangladesh Emergency Services. Proceedings of the 1st ACM SIGCAS Conference on Computing and Sustainable Societies. https://doi.org/10.1145/3209811.3209870
+2. Edillo, Shallom & Garrote, Pamela & Domingo, Lucky & Malapit, Arianne & Fabito, Bernie. (2017). A mobile based emergency reporting application for the Philippine National Police Emergency Hotline 911: A case for the development of i911. 1-4. 10.23919/ICMU.2017.8330110
+3. Klein, B., Laiseca, X., Casado-Mansilla, D., López-de-Ipiña, D., & Nespral, A. P. (2012). Detection and Extracting of Emergency Knowledge from Twitter Streams. Ubiquitous Computing and Ambient Intelligence, 462–469. https://doi.org/10.1007/978-3-642-35377-2_64 
+```
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
