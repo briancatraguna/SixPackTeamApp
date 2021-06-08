@@ -15,7 +15,7 @@ class NerApiConfig {
                 .addInterceptor(loggingInterceptor)
                 .build()
             val retrofit = Retrofit.Builder()
-                .baseUrl(BuildConfig.NER_BASE_URL)
+                .baseUrl("http://34.101.94.235:5000/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build()

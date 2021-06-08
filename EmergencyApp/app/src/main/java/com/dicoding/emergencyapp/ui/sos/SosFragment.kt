@@ -12,7 +12,9 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.dicoding.emergencyapp.R
 import com.dicoding.emergencyapp.data.remote.FirebaseDataSource
+import com.dicoding.emergencyapp.data.remote.NerDataSource
 import com.dicoding.emergencyapp.data.repository.FirebaseRepository
+import com.dicoding.emergencyapp.data.repository.NerRepository
 import com.dicoding.emergencyapp.databinding.FragmentSosBinding
 import com.dicoding.emergencyapp.helpers.ClassificationAlgorithm
 import com.dicoding.emergencyapp.helpers.DateHelper
@@ -26,6 +28,7 @@ class SosFragment : Fragment() {
     private lateinit var binding: FragmentSosBinding
     private lateinit var transcription: String
     private lateinit var viewModel: SosViewModel
+    private lateinit var nerViewModel: NerViewModel
 
     companion object {
         private var TAG = SosFragment::class.java.simpleName
@@ -43,6 +46,7 @@ class SosFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = SosViewModel(FirebaseRepository(FirebaseDataSource()))
+        nerViewModel = NerViewModel(NerRepository(NerDataSource.getInstance()))
 
         val emergencyButton = binding.sosButtonContainer
         emergencyButton.setOnClickListener {
@@ -69,6 +73,12 @@ class SosFragment : Fragment() {
 
         val classificationObject = ClassificationAlgorithm(transcription)
         val classifiedClass = classificationObject.getClass()
+
+        nerViewModel.getResults(transcription).observe(this,{ response ->
+            if (response!=null){
+                println(response.lOCATION)
+            }
+        })
 
         viewModel.uploadData(
             usersName,
