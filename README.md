@@ -25,7 +25,7 @@
   <p align="center">
     by Six Pack (B21-CAP0031)
     <br />
-    <a href="https://github.com/briancatraguna/SixPackTeamApp/"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/briancatraguna/SixPackTeamApp.wiki.git"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/briancatraguna/SixPackTeamApp/">View Demo</a>
