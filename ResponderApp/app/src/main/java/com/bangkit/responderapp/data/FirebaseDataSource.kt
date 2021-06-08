@@ -16,8 +16,12 @@ class FirebaseDataSource {
     private var _readSuccess = MutableLiveData<Boolean>()
     var readSuccess: LiveData<Boolean> = _readSuccess
 
+    private var _isLoading = MutableLiveData<Boolean>()
+    var isLoading: LiveData<Boolean> = _isLoading
+
     fun getAllReports(): MutableLiveData<ArrayList<ReportEntity?>>{
         _readSuccess.value = true
+        _isLoading.value = true
         val result = MutableLiveData<ArrayList<ReportEntity?>>()
         val reportList = arrayListOf<ReportEntity?>()
         myRef.addValueEventListener(object : ValueEventListener{
@@ -31,11 +35,13 @@ class FirebaseDataSource {
                     }
                     reportList.reverse()
                     result.value = reportList
+                    _isLoading.value = false
                 }
             }
 
             override fun onCancelled(error: DatabaseError) {
                 _readSuccess.value = false
+                _isLoading.value = false
             }
 
         })

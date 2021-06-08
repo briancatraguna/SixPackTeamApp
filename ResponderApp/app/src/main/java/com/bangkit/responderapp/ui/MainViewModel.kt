@@ -16,4 +16,8 @@ class MainViewModel(private val repository: FirebaseRepository):ViewModel() {
         return repository.readSuccess()
     }
 
+    fun isLoading(): LiveData<Boolean>{
+        return repository.isLoading()
+    }
+
 }

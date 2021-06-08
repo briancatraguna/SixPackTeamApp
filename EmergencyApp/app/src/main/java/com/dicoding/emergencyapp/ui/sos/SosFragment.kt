@@ -14,6 +14,7 @@ import com.dicoding.emergencyapp.R
 import com.dicoding.emergencyapp.data.remote.FirebaseDataSource
 import com.dicoding.emergencyapp.data.repository.FirebaseRepository
 import com.dicoding.emergencyapp.databinding.FragmentSosBinding
+import com.dicoding.emergencyapp.helpers.ClassificationAlgorithm
 import com.dicoding.emergencyapp.helpers.DateHelper
 import com.dicoding.emergencyapp.ui.sos.typing.TypingActivity
 import com.google.firebase.database.ktx.database
@@ -65,6 +66,10 @@ class SosFragment : Fragment() {
             val result = data?.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS)
             transcription = result?.get(0).toString()
         }
+
+        val classificationObject = ClassificationAlgorithm(transcription)
+        val classifiedClass = classificationObject.getClass()
+
         viewModel.uploadData(
             usersName,
             userPhoto,
@@ -72,7 +77,7 @@ class SosFragment : Fragment() {
             userId,
             transcription,
             "Empty report",
-            "Empty classification",
+            classifiedClass,
             latitude,
             longitude,
             "Waiting for responder"

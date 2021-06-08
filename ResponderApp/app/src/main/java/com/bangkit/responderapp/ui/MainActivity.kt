@@ -36,6 +36,14 @@ class MainActivity : AppCompatActivity() {
             rvReports.adapter = listReportsAdapter
         })
 
+        viewModel.isLoading().observe(this,{isLoading->
+            if (isLoading){
+                binding.progressBar.visibility = View.VISIBLE
+            } else {
+                binding.progressBar.visibility = View.GONE
+            }
+        })
+
         viewModel.readSuccess().observe(this,{success->
             if (!success){
                 binding.tvFail.visibility = View.VISIBLE

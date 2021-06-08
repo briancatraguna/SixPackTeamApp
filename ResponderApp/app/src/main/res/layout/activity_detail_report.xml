@@ -20,7 +20,16 @@
             app:layout_constraintTop_toBottomOf="@+id/toolbar"
             tools:layout_editor_absoluteX="-16dp">
 
+            <ProgressBar
+                android:id="@+id/imgProgressBar"
+                android:visibility="gone"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="30dp"/>
+
             <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgPerson"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_marginLeft="24dp"
@@ -38,6 +47,7 @@
                 android:textSize="14sp" />
 
             <TextView
+                android:id="@+id/tvDisplayName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="115dp"
@@ -69,6 +79,7 @@
                 android:textSize="14sp" />
 
             <TextView
+                android:id="@+id/tvClassification"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="60dp"
@@ -79,6 +90,7 @@
                 android:textSize="20sp" />
 
             <ImageView
+                android:id="@+id/imgLogo"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginLeft="24dp"
@@ -106,6 +118,7 @@
                 android:textSize="14sp" />
 
             <TextView
+                android:id="@+id/tvTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="24dp"
@@ -115,36 +128,6 @@
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
-        </FrameLayout>
-
-        <FrameLayout
-            android:id="@+id/frameLayout4"
-            android:layout_width="match_parent"
-            android:layout_height="145dp"
-            android:background="@drawable/bottom_border"
-            app:layout_constraintTop_toBottomOf="@+id/frameLayout3"
-            tools:layout_editor_absoluteX="16dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
-                android:layout_marginTop="5dp"
-                android:fontFamily="@font/roboto_italic"
-                android:text="Details"
-                android:textColor="@color/subtext"
-                android:textSize="14sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
-                android:layout_marginTop="32dp"
-                android:fontFamily="@font/roboto_black"
-                android:lineSpacingExtra="2dp"
-                android:text="People involved:\nDescription:\nLocation mentioned:\nWeapons:\n"
-                android:textColor="@color/black"
-                android:textSize="18sp" />
         </FrameLayout>
 
         <FrameLayout
@@ -165,6 +148,7 @@
                 android:textSize="14sp" />
 
             <TextView
+                android:id="@+id/tvTranscription"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="24dp"
@@ -194,6 +178,7 @@
                 android:textSize="14sp" />
 
             <TextView
+                android:id="@+id/tvLocation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="24dp"
@@ -208,6 +193,9 @@
                 android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:text="Maps"
+                android:fontFamily="@font/roboto_regular"
+                android:backgroundTint="@color/emergency_red"
+                android:elevation="5dp"
                 android:layout_marginTop="50dp"
                 android:layout_marginLeft="250dp"/>
         </FrameLayout>
