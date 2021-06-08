@@ -70,7 +70,7 @@
 
 Did you know that a huge amount of emergency cases remain unhandled? Some of the victims may lose their lives because of the long response time of the emergency service. While emergency services must always be a priority, we are here to help Indonesia to have a better emergency service. 
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+<a href="https://github.com/briancatraguna/SixPackTeamApp/"> <img src="assets/implementation.png" alt="Logo"> </a>
 
 ### Directory Guide
 
@@ -82,6 +82,7 @@ No. | Dir | Details
 4 | `data` | Consists all data: raw, preprocessed, filtered, data for classification and NER.
 5 | `classification`| TBA
 6 | `ner` | TBA
+7 | `flask` | Contains API for NER and classification model.
 
 ### Built With
 
