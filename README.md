@@ -81,12 +81,14 @@ Our app integrates machine learning technology to correctly classify what kind o
 No. | Dir | Details
 --- | --- | ---
 1 | `EmergencyApp` | Android application.
-2 | `scraping` | Code for [website](https://lapor.go.id) scraping.
-3 | `build_df` | Processing raw results from scraping and generate dataframes.
-4 | `data` | Consists all data: raw, preprocessed, filtered, data for classification and NER.
+2 | `ResponderApp` | 
+3 | `assets` | 
+4 | `build_df` | Processing raw results from scraping and generate dataframes.
 5 | `classification`| TBA
-6 | `ner` | TBA
+6 | `data` | Consists all data: raw, preprocessed, filtered, data for classification and NER.
 7 | `flask` | Contains API for NER and classification model.
+8 | `ner` | TBA
+9 | `scraping` | Code for [website](https://lapor.go.id) scraping.
 
 ### 🏗️ Built With
 
