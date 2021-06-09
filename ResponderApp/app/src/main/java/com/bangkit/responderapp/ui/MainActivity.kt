@@ -33,6 +33,9 @@ class MainActivity : AppCompatActivity() {
         val listReportsAdapter = ListReportsAdapter(this)
         viewModel.getAllReports().observe(this,{reports->
             listReportsAdapter.setData(reports)
+            viewModel.getReportIds().observe(this,{ids->
+                listReportsAdapter.setReportIds(ids)
+            })
             rvReports.adapter = listReportsAdapter
         })
 

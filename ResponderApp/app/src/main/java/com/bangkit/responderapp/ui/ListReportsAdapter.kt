@@ -9,6 +9,7 @@ import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bangkit.responderapp.R
 import com.bangkit.responderapp.data.ReportEntity
+import com.bangkit.responderapp.data.ReportIdEntity
 import com.bangkit.responderapp.databinding.ItemReportBinding
 import com.bangkit.responderapp.utils.LocationHelper
 import java.util.*
@@ -34,8 +35,14 @@ class ListReportsAdapter(private val context: Context): RecyclerView.Adapter<Lis
         notifyDataSetChanged()
     }
 
+    private var listReportIds: ReportIdEntity? = ReportIdEntity(arrayListOf())
+    fun setReportIds(reportIds: ReportIdEntity?){
+        this.listReportIds = reportIds
+        notifyDataSetChanged()
+    }
+
     inner class ListViewHolder(private val binding: ItemReportBinding): RecyclerView.ViewHolder(binding.root) {
-        fun bind(report: ReportEntity?){
+        fun bind(report: ReportEntity?,id: String?){
             with(binding){
                 tvReportTitle.text = report?.classification
                 tvLocation.text = locationHelper.getLocation(report?.latitude,report?.longitude)
@@ -54,9 +61,11 @@ class ListReportsAdapter(private val context: Context): RecyclerView.Adapter<Lis
                     imgLogo.setImageResource(R.drawable.ic_unknown_logo)
                 }
             }
+
             itemView.setOnClickListener {
                 val intent = Intent(itemView.context,DetailReportActivity::class.java)
                 intent.putExtra(DetailReportActivity.EXTRA_REPORT,report)
+                intent.putExtra(DetailReportActivity.EXTRA_REPORT_ID,id)
                 itemView.context.startActivity(intent)
             }
         }
@@ -68,7 +77,7 @@ class ListReportsAdapter(private val context: Context): RecyclerView.Adapter<Lis
     }
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-        holder.bind(listData[position])
+        holder.bind(listData[position],listReportIds?.ids?.get(position))
     }
 
     override fun getItemCount(): Int {

@@ -19,6 +19,7 @@ class DetailReportActivity : AppCompatActivity() {
 
     companion object{
         const val EXTRA_REPORT = "report"
+        const val EXTRA_REPORT_ID = "report_id"
         private const val crime = "Crime"
         private const val medical = "Medical"
         private const val fire = "Fire"
@@ -32,6 +33,8 @@ class DetailReportActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailReportBinding.inflate(layoutInflater)
         report = intent.getParcelableExtra<ReportEntity>(EXTRA_REPORT)
+        val id = intent.getStringExtra(EXTRA_REPORT_ID)
+        println(id)
         setContentView(binding.root)
 
         binding.toolbar.backBtn.setOnClickListener { finish() }

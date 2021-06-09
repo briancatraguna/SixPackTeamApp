@@ -17,4 +17,8 @@ class FirebaseRepository(private val dataSource: FirebaseDataSource) {
         return dataSource.isLoading
     }
 
+    fun getReportIds(): MutableLiveData<ReportIdEntity?>{
+        return dataSource.getReportIds()
+    }
+
 }
