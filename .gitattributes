@@ -1,0 +1,2 @@
+D:/annisann/Bangkit/capstone/model/ner.h5 filter=lfs diff=lfs merge=lfs -text
+D:/annisann/Bangkit/capstone/model/classification.h5 filter=lfs diff=lfs merge=lfs -text
