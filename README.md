@@ -81,7 +81,7 @@ Our app implements machine learning technology to correctly generate reports fro
 
 * [Tensorflow](https://tensorflow.com)
 * [Android Studio](https://developer.android.com/studio/)
-* [Google App Engine](https://cloud.google.com/appengine/)
+* [Google Compute Engine](https://cloud.google.com/compute)
 * [Flask](https://flask.palletsprojects.com)
 <!-- *  -->
 
@@ -92,7 +92,7 @@ Our app implements machine learning technology to correctly generate reports fro
 No. | Dir | Details
 --- | --- | ---
 1 | `EmergencyApp` | User application: for emergency reporting, see news, and see tips while in emergency situation.
-2 | `ResponderApp` | Reponder application: ..
+2 | `ResponderApp` | Reponder application: the app used for responders to read the automated reports and update status on the emergency case.
 3 | `assets` | Contains all images for this repository.
 4 | `build_df` | Processing data from scraping result, generate train and test data for Machine Learning
 5 | `classification`| Classify user report to its label.
