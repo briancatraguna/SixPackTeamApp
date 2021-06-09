@@ -72,7 +72,7 @@ Did you know that a huge amount of emergency cases remain unhandled? Some of the
 Our app implements machine learning technology to correctly generate reports from user voice and automatically send it to the responser app. Our superior technology can accelerate responders to respond appropriately according to the user’s needs and could save many lives.
 
 <p align='center'>
-  <a href="https://github.com/briancatraguna/SixPackTeamApp/"> <img src="assets/flow.png" alt="Logo"> </a>
+  <a href="https://github.com/briancatraguna/SixPackTeamApp/"> <img src="assets/our-flow.png" alt="Our Flow"> </a>
 </p>
 
 ### 🏗️ Built With
@@ -160,7 +160,6 @@ Septin Lutfiyatul Munawaroh | <a href="https://github.com/septinlutf"><img src="
 
 <!-- ACKNOWLEDGEMENTS -->
 ## 💌 Acknowledgements
-* [Bangkit Academy 2021](https://grow.google/intl/id_id/bangkit/) 🤍
 * [Img Shields](https://shields.io)
 * [Choose an Open Source License](https://choosealicense.com)
 * [README Template](https://github.com/othneildrew/Best-README-Template/)
@@ -170,6 +169,11 @@ Septin Lutfiyatul Munawaroh | <a href="https://github.com/septinlutf"><img src="
 2. Edillo, Shallom & Garrote, Pamela & Domingo, Lucky & Malapit, Arianne & Fabito, Bernie. (2017). A mobile based emergency reporting application for the Philippine National Police Emergency Hotline 911: A case for the development of i911. 1-4. 10.23919/ICMU.2017.8330110
 3. Klein, B., Laiseca, X., Casado-Mansilla, D., López-de-Ipiña, D., & Nespral, A. P. (2012). Detection and Extracting of Emergency Knowledge from Twitter Streams. Ubiquitous Computing and Ambient Intelligence, 462–469. https://doi.org/10.1007/978-3-642-35377-2_64 
 ```
+<p align="center">
+  <a href="https://grow.google/intl/id_id/bangkit/">
+    <h3 align="center">Special thanks to <strong>Bangkit Academy 2021</strong>🤍</h3>
+    <img src="assets/bangkit.png" alt="Bangkit Academy">
+</p>
 <!--  -->
 
 
