@@ -23,7 +23,7 @@
   <p align="center">
     by Six Pack (B21-CAP0031)
     <br />
-    <a href="https://github.com/briancatraguna/SixPackTeamApp.wiki.git"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/briancatraguna/SixPackTeamApp/wiki"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/briancatraguna/SixPackTeamApp/">View Demo</a>
@@ -125,7 +125,7 @@ Download our APK at `insert link here`
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
-_For more examples, please refer to the [Documentation](https://github.com/briancatraguna/SixPackTeamApp.wiki.git)_
+_For more examples, please refer to the [Documentation](https://github.com/briancatraguna/SixPackTeamApp/wiki)_
 <!--  -->
 
 <!-- CONTRIBUTING -->
