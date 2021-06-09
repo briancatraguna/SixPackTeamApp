@@ -16,11 +16,18 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.lifecycle.ViewModel
 import com.dicoding.emergencyapp.R
+import com.dicoding.emergencyapp.data.remote.ClassificationDataSource
 import com.dicoding.emergencyapp.data.remote.FirebaseDataSource
+import com.dicoding.emergencyapp.data.remote.NerDataSource
+import com.dicoding.emergencyapp.data.repository.ClassificationRepository
 import com.dicoding.emergencyapp.data.repository.FirebaseRepository
+import com.dicoding.emergencyapp.data.repository.NerRepository
 import com.dicoding.emergencyapp.databinding.ActivityTypingBinding
 import com.dicoding.emergencyapp.helpers.DateHelper
+import com.dicoding.emergencyapp.helpers.NerResponseParser
 import com.dicoding.emergencyapp.ui.home.HomeActivity
+import com.dicoding.emergencyapp.ui.sos.ClassificationViewModel
+import com.dicoding.emergencyapp.ui.sos.NerViewModel
 import com.dicoding.emergencyapp.ui.sos.SosViewModel
 import com.google.android.gms.location.*
 import com.google.android.material.textfield.TextInputLayout
@@ -45,6 +52,8 @@ class TypingActivity : AppCompatActivity() {
     private var longitude: Double? = 0.0
     private lateinit var fusedLocationProviderClient: FusedLocationProviderClient
     private lateinit var locationRequest: LocationRequest
+    private lateinit var nerViewModel: NerViewModel
+    private lateinit var classificationViewModel: ClassificationViewModel
 
     companion object {
         //Unique int for permission ID
@@ -56,6 +65,9 @@ class TypingActivity : AppCompatActivity() {
         binding = ActivityTypingBinding.inflate(layoutInflater)
         setContentView(binding.root)
         viewModel = SosViewModel(FirebaseRepository(FirebaseDataSource()))
+        nerViewModel = NerViewModel(NerRepository(NerDataSource.getInstance()))
+        classificationViewModel = ClassificationViewModel(ClassificationRepository(
+            ClassificationDataSource.getInstance()))
 
         mRootStorage = FirebaseStorage.getInstance().getReference()
         mAuth = FirebaseAuth.getInstance()
@@ -64,23 +76,36 @@ class TypingActivity : AppCompatActivity() {
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
         getLastLocation()
 
+        val transcription = binding.situationEdit.text.toString()
+
         val userId = user?.uid.toString()
         val userName = user?.displayName.toString()
         val userPhoto = user?.photoUrl.toString()
 
         binding.sendBtn.setOnClickListener {
-            viewModel.uploadData(
-                userName,
-                userPhoto,
-                DateHelper.getDate(),
-                userId,
-                binding.situationEdit.text.toString(),
-                "Empty report",
-                "Empty classification",
-                latitude,
-                longitude,
-                "Waiting for responder"
-            )
+            var report = ""
+            var classification = ""
+            nerViewModel.getResults(transcription).observe(this,{ nerResponse ->
+                val parser = NerResponseParser(nerResponse)
+                report = parser.getStringFormat()
+                classificationViewModel.getResults(transcription).observe(this,{ classificationResponse->
+                    classification = classificationResponse.label.toString()
+                    if (report!=""&&classification!=""){
+                        viewModel.uploadData(
+                            userName,
+                            userPhoto,
+                            DateHelper.getDate(),
+                            userId,
+                            transcription,
+                            report,
+                            classification,
+                            latitude,
+                            longitude,
+                            "Waiting for responder"
+                        )
+                    }
+                })
+            })
             viewModel.getStatus().observe(this,{
                 if (it){
                     Toast.makeText(this,"Data succesfully uploaded. Waiting for responder.",
