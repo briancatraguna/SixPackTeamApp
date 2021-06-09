@@ -20,6 +20,9 @@ class FirebaseDataSource {
     private var _readSuccess = MutableLiveData<Boolean>()
     var readSuccess: LiveData<Boolean> = _readSuccess
 
+    private var _isLoading = MutableLiveData<Boolean>()
+    var isLoading: LiveData<Boolean> = _isLoading
+
     fun uploadData(
         usersName: String,
         usersPhoto: String,
@@ -52,6 +55,7 @@ class FirebaseDataSource {
 
     fun readUserReports(userId: String?): MutableLiveData<ArrayList<ReportEntity?>> {
         _readSuccess.value = true
+        _isLoading.value = true
         val userRef = myRef.child(userId.toString())
         val result = MutableLiveData<ArrayList<ReportEntity?>>()
         val reportList = arrayListOf<ReportEntity?>()
@@ -64,11 +68,13 @@ class FirebaseDataSource {
                     }
                     reportList.reverse()
                     result.value = reportList
+                    _isLoading.value = false
                 }
             }
 
             override fun onCancelled(error: DatabaseError) {
                 _readSuccess.value = false
+                _isLoading.value = false
             }
         })
         return result

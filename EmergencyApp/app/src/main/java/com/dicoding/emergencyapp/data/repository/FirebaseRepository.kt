@@ -33,4 +33,8 @@ class FirebaseRepository(private val dataSource: FirebaseDataSource) {
     fun isReadSuccess(): LiveData<Boolean>{
         return dataSource.readSuccess
     }
+
+    fun isLoading(): LiveData<Boolean>{
+        return dataSource.isLoading
+    }
 }

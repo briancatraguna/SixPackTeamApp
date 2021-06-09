@@ -73,24 +73,27 @@ class SosFragment : Fragment() {
             transcription = result?.get(0).toString()
         }
 
+        var report = ""
+        var classification = ""
         nerViewModel.getResults(transcription).observe(this,{ nerResponse ->
             val parser = NerResponseParser(nerResponse)
-            val report = parser.getStringFormat()
+            report = parser.getStringFormat()
             classificationViewModel.getResults(transcription).observe(this,{ classificationResponse->
-                val classification = classificationResponse.label.toString()
-                viewModel.uploadData(
-                    usersName,
-                    userPhoto,
-                    DateHelper.getDate(),
-                    userId,
-                    transcription,
-                    report,
-                    classification,
-                    latitude,
-                    longitude,
-                    "Waiting for responder"
-                )
-
+                classification = classificationResponse.label.toString()
+                if (report!=""&&classification!=""){
+                    viewModel.uploadData(
+                        usersName,
+                        userPhoto,
+                        DateHelper.getDate(),
+                        userId,
+                        transcription,
+                        report,
+                        classification,
+                        latitude,
+                        longitude,
+                        "Waiting for responder"
+                    )
+                }
             })
         })
 
