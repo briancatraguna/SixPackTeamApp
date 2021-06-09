@@ -41,6 +41,7 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
+        <li><a href="#flow">Flow</a></li>
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
@@ -71,6 +72,7 @@ Did you know that a huge amount of emergency cases remain unhandled? Some of the
 
 Our app implements machine learning technology to correctly generate reports from user voice and automatically send it to the responser app. Our superior technology can accelerate responders to respond appropriately according to the user’s needs and could save many lives.
 
+### 💁‍♀️ Flow
 <p align='center'>
   <a href="https://github.com/briancatraguna/SixPackTeamApp/"> <img src="assets/our-flow.png" alt="Our Flow"> </a>
 </p>
