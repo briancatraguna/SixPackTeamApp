@@ -72,7 +72,7 @@ Did you know that a huge amount of emergency cases remain unhandled? Some of the
 Our app implements machine learning technology to correctly generate reports from user voice and automatically send it to the responser app. Our superior technology can accelerate responders to respond appropriately according to the user’s needs and could save many lives.
 
 <p align='center'>
-  <a href="https://github.com/briancatraguna/SixPackTeamApp/"> <img src="assets/implementation.png" alt="Logo"> </a>
+  <a href="https://github.com/briancatraguna/SixPackTeamApp/"> <img src="https://github.com/briancatraguna/SixPackTeamApp/assets/implementation.png" alt="Logo"> </a>
 </p>
 
 ### 🏗️ Built With
