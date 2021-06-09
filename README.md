@@ -19,9 +19,7 @@
   <a href="https://github.com/briancatraguna/SixPackTeamApp/">
     <img src="assets/logo.png" alt="Logo">
   </a>
-
   <h3 align="center">An Emergency Service App</h3>
-
   <p align="center">
     by Six Pack (B21-CAP0031)
     <br />
@@ -47,6 +45,9 @@
       </ul>
     </li>
     <li>
+      <a href="#directory-guide">Directory Guide</a>
+    </li>
+    <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
@@ -60,6 +61,7 @@
     <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
 </details>
+<!--  -->
 
 
 <!-- ABOUT THE PROJECT -->
@@ -67,13 +69,23 @@
 
 Did you know that a huge amount of emergency cases remain unhandled? Some of the victims may lose their lives because of the long response time of the emergency service. While emergency services must always be a priority, we are here to help Indonesia to have a better emergency service. 🇮🇩
 
-Our app integrates machine learning technology to correctly classify what kind of emergency the reporter is in so that processing reporters’ situations would be automated and important things can be extracted from the user’s report. Our superior technology can accelerate responders to respond appropriately according to the user’s needs.
+Our app implements machine learning technology to correctly generate reports from user voice and automatically send it to the responser app. Our superior technology can accelerate responders to respond appropriately according to the user’s needs and could save many lives.
 
 <p align='center'>
   <a href="https://github.com/briancatraguna/SixPackTeamApp/"> <img src="assets/implementation.png" alt="Logo"> </a>
 </p>
 
-### 🦮 Directory Guide
+### 🏗️ Built With
+
+* [Tensorflow](https://tensorflow.com)
+* [Android Studio](https://developer.android.com/studio/)
+* [Google App Engine](https://cloud.google.com/appengine/)
+* [Flask](https://flask.palletsprojects.com)
+<!-- *  -->
+
+
+<!-- DIRECTORY GUIDE -->
+## 🦮 Directory Guide
 
 No. | Dir | Details
 --- | --- | ---
@@ -86,13 +98,8 @@ No. | Dir | Details
 7 | `flask` | Contains API for NER and classification model.
 8 | `ner` | TBA
 9 | `scraping` | Code for [website](https://lapor.go.id) scraping.
+<!--  -->
 
-### 🏗️ Built With
-
-* [Tensorflow](https://tensorflow.com)
-* [Android Studio](https://developer.android.com/studio/)
-* [Google App Engine](https://cloud.google.com/appengine/)
-* [Flask](https://flask.palletsprojects.com)
 
 <!-- GETTING STARTED -->
 ## ⭐ Getting Started
@@ -108,6 +115,8 @@ This is an example of how to list things you need to use the software and how to
 
 ### ⚙️ Installation
 1. Download our APK at ..
+<!--  -->
+
 
 <!-- USAGE EXAMPLES -->
 ## 📱 Usage
@@ -115,8 +124,7 @@ This is an example of how to list things you need to use the software and how to
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
 _For more examples, please refer to the [Documentation](https://example.com)_
-
-<!-- ROADMAP -->
+<!--  -->
 
 <!-- CONTRIBUTING -->
 <!-- ## Contributing
@@ -133,6 +141,8 @@ Contributions are what make the open source community such an amazing place to b
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
+<!--  -->
+
 
 <!-- OUR TEAM -->
 ## 🧑‍🤝‍🧑 Our Team
@@ -145,6 +155,8 @@ Fadia Hanifa Suwandoko | <a href="https://github.com/fadiahanifa"><img src="asse
 Michael Wijaya | <a href="https://github.com/Michael-Wijayaa"><img src="assets/github.svg" alt="GitHub"></a> | <a href="https://www.linkedin.com/in/"><img src="assets/linkedin.svg" alt="LinkedIn"></a>
 Rahmat Syawaludin | <a href="https://github.com/rahmatsywldn"><img src="assets/github.svg" alt="GitHub"></a> | <a href="https://www.linkedin.com/in/rahmatsywldn"><img src="assets/linkedin.svg" alt="LinkedIn"></a>
 Septin Lutfiyatul Munawaroh | <a href="https://github.com/septinlutf"><img src="assets/github.svg" alt="GitHub"></a> | <a href="https://www.linkedin.com/in/septinlutf"><img src="assets/linkedin.svg" alt="LinkedIn"></a>
+<!--  -->
+
 
 <!-- ACKNOWLEDGEMENTS -->
 ## 💌 Acknowledgements
@@ -158,6 +170,8 @@ Septin Lutfiyatul Munawaroh | <a href="https://github.com/septinlutf"><img src="
 2. Edillo, Shallom & Garrote, Pamela & Domingo, Lucky & Malapit, Arianne & Fabito, Bernie. (2017). A mobile based emergency reporting application for the Philippine National Police Emergency Hotline 911: A case for the development of i911. 1-4. 10.23919/ICMU.2017.8330110
 3. Klein, B., Laiseca, X., Casado-Mansilla, D., López-de-Ipiña, D., & Nespral, A. P. (2012). Detection and Extracting of Emergency Knowledge from Twitter Streams. Ubiquitous Computing and Ambient Intelligence, 462–469. https://doi.org/10.1007/978-3-642-35377-2_64 
 ```
+<!--  -->
+
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
