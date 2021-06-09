@@ -8,4 +8,9 @@
     <string name="tvfail">Check your internet connection and try again.</string>
     <string name="report_details">Report Details</string>
     <string name="fire">Fire</string>
+    <string name="crime">Crime</string>
+    <string name="medical">Medical</string>
+    <string name="natural_disaster">Natural Disaster</string>
+    <string name="traffic_accident">Traffic Accident</string>
+    <string name="title_activity_maps">Map</string>
 </resources>
