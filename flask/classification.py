@@ -20,7 +20,7 @@ def classify(sentence):
   predictions = model.predict([sentence])[0]
 
   # get classification based on the index
-  classification = np.where(predictions == np.max(sentence))[0][0]
+  classification = np.where(predictions == np.max(predictions))[0][0]
   switcher = {0: "Crime",
               1: "Medical",
               2: "Fire",
