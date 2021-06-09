@@ -32,11 +32,18 @@ class MainActivity : AppCompatActivity() {
         rvReports.layoutManager = LinearLayoutManager(this)
         val listReportsAdapter = ListReportsAdapter(this)
         viewModel.getAllReports().observe(this,{reports->
-            listReportsAdapter.setData(reports)
+            if (reports.size>0){
+                listReportsAdapter.setData(reports)
+            }
             viewModel.getReportIds().observe(this,{ids->
-                listReportsAdapter.setReportIds(ids)
+                if (ids?.ids!=null){
+                    listReportsAdapter.setReportIds(ids)
+                    if (reports.size>0){
+                        rvReports.adapter = listReportsAdapter
+                    }
+                }
             })
-            rvReports.adapter = listReportsAdapter
+
         })
 
         viewModel.isLoading().observe(this,{isLoading->

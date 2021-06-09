@@ -72,6 +72,7 @@ class FirebaseDataSource {
             }
 
             override fun onCancelled(error: DatabaseError) {
+                _updateFail.value = true
                 Log.d("TAG","Fail")
             }
 

@@ -23,7 +23,6 @@ class ListReportsAdapter(private val context: Context): RecyclerView.Adapter<Lis
         private const val fire = "Fire"
         private const val naturalDisaster = "Natural Disaster"
         private const val trafficAccident = "Traffic Accident"
-        private const val unknown = "Unknown"
     }
 
     private val locationHelper = LocationHelper(context)

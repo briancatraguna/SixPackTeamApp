@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import com.bangkit.responderapp.R
 import com.bangkit.responderapp.data.FirebaseDataSource
 import com.bangkit.responderapp.data.FirebaseRepository
@@ -40,7 +41,11 @@ class DetailReportActivity : AppCompatActivity() {
         viewModel = MainViewModel(FirebaseRepository(FirebaseDataSource()))
         setContentView(binding.root)
 
-        binding.toolbar.backBtn.setOnClickListener { finish() }
+        binding.toolbar.backBtn.setOnClickListener {
+            val intent = Intent(this,MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
 
         binding.tvDisplayName.text = report?.usersName
         binding.tvClassification.text = report?.classification
@@ -83,14 +88,17 @@ class DetailReportActivity : AppCompatActivity() {
                 R.id.status_find -> {
                     report?.status = "Waiting for responder"
                     viewModel.updateStatus(id,report)
+                    Toast.makeText(this,"Status updated succesfully!",Toast.LENGTH_SHORT).show()
                 }
                 R.id.status_progress -> {
                     report?.status = "Responder on progress"
                     viewModel.updateStatus(id,report)
+                    Toast.makeText(this,"Status updated succesfully!",Toast.LENGTH_SHORT).show()
                 }
                 R.id.status_resolved -> {
                     report?.status = "Case resolved"
                     viewModel.updateStatus(id,report)
+                    Toast.makeText(this,"Status updated succesfully!",Toast.LENGTH_SHORT).show()
                 }
             }
         }
