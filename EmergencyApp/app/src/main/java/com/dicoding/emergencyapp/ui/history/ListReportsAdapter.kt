@@ -32,6 +32,20 @@ class ListReportsAdapter: RecyclerView.Adapter<ListReportsAdapter.ListViewHolder
                 } else {
                     imgStatus.setImageResource(R.drawable.ic_broken_image)
                 }
+
+                if (report?.classification == "Crime"){
+                    imgLogo.setImageResource(R.drawable.ic_crime_logo)
+                } else if (report?.classification == "Medical"){
+                    imgLogo.setImageResource(R.drawable.ic_medical_logo)
+                } else if (report?.classification == "Fire"){
+                    imgLogo.setImageResource(R.drawable.ic_fire_logo)
+                } else if (report?.classification == "Natural Disaster"){
+                    imgLogo.setImageResource(R.drawable.ic_natural_disaster_logo)
+                } else if (report?.classification == "Traffic Accident"){
+                    imgLogo.setImageResource(R.drawable.ic_traffic_accident_logo)
+                } else {
+                    imgLogo.setImageResource(R.drawable.ic_unknown_logo)
+                }
             }
 
             itemView.setOnClickListener{
