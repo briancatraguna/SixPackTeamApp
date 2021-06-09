@@ -107,7 +107,8 @@ No. | Dir | Details
 ## ⭐ Getting Started
 
 To get a local copy up and running follow these simple example steps.
-DISCLAIMER: This app will only work when the admin of the cloud server has opened the SSH connection to the android in order to run ML inferences. But you can set up your own virtual machine in your own cloud console.
+<br>
+#### DISCLAIMER: This app will only work when the admin of the cloud server has opened the SSH connection to the android in order to run ML inferences. But you can set up your own virtual machine in your own cloud console.</br>
 
 ### ❗ Prerequisites
 
