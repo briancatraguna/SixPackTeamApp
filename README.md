@@ -91,15 +91,15 @@ Our app implements machine learning technology to correctly generate reports fro
 
 No. | Dir | Details
 --- | --- | ---
-1 | `EmergencyApp` | Android application.
-2 | `ResponderApp` | 
-3 | `assets` | 
-4 | `build_df` | Processing raw results from scraping and generate dataframes.
-5 | `classification`| TBA
+1 | `EmergencyApp` | User application: for emergency reporting, see news, and see tips while in emergency situation.
+2 | `ResponderApp` | Reponder application: ..
+3 | `assets` | Contains all images for this repository.
+4 | `build_df` | Processing data from scraping result, generate train and test data for Machine Learning
+5 | `classification`| Classify user report to its label.
 6 | `data` | Consists all data: raw, preprocessed, filtered, data for classification and NER.
-7 | `flask` | Contains API for NER and classification model.
-8 | `ner` | TBA
-9 | `scraping` | Code for [website](https://lapor.go.id) scraping.
+7 | `flask` | Contains REST API for NER and classification model to transfer to Responder Application.
+8 | `ner` | Extract entities from user's voice transcription.
+9 | `scraping` | Gathered data or scraping through this [website](https://lapor.go.id).
 <!--  -->
 
 
@@ -111,12 +111,12 @@ To get a local copy up and running follow these simple example steps.
 ### ❗ Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
-* Android version ......
+* Android version `inser version`
 * Internet connection
 * Location services (GPS)
 
 ### ⚙️ Installation
-1. Download our APK at ..
+Download our APK at `insert link here`
 <!--  -->
 
 
