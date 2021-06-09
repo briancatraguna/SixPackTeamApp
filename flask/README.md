@@ -37,6 +37,8 @@ Now that you are connected with the server, perform the following commands below
 5. Run this command: `pip install requirements.txt`
 6. Then you're set! Now run the server by doing this command `flask run -h 0.0.0.0`
 
+## You need to repeat again to create another virtual machine to run the other model. Repeat from the top!
+
 ## Extras
 - To stop the flask server click `CTRL + C`
 - To use the API run with this URL on the browser:
