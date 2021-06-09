@@ -47,5 +47,13 @@ class HistoryFragment : Fragment() {
                 binding.tvFail.visibility = View.GONE
             }
         })
+
+        viewModel.isLoading().observe(requireActivity(),{isLoading->
+            if (isLoading){
+                binding.progressBar.visibility = View.VISIBLE
+            } else {
+                binding.progressBar.visibility = View.GONE
+            }
+        })
     }
 }

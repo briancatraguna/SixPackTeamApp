@@ -40,4 +40,8 @@ class SosViewModel(private val repository: FirebaseRepository): ViewModel() {
         return repository.isReadSuccess()
     }
 
+    fun isLoading(): LiveData<Boolean>{
+        return repository.isLoading()
+    }
+
 }

@@ -149,4 +149,6 @@ And anyways, as Cecil Adams reasoned, “[Do you really] think graphic arts supp
     <string name="type_of_emergency">Type of Emergency</string>
     <string name="natural_disaster">Natural Disaster</string>
     <string name="report">Report</string>
+    <string name="location_of_occurence">Location of Occurence</string>
+    <string name="maps">Maps</string>
 </resources>
