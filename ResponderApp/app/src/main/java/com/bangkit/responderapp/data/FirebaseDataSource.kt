@@ -21,6 +21,9 @@ class FirebaseDataSource {
     private var _isLoading = MutableLiveData<Boolean>()
     var isLoading: LiveData<Boolean> = _isLoading
 
+    private var _updateFail = MutableLiveData<Boolean>()
+    var updateFail: LiveData<Boolean> = _updateFail
+
     fun getAllReports(): MutableLiveData<ArrayList<ReportEntity?>>{
         _readSuccess.value = true
         _isLoading.value = true
@@ -50,7 +53,28 @@ class FirebaseDataSource {
         return result
     }
 
-    fun updateStatus(reportId: String,status: String){
+    fun updateStatus(reportId: String,reportEntity: ReportEntity?){
+        _updateFail.value = false
+        myRef.addValueEventListener(object: ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if (snapshot.exists()){
+                    for (user in snapshot.children){
+                        val userRef = user.key.toString()
+                        for (report in user.children){
+                            val reportIdRef = report.key.toString()
+                            if (reportId == reportIdRef){
+                                myRef.child(userRef).child(reportIdRef).setValue(reportEntity)
+                            }
+                        }
+                    }
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                _updateFail.value = true
+            }
+
+        })
 
     }
 

@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.bangkit.responderapp.R
+import com.bangkit.responderapp.data.FirebaseDataSource
+import com.bangkit.responderapp.data.FirebaseRepository
 import com.bangkit.responderapp.data.ReportEntity
 import com.bangkit.responderapp.databinding.ActivityDetailReportBinding
 import com.bangkit.responderapp.ui.maps.MapsActivity
@@ -16,6 +18,7 @@ class DetailReportActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDetailReportBinding
     private var report: ReportEntity? = null
+    private lateinit var viewModel: MainViewModel
 
     companion object{
         const val EXTRA_REPORT = "report"
@@ -34,7 +37,7 @@ class DetailReportActivity : AppCompatActivity() {
         binding = ActivityDetailReportBinding.inflate(layoutInflater)
         report = intent.getParcelableExtra<ReportEntity>(EXTRA_REPORT)
         val id = intent.getStringExtra(EXTRA_REPORT_ID)
-        println(id)
+        viewModel = MainViewModel(FirebaseRepository(FirebaseDataSource()))
         setContentView(binding.root)
 
         binding.toolbar.backBtn.setOnClickListener { finish() }

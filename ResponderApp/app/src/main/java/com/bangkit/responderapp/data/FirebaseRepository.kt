@@ -21,4 +21,12 @@ class FirebaseRepository(private val dataSource: FirebaseDataSource) {
         return dataSource.getReportIds()
     }
 
+    fun updateStatus(reportId: String, report: ReportEntity?){
+        dataSource.updateStatus(reportId,report)
+    }
+
+    fun getUpdateStatus():LiveData<Boolean>{
+        return dataSource.updateFail
+    }
+
 }
