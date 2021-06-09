@@ -116,7 +116,7 @@ This is an example of how to list things you need to use the software and how to
 * Location services (GPS)
 
 ### ⚙️ Installation
-Download our APK at `insert link here`
+Download our APK at [this link](https://drive.google.com/drive/folders/1lILNDEo_bthNN-wvuQXULXfjTwbsNP_-?usp=sharing)
 <!--  -->
 
 
