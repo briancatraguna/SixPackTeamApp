@@ -97,7 +97,7 @@ No. | Dir | Details
 4 | `build_df` | Processing data from scraping result, generate train and test data for Machine Learning
 5 | `classification`| Classify user report to its label.
 6 | `data` | Consists all data: raw, preprocessed, filtered, data for classification and NER.
-7 | `flask` | Contains REST API for NER and classification model to transfer to Responder Application.
+7 | `flask` | Contains the code to create an API to do ML inferences by the Android App.
 8 | `ner` | Extract entities from user's voice transcription.
 9 | `scraping` | Gathered data or scraping through this [website](https://lapor.go.id).
 <!--  -->
@@ -121,7 +121,7 @@ This is an example of how to list things you need to use the software and how to
 ### Connection to the Cloud Server in Android Studio
 Once you have followed the instructions in how to setup the cloud server you must:
 1. Go to your app level `build.gradle`
-2. Modify this part:
+2. Modify this part: (`YOUR_NER_BASE_URL`,`YOUR_CLASSIFICATION_BASE_URL`)
 ```
 android {
     .....
