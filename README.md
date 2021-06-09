@@ -172,8 +172,10 @@ Septin Lutfiyatul Munawaroh | <a href="https://github.com/septinlutf"><img src="
 <p align="center">
   <h3 align="center">Special thanks to Bangkit Academy 2021 🤍
   </h3>
+</p>
+<p align="center">
   <a href="https://grow.google/intl/id_id/bangkit/">
-    <img align="middle" src="assets/bangkit.png" alt="Bangkit Academy" height=315 width=600>
+    <img src="assets/bangkit.png" alt="Bangkit Academy" height=315 width=600>
   </a>
 </p>
 <!--  -->
