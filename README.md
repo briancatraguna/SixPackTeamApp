@@ -72,7 +72,7 @@ Did you know that a huge amount of emergency cases remain unhandled? Some of the
 Our app implements machine learning technology to correctly generate reports from user voice and automatically send it to the responser app. Our superior technology can accelerate responders to respond appropriately according to the user’s needs and could save many lives.
 
 <p align='center'>
-  <a href="https://github.com/briancatraguna/SixPackTeamApp/"> <img src="assets/implementation.png" alt="Logo"> </a>
+  <a href="https://github.com/briancatraguna/SixPackTeamApp/"> <img src="assets/flow.png" alt="Logo"> </a>
 </p>
 
 ### 🏗️ Built With
@@ -123,7 +123,7 @@ This is an example of how to list things you need to use the software and how to
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+_For more examples, please refer to the [Documentation](https://github.com/briancatraguna/SixPackTeamApp.wiki.git)_
 <!--  -->
 
 <!-- CONTRIBUTING -->
