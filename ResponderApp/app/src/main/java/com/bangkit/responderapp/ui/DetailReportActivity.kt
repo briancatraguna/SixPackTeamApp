@@ -36,7 +36,7 @@ class DetailReportActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailReportBinding.inflate(layoutInflater)
         report = intent.getParcelableExtra<ReportEntity>(EXTRA_REPORT)
-        val id = intent.getStringExtra(EXTRA_REPORT_ID)
+        val id = intent.getStringExtra(EXTRA_REPORT_ID).toString()
         viewModel = MainViewModel(FirebaseRepository(FirebaseDataSource()))
         setContentView(binding.root)
 
@@ -74,6 +74,36 @@ class DetailReportActivity : AppCompatActivity() {
             locationIntent.putExtra(LONGITUDE_KEY,report?.longitude)
             locationIntent.putExtra(LATITUDE_KEY,report?.latitude)
             startActivity(locationIntent)
+        }
+
+        setupRadioGroupState()
+
+        binding.radioGroup.setOnCheckedChangeListener { group, checkedId ->
+            when (checkedId){
+                R.id.status_find -> {
+                    report?.status = "Waiting for responder"
+                    viewModel.updateStatus(id,report)
+                }
+                R.id.status_progress -> {
+                    report?.status = "Responder on progress"
+                    viewModel.updateStatus(id,report)
+                }
+                R.id.status_resolved -> {
+                    report?.status = "Case resolved"
+                    viewModel.updateStatus(id,report)
+                }
+            }
+        }
+    }
+
+    private fun setupRadioGroupState() {
+        val status = report?.status
+        if (status == "Waiting for responder"){
+            binding.statusFind.isChecked = true
+        } else if (status == "Responder on progress"){
+            binding.statusProgress.isChecked = true
+        } else if (status == "Case resolved"){
+            binding.statusResolved.isChecked = true
         }
     }
 }

@@ -250,6 +250,7 @@
                 android:textSize="14sp" />
 
             <RadioGroup
+                android:id="@+id/radioGroup"
                 android:layout_marginTop="25dp"
                 android:layout_marginLeft="16dp"
                 android:layout_width="wrap_content"
@@ -257,18 +258,21 @@
                 android:orientation="vertical">
 
                 <RadioButton
+                    android:id="@+id/status_find"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/status_finding_responder"
                     android:layout_margin="5dp"/>
 
                 <RadioButton
+                    android:id="@+id/status_progress"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/status_on_progress"
                     android:layout_margin="5dp"/>
 
                 <RadioButton
+                    android:id="@+id/status_resolved"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/status_case_resolved"

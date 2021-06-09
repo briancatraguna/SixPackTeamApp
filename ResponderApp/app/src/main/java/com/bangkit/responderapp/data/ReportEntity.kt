@@ -13,5 +13,5 @@ data class ReportEntity (
     val classification: String = "",
     val latitude: Double? = 0.0,
     val longitude: Double? = 0.0,
-    val status: String = ""
+    var status: String = ""
 ): Parcelable

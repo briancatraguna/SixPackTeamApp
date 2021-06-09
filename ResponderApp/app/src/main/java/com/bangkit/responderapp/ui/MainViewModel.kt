@@ -25,7 +25,7 @@ class MainViewModel(private val repository: FirebaseRepository):ViewModel() {
         return repository.getReportIds()
     }
 
-    fun updateStatus(reportId: String,report: ReportEntity){
+    fun updateStatus(reportId: String,report: ReportEntity?){
         repository.updateStatus(reportId,report)
     }
 
