@@ -30,7 +30,7 @@
     ·
     <a href="https://github.com/briancatraguna/SixPackTeamApp/">Video Presentation</a>
     ·
-    <a href="https://github.com/briancatraguna/SixPackTeamApp/">Slide Deck</a>
+    <a href="https://bit.ly/sixpackslides">Slide Deck</a>
   </p>
 </p>
 
