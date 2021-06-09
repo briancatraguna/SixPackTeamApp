@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">Responder App</string>
     <string name="current_emergency_cases">Kasus Gawat Darurat</string>
+    <string name="pickpocket">Copet</string>
+    <string name="status">Status:</string>
+    <string name="date_of_occurence">Tanggal Kejadian</string>
+    <string name="location">Lokasi</string>
+    <string name="tvfail">Periksa koneksi internet Anda dan coba lagi.</string>
+    <string name="report_details">Detail Laporan</string>
+    <string name="fire">Kebakaran</string>
+    <string name="crime">Kriminalitas</string>
+    <string name="medical">Medik</string>
+    <string name="natural_disaster">Natural Disaster</string>
+    <string name="traffic_accident">Traffic Accident</string>
 </resources>

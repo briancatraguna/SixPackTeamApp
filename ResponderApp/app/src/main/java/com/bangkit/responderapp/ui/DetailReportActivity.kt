@@ -1,11 +1,13 @@
 package com.bangkit.responderapp.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.bangkit.responderapp.R
 import com.bangkit.responderapp.data.ReportEntity
 import com.bangkit.responderapp.databinding.ActivityDetailReportBinding
+import com.bangkit.responderapp.ui.maps.MapsActivity
 import com.bangkit.responderapp.utils.LocationHelper
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -22,6 +24,8 @@ class DetailReportActivity : AppCompatActivity() {
         private const val fire = "Fire"
         private const val naturalDisaster = "Natural Disaster"
         private const val trafficAccident = "Traffic Accident"
+        const val LONGITUDE_KEY = "longitude"
+        const val LATITUDE_KEY = "latitude"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,6 +38,7 @@ class DetailReportActivity : AppCompatActivity() {
 
         binding.tvDisplayName.text = report?.usersName
         binding.tvClassification.text = report?.classification
+        binding.tvReport.text = report?.report
         val reportClass = report?.classification
         if (reportClass == crime){
             binding.imgLogo.setImageResource(R.drawable.ic_crime_logo)
@@ -58,5 +63,11 @@ class DetailReportActivity : AppCompatActivity() {
             .apply(RequestOptions().override(500,500))
             .into(binding.imgPerson)
         binding.imgProgressBar.visibility = View.GONE
+        binding.buttonMaps.setOnClickListener {
+            val locationIntent = Intent(this,MapsActivity::class.java)
+            locationIntent.putExtra(LONGITUDE_KEY,report?.longitude)
+            locationIntent.putExtra(LATITUDE_KEY,report?.latitude)
+            startActivity(locationIntent)
+        }
     }
 }
