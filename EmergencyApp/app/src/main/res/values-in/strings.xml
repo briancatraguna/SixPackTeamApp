@@ -130,4 +130,10 @@
     <string name="content_tips_feature_2">- Pilih topik untuk melihat tips yang diinginkan</string>
     <string name="content_tips_feature_3">- Nonton video dan bacalah tipsnya</string>
     <string name="send">Kirim</string>
+    <string name="date">Date</string>
+    <string name="type_of_emergency">Tipe Gawat Darurat</string>
+    <string name="natural_disaster">Bencana Alam</string>
+    <string name="report">Laporan</string>
+    <string name="location_of_occurence">Lokasi Kejadian</string>
+    <string name="maps">Peta</string>
 </resources>

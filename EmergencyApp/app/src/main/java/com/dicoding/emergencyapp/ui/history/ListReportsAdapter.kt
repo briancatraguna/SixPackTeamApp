@@ -1,6 +1,5 @@
 package com.dicoding.emergencyapp.ui.history
 
-import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -24,11 +23,11 @@ class ListReportsAdapter: RecyclerView.Adapter<ListReportsAdapter.ListViewHolder
                 tvReportTitle.text = report?.classification
                 tvStatus.text = report?.status
                 if (report?.status == "Waiting for responder"){
-                    imgStatus.setImageResource(R.drawable.ic_finding_responder)
+                    imgStatus.setImageResource(R.drawable.ic_status_finding_responder)
                 } else if (report?.status == "Responder on progress"){
-                    imgStatus.setImageResource(R.drawable.ic_on_progress)
+                    imgStatus.setImageResource(R.drawable.ic_status_on_progress)
                 } else if (report?.status == "Case resolved"){
-                    imgStatus.setImageResource(R.drawable.ic_resolved)
+                    imgStatus.setImageResource(R.drawable.ic_status_resolved)
                 } else {
                     imgStatus.setImageResource(R.drawable.ic_broken_image)
                 }
