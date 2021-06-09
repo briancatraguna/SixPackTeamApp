@@ -170,9 +170,13 @@ Septin Lutfiyatul Munawaroh | <a href="https://github.com/septinlutf"><img src="
 3. Klein, B., Laiseca, X., Casado-Mansilla, D., López-de-Ipiña, D., & Nespral, A. P. (2012). Detection and Extracting of Emergency Knowledge from Twitter Streams. Ubiquitous Computing and Ambient Intelligence, 462–469. https://doi.org/10.1007/978-3-642-35377-2_64 
 ```
 <p align="center">
-  <h3 align="center">Special thanks to <a href="https://grow.google/intl/id_id/bangkit/">Bangkit Academy 2021</a>🤍
-    <img src="assets/bangkit.png" alt="Bangkit Academy" height=315 width=600>
+  <h3 align="center">Special thanks to 
+    <a href="https://grow.google/intl/id_id/bangkit/">Bangkit Academy 2021
+    </a>🤍
   </h3>
+  <a href="https://grow.google/intl/id_id/bangkit/">
+    <img src="assets/bangkit.png" alt="Bangkit Academy" height=315 width=600>
+  </a>
 </p>
 <!--  -->
 
