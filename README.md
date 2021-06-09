@@ -118,10 +118,33 @@ This is an example of how to list things you need to use the software and how to
 * Location services (GPS)
 * Setup cloud server: for more info about setting up the cloud server, click this [link](https://github.com/briancatraguna/SixPackTeamApp/tree/master/flask)
 
-### ⚙️ Installation
-There are two ways in which you can install this app. 
+### Connection to the Cloud Server in Android Studio
+Once you have followed the instructions in how to setup the cloud server you must:
+1. Go to your app level `build.gradle`
+2. Modify this part:
+```
+android {
+    .....
 
-Download our APK at [this link](https://drive.google.com/drive/folders/1lILNDEo_bthNN-wvuQXULXfjTwbsNP_-?usp=sharing)
+    defaultConfig {
+        .....
+        buildConfigField('String','NER_BASE_URL','"YOUR_NER_BASE_URL"')
+        buildConfigField('String','CLASSIFICATION_BASE_URL','"YOUR_CLASSIFICATION_BASE_RUL"')
+        .....
+    }
+    .....
+}
+```
+
+### ⚙️ Installation
+There are two ways in which you can install this app.
+
+Firstly you can fork this repository and run either one of these projects:
+- `EmergencyApp`
+- `ResponderApp`
+On your android studio to be installed in your emulator/device
+
+Or you can download our APK at [this link](https://drive.google.com/drive/folders/1lILNDEo_bthNN-wvuQXULXfjTwbsNP_-?usp=sharing)
 <!--  -->
 
 
