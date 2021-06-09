@@ -107,15 +107,19 @@ No. | Dir | Details
 ## ⭐ Getting Started
 
 To get a local copy up and running follow these simple example steps.
+DISCLAIMER: This app will only work when the admin of the cloud server has opened the SSH connection to the android in order to run ML inferences. But you can set up your own virtual machine in your own cloud console.
 
 ### ❗ Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
-* Android version `inser version`
+* Android emulator or device
 * Internet connection
 * Location services (GPS)
+* Setup cloud server: for more info about setting up the cloud server, click this [link](https://github.com/briancatraguna/SixPackTeamApp/tree/master/flask)
 
 ### ⚙️ Installation
+There are two ways in which you can install this app. 
+
 Download our APK at [this link](https://drive.google.com/drive/folders/1lILNDEo_bthNN-wvuQXULXfjTwbsNP_-?usp=sharing)
 <!--  -->
 
