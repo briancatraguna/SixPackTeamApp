@@ -10,18 +10,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import com.dicoding.emergencyapp.R
+import com.dicoding.emergencyapp.data.remote.ClassificationDataSource
 import com.dicoding.emergencyapp.data.remote.FirebaseDataSource
 import com.dicoding.emergencyapp.data.remote.NerDataSource
+import com.dicoding.emergencyapp.data.repository.ClassificationRepository
 import com.dicoding.emergencyapp.data.repository.FirebaseRepository
 import com.dicoding.emergencyapp.data.repository.NerRepository
 import com.dicoding.emergencyapp.databinding.FragmentSosBinding
-import com.dicoding.emergencyapp.helpers.ClassificationAlgorithm
 import com.dicoding.emergencyapp.helpers.DateHelper
 import com.dicoding.emergencyapp.helpers.NerResponseParser
 import com.dicoding.emergencyapp.ui.sos.typing.TypingActivity
-import com.google.firebase.database.ktx.database
-import com.google.firebase.ktx.Firebase
 import java.util.*
 
 class SosFragment : Fragment() {
@@ -30,6 +28,7 @@ class SosFragment : Fragment() {
     private lateinit var transcription: String
     private lateinit var viewModel: SosViewModel
     private lateinit var nerViewModel: NerViewModel
+    private lateinit var classificationViewModel: ClassificationViewModel
 
     companion object {
         private var TAG = SosFragment::class.java.simpleName
@@ -48,6 +47,8 @@ class SosFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewModel = SosViewModel(FirebaseRepository(FirebaseDataSource()))
         nerViewModel = NerViewModel(NerRepository(NerDataSource.getInstance()))
+        classificationViewModel = ClassificationViewModel(ClassificationRepository(
+            ClassificationDataSource.getInstance()))
 
         val emergencyButton = binding.sosButtonContainer
         emergencyButton.setOnClickListener {
@@ -72,24 +73,31 @@ class SosFragment : Fragment() {
             transcription = result?.get(0).toString()
         }
 
-        val classificationObject = ClassificationAlgorithm(transcription)
-        val classifiedClass = classificationObject.getClass()
-
         nerViewModel.getResults(transcription).observe(this,{ response ->
             val parser = NerResponseParser(response)
             val report = parser.getStringFormat()
-            viewModel.uploadData(
-                usersName,
-                userPhoto,
-                DateHelper.getDate(),
-                userId,
-                transcription,
-                report,
-                classifiedClass,
-                latitude,
-                longitude,
-                "Waiting for responder"
-            )
+            classificationViewModel.getResults(transcription).observe(this,{ response->
+                val classification = response.label.toString()
+                viewModel.uploadData(
+                    usersName,
+                    userPhoto,
+                    DateHelper.getDate(),
+                    userId,
+                    transcription,
+                    report,
+                    classification,
+                    latitude,
+                    longitude,
+                    "Waiting for responder"
+                )
+
+            })
+        })
+
+        nerViewModel.isFail().observe(requireActivity(),{isFail->
+            if (isFail){
+                Toast.makeText(context,"Failed to user ML Model! Need authorization from admin.",Toast.LENGTH_SHORT).show()
+            }
         })
         viewModel.getStatus().observe(requireActivity(),{
             if (it){

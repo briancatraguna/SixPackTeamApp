@@ -145,4 +145,8 @@ And anyways, as Cecil Adams reasoned, “[Do you really] think graphic arts supp
     <string name="content_tips_feature_2">- Select the topic you want to see the tips on</string>
     <string name="content_tips_feature_3">- Watch the video and read the tips</string>
     <string name="send">Send</string>
+    <string name="date">Date</string>
+    <string name="type_of_emergency">Type of Emergency</string>
+    <string name="natural_disaster">Natural Disaster</string>
+    <string name="report">Report</string>
 </resources>

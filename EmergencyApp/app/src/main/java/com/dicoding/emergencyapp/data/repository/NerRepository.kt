@@ -11,4 +11,8 @@ class NerRepository(private val dataSource: NerDataSource) {
         return dataSource.nerResponse
     }
 
+    fun isFail(): LiveData<Boolean>{
+        return dataSource.isFail
+    }
+
 }

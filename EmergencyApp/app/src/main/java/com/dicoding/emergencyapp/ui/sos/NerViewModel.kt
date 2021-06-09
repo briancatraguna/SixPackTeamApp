@@ -10,4 +10,8 @@ class NerViewModel(private val repository: NerRepository): ViewModel() {
     fun getResults(inputString: String):LiveData<NerResponse>{
         return repository.getResults(inputString)
     }
+
+    fun isFail(): LiveData<Boolean>{
+        return repository.isFail()
+    }
 }

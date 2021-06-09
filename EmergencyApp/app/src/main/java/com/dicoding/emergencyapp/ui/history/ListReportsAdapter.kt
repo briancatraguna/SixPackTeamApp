@@ -36,6 +36,7 @@ class ListReportsAdapter: RecyclerView.Adapter<ListReportsAdapter.ListViewHolder
 
             itemView.setOnClickListener{
                 val intent = Intent(itemView.context,DetailReportActivity::class.java)
+                intent.putExtra(DetailReportActivity.EXTRA_REPORT,report)
                 itemView.context.startActivity(intent)
             }
         }
