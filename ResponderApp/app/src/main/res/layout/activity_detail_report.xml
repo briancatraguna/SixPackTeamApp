@@ -233,8 +233,9 @@
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="135dp"
+            android:layout_height="wrap_content"
             android:background="@drawable/bottom_border"
+            android:layout_marginBottom="10dp"
             app:layout_constraintTop_toBottomOf="@+id/frameLayout4"
             tools:layout_editor_absoluteX="0dp">
 
@@ -247,6 +248,54 @@
                 android:text="Status"
                 android:textColor="@color/subtext"
                 android:textSize="14sp" />
+
+            <RadioGroup
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/status_finding_responder"
+                    android:layout_margin="5dp"/>
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/status_on_progress"
+                    android:layout_margin="5dp"/>
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/status_case_resolved"
+                    android:layout_margin="5dp"/>
+
+            </RadioGroup>
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_status_finding_responder"
+                android:layout_marginTop="38dp"
+                android:layout_marginLeft="200dp"/>
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_status_on_progress"
+                android:layout_marginTop="95dp"
+                android:layout_marginLeft="205dp"/>
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_status_resolved"
+                android:layout_marginTop="155dp"
+                android:layout_marginLeft="155dp"/>
 
         </FrameLayout>
 

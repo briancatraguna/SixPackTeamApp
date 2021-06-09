@@ -13,4 +13,7 @@
     <string name="natural_disaster">Natural Disaster</string>
     <string name="traffic_accident">Traffic Accident</string>
     <string name="title_activity_maps">Map</string>
+    <string name="status_finding_responder">Waiting for Responder</string>
+    <string name="status_on_progress">Responder on Progress</string>
+    <string name="status_case_resolved">Case Resolved</string>
 </resources>

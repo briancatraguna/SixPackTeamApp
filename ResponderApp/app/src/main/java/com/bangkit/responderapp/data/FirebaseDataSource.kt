@@ -54,7 +54,7 @@ class FirebaseDataSource {
     }
 
     fun updateStatus(reportId: String,reportEntity: ReportEntity?){
-        _updateFail.value = false
+        _updateFail.value = true
         myRef.addValueEventListener(object: ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.exists()){
@@ -67,11 +67,12 @@ class FirebaseDataSource {
                             }
                         }
                     }
+                    _updateFail.value = false
                 }
             }
 
             override fun onCancelled(error: DatabaseError) {
-                _updateFail.value = true
+                Log.d("TAG","Fail")
             }
 
         })
